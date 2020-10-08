@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+
+<head>
+    <title>Loja Online</title>
+    <vtex:metaTags/>    
+    <link rel="stylesheet" type="text/css" href="~/arquivos/general.css" />
+    <link rel="stylesheet" type="text/css" href="~/arquivos/lists.css" />
+    <script type="text/javascript" src="~/arquivos/menu.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span10 offset1">
+                <!--  SubTemplate: Header -->
+                <vtex:template id="Header" />
+                <!--  /SubTemplate: Header -->
+                
+                <!--  SubTemplate: listsSideBar -->
+                <vtex:template id="listsSideBar" />
+                <!-- /SubTemplate: listsSideBar -->
+	
+            	<div id="content">
+            		<h2 class="titulo-sessao">Produtos da lista</h2>
+            		
+            		<!--  Controle: produtos da lista -->
+            		<vtex.cmc:giftListProducts />
+            		<!-- /Controle: produtos da lista -->
+                </div>
+                
+                <div class="footer clearfix">
+                    <!--  SubTemplate: Footer -->
+                    <vtex:template id="Footer" />
+                    <!-- /SubTemplate: Footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

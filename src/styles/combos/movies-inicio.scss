@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*============================================================================
+  FRUTA FRESCA | Inicio
+==============================================================================*/
+
+/*================ BASE ================*/
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
+@import "../base/fuentes.scss";
+@import "../base/keyframes.scss";
+
+/*================ LOCAL MODULES ================*/
+
+/*================ LOCAL VENDOR ================*/
+
+/*================ PAGES ================*/
+@import "../pages/inicio.scss";

@@ -1,0 +1,26 @@
+#set($id = $product.Id)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+<br />
+<table border="0" height="90" cellpadding="0" cellspacing="0" width="550">
+<tr>
+    <td align="left">
+        <a title="$escapedName" href="$uri?utm_source=VTEXCEM&utm_medium=Abandono_carrinho&utm_campaign=Abandono" border="0">$product.GetImageTag(30)</a>
+    </td>
+    <td>
+        <font face="Arial" size="2" color="#333333" style="font-family: 'lato', sans-serif; font-size: 13px; line-height: 16px; text-align: center; color: black;padding: 18px 0;">$product.Name</font>
+    </td>
+    <td align="center">     
+        <p style="font-family: 'lato', sans-serif; font-size: 13px; line-height: 16px; text-align: center; color: black;padding: 18px 0;">
+            #if($product.HasBestPrice)
+                <font face="Arial" size="2" color="#33333" style="text-decoration:line-through;">$product.ListPrice</font><br />           
+            #end
+          <font face="Arial" size="3" color="#e61f84">$product.BestPrice</font>     
+        </p>
+        <p style="font-family: 'lato', sans-serif; font-size: 13px; line-height: 16px; text-align: center; color: black;padding: 18px 0;">
+            <a href="$uri?utm_source=VTEXCEM&utm_medium=Abandono_carrinho&utm_campaign=Abandono" style="background: #e61f84; padding: 6px 12px; color: white; text-decoration: none; font-size: 14px; font-family: 'lato', sans-serif; letter-spacing: 1px;">Ver Producto</a>
+        </p>
+    </td>    
+</tr>
+</table>
+<br />

@@ -1,0 +1,100 @@
+    <!-- 
+ *
+ * Desarrollado por WebImpacto - The Ecommerce Agency
+ *
+ -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es">
+
+<head>    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <vtex:metaTags/>
+
+    <!--<link href="/arquivos/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/ion.rangeSlider.skinHTML5.css" rel="stylesheet" type="text/css" />
+    <script src="/arquivos/ion.rangeSlider.min.js"></script>-->
+    <link rel="stylesheet" href="/files/movies-categoria.min.css" />
+    <vtex:template id="MOVIES - CommonStyles" /> 
+    
+</head> 
+<body id="category-page">
+    <div class="page"> 
+        <!--  SubTemplate: Header -->
+        <vtex:template id="MOVIES - Header" />
+        <vtex:template id="MOVIES - HeaderMobile" />
+        <!-- /SubTemplate: Header -->
+                    
+        <section id="category-header" style="visibility:hidden">
+            <vtex:contentPlaceHolder id="Category-Header-Banner-Desktop"/>
+            <vtex:contentPlaceHolder id="Category-Header-Banner-Mobile"/>
+            <div class="category-header-content" >                
+                <div class="category-header-name">
+                    <h1><vtex:contentPlaceHolder id="Category-Header-Name"/></h1>
+                </div>
+                <div class="category-header-breadcrum">
+                    <vtex.cmc:breadCrumb />
+                </div>
+            </div>
+        </section>
+ 
+        <section id="category-body" >                    
+            <div id="category-body-organize">
+                <div class="delivery">
+                    <img class="fav-logo" src="/arquivos/Truck-footer.png" />
+                    <h2>Envío gratuito x compras mayores a $99.900 <br /> &amp; devolución gratuita de hasta 30 días</h2>
+                </div>
+                <div class="return">
+                    <img class="fav-logo" src="/arquivos/arrow-back-icon-32.png" />
+                    <h2>Devolución gratuita hasta 120 días</h2>
+                </div>
+                <div id="filters" class="filters"><span>Filtrar por</span></div>
+                <div id="ordering" class="ordering"></div>
+                <div id="grids" class="grids">
+                    <div class="grid1"><img src="/arquivos/Grid1-icon.png" /></div>
+                    <div class="grid2"><img src="/arquivos/Grid2-icon.png" /></div>
+                    <div class="grid3"><img src="/arquivos/Grid3-icon.png" /></div>
+                </div>
+            </div>
+
+            <div id="category-body-content" class="row">
+
+                <aside class="category-body-content-left sidebar">
+                    <div id="departament-navegador">
+                        <!--  Controle: navegador de departamento -->
+                        <vtex.cmc:searchNavigator />
+                        <!-- /Controle: navegador de departamento -->
+                    
+                        <div id="category-extra-filtro"></div>
+                    </div><!-- #departament-navegador -->          	
+                </aside><!-- .sidebar -->
+    
+                <article id="main-content" class="category-body-content-right">
+
+                    <div id="collections">
+                        <div class="showcase-default">
+                            <!--  Controle: Resultado da busca / Lista de produtos -->
+                            <vtex.cmc:searchResult layout="89a36bb1-cd85-4e51-b597-c5062f57b31b" itemCount="12"  columnCount="12" />
+                            <!--  /Controle: Resultado da busca / Lista de produtos -->
+                        </div><!-- .collection-wrap -->
+                    </div><!-- #collections -->
+                
+                </article><!-- #main-content -->
+
+            </div><!-- .row -->
+        
+        </section><!-- #content -->
+                    
+        <div id="category-extra-bottom"></div>
+
+        <!--  SubTemplate: Footer -->
+        <vtex:template id="MOVIES - Footer" />
+        <!-- /SubTemplate: Footer -->
+    
+    </div><!-- .container-fluid -->
+ 
+</body>
+<vtex:template id="MOVIES - CommonScripts" />
+<script src="/files/movies-categoria.min.js"></script>
+</html>

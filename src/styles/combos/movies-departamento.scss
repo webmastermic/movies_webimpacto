@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*============================================================================
+  FRUTA FRESCA | Departamento
+==============================================================================*/
+
+/*================ BASE ================*/
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
+@import "../base/fuentes.scss";
+@import "../base/normalize.scss";
+@import "../base/globales.scss";
+
+/*================ LOCAL MODULES ================*/
+@import "../modules-local/vitrinas.scss";
+
+/*================ PAGES ================*/
+@import "../pages/departamento.scss";

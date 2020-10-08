@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*============================================================================
+  FRUTA FRESCA | Checkout
+==============================================================================*/
+
+/*================ BASE ================*/
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
+@import "../base/fuentes.scss";
+@import "../base/normalize.scss";
+@import "../base/globales-checkout.scss";
+
+
+/*================ MODULES ================*/
+
+
+/*================ PAGES ================*/
+@import "../pages/checkout.scss";

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*============================================================================
+  FRUTA FRESCA | Categoría
+==============================================================================*/
+
+/*================ BASE ================*/
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
+@import "../base/fuentes.scss";
+@import "../base/normalize.scss";
+
+/*================ LOCAL MODULES ================*/
+
+/*================ PAGES ================*/
+@import "../pages/categoria.scss";

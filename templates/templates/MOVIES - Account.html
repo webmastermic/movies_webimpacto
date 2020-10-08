@@ -1,0 +1,70 @@
+<!-- 
+ *
+ * Desenvolvido por Integrando.se
+ * hello@integrando.se
+ * 
+ * Bootstrap v.3
+ *
+ -->
+
+ <!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es-co">
+ 
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <vtex:metaTags/>
+    <vtex:template id="MOVIES - CommonStyles" /> 
+    <link rel="stylesheet" href="/files/movies-my-account.min.css" />
+ </head>
+ 
+ <body id="account-page">
+ 
+     <div class="page">
+ 
+          <!--  SubTemplate: Header -->
+        <vtex:template id="MOVIES - Header" />
+        <vtex:template id="MOVIES - HeaderMobile" />
+        <!-- /SubTemplate: Header -->
+ 
+         <div id="account-extra-top"></div>
+ 
+         <section id="account-content" class="container">
+             
+             <div class="row">
+ 
+                 <div class="col-xs-12">
+                     <vtex.cmc:accountUserProfile />
+                 </div>
+                 <!--<div class="col-xs-12 col-sm-6">
+                   <vtex.cmc:accountAddress/>
+                 </div>-->
+             
+             </div>
+ 
+         </section><!-- #content -->  
+         
+         <div id="account-extra-bottom"></div>
+                 
+         <!--  SubTemplate: Footer -->
+        <vtex:template id="MOVIES - Footer" />
+        <!-- /SubTemplate: Footer -->
+     
+    </div><!-- .container-fluid -->
+    <vtex:template id="MOVIES - CommonScripts" />
+    <script type="text/javascript" src="/files/my-account.js"></script>
+ </body>
+     <script type="text/javascript">
+         $(document).ready( function(){
+             var hash = $(location).attr('hash');
+             var $links = $('a[data-toggle="modal"]');
+ 
+             $.each( $links, function(){
+                 var $this = $(this);
+                 if( $this.attr('href') === hash ){
+                     $this.click();
+                 } 
+             });
+         })
+     </script>
+ </html>

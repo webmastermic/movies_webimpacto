@@ -1,0 +1,224 @@
+/*=============================================================*/
+/* MIXINS */
+
+// -------------------------------------------------------------
+//  Mixin para generar prefijos en la propiedad.
+//	Basado en Shopify Slate.
+//  Modo de uso (Sass):
+//    .element {
+//      @include prefix-prop(transform, scale(1), ms webkit spec);
+//    }
+//	Resultado (CSS):
+//    .element {
+//      -ms-transform: scale(1);
+//      -webkit-transform: scale(1);
+//      transform: scale(1);
+//    }
+// -------------------------------------------------------------
+@mixin prefix-prop($property, $value, $prefixes) {
+	@each $prefix in $prefixes {
+		@if $prefix == webkit {
+			-webkit-#{$property}: #{$value};
+		} @else if $prefix == moz {
+			-moz-#{$property}: #{$value};
+		} @else if $prefix == ms {
+			-ms-#{$property}: #{$value};
+		} @else if $prefix == o {
+			-o-#{$property}: #{$value};
+		} @else if $prefix == spec {
+			#{$property}: #{$value};
+		} @else  {
+			@warn 'Unrecognized prefix: #{$prefix}';
+		}
+	}
+}
+
+// -------------------------------------------------------------
+//  Mixin para generar prefijos en el valor de la propiedad.
+//  Basado en Shopify Slate.
+//  Modo de uso (Sass):
+//    .element {
+//      @include prefix-prop(display, flex, ms webkit spec);
+//    }
+//  Resultado (CSS):
+//    .element {
+//      display: -ms-flex;
+//      display: -webkit-flex;
+//      display: flex;
+//    }
+// -------------------------------------------------------------
+@mixin prefix-val($property,$value,$prefixes) {
+	@each $prefix in $prefixes {
+		@if $prefix == webkit {
+			#{$property}: -webkit-#{$value};
+		} @else if $prefix == moz {
+			#{$property}: -moz-#{$value};
+		} @else if $prefix == ms {
+			#{$property}: -ms-#{$value};
+		} @else if $prefix == o {
+			#{$property}: -o-#{$value};
+		} @else if $prefix == spec {
+			#{$property}: #{$value};
+		} @else  {
+			@warn 'Unrecognized prefix: #{$prefix}';
+		}
+	}
+}
+
+// -------------------------------------------------------------
+//  Mixin para generar prefijos en la regla keyframes.
+//  Basado en mixin de Josh Broton. Modificado por Andrés Rodríguez
+//  Modo de uso (Sass):
+//    @include keyframes (animacion, ms webkit spec) {
+//			0%   { left: 100px; }
+//			100% { left: 200px; }
+//		}
+//  Resultado (CSS):
+//    @-ms-keyframes move-the-object {
+//		  0%   { left: 100px; }
+//		  100% { left: 200px; }
+//		}
+//		@-webkit-keyframes move-the-object {
+//		  0%   { left: 100px; }
+//		  100% { left: 200px; }
+//		}
+//		@keyframes move-the-object {
+//		  0%   { left: 100px; }
+//		  100% { left: 200px; }
+//		}
+// -------------------------------------------------------------
+@mixin keyframes($animationName,$prefixes) {
+	@each $prefix in $prefixes {
+		@if $prefix == webkit {
+			@-webkit-keyframes #{$animationName} {
+				@content;
+			}
+		}
+		@if $prefix == moz {
+			@-moz-keyframes #{$animationName} {
+				@content;
+			}
+		}
+		@if $prefix == ms {
+			@-ms-keyframes #{$animationName} {
+				@content;
+			}
+		}
+		@if $prefix == o {
+			@-o-keyframes #{$animationName} {
+				@content;
+			}
+		}
+		@if $prefix == spec {
+			@keyframes #{$animationName} {
+				@content;
+			}
+		}
+	}
+}
+
+// -------------------------------------------------------------
+
+//calcular tamaño de fuente en rem
+$browser-context: 15; // Default
+@function calculateRem($size) {
+ $remSize: $size / 15;
+ @return #{$remSize}rem;
+}
+@mixin rem($size) {
+ font-size: $size + px; //Fallback in px
+ font-size: calculateRem($size);
+ // font-size: $size / $browser-context + rem;
+}
+
+// -------------------------------------------------------------
+
+//para estilizar los placeholder
+@mixin placeholder ($color: $negro ) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+// -------------------------------------------------------------
+
+//eliminar apariencia por defecto del navegador
+@mixin appearance ($value){
+	-webkit-appearance: ($value);
+	-moz-appearance: ($value);
+	-ms-appearance: ($value);
+	-o-appearance: ($value);
+	appearance: ($value);
+}
+
+// -------------------------------------------------------------
+
+//distribución de contenido en columnas
+@mixin column($num){
+	-webkit-column-count: ($num); /* Chrome, Safari, Opera */
+  -moz-column-count: ($num); /* Firefox */
+  column-count: ($num);
+}
+
+// -------------------------------------------------------------
+
+//animación básica o transición
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+// -------------------------------------------------------------
+
+//degradados
+@mixin grandient-blanco-horizontal {
+	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,0.15) 63%, rgba(255,255,255,0) 74%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0.15) 63%,rgba(255,255,255,0) 74%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.15) 63%,rgba(255,255,255,0) 74%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+@mixin grandient-blanco-vertical {
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.15) 63%, rgba(255,255,255,0) 74%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.15) 63%,rgba(255,255,255,0) 74%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.15) 63%,rgba(255,255,255,0) 74%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+// -------------------------------------------------------------
+
+//filtro a escala de grises
+@mixin grayscale ($percent) {
+	-webkit-filter: grayscale($percent);
+	-ms-filter: grayscale($percent);
+	-o-filter: grayscale($percent);
+	-moz-filter: grayscale($percent);
+	filter: grayscale($percent);
+}
+
+
+// -------------------------------------------------------------
+//Media queries for responsive
+@mixin for-size($size) {
+    @if $size == phone-only {
+        @media (max-width: $breakpoint-mobile) { @content; }
+    }  @else if $size == tablet-landscape {
+        @media (min-width: $breakpoint-tablet) { @content; }
+    } @else if $size == phone-and-tablet {
+        @media (max-width: $breakpoint-desktop) { @content; }
+    } @else if $size == small-desktop {
+        @media (min-width: $breakpoint-desktop) { @content; }
+    } @else if $size == normal-desktop {
+        @media (min-width: $breakpoint-normal-desktop) { @content; }
+    } @else if $size == big-desktop {
+        @media (min-width: $breakpoint-big-desktop) { @content; }
+    }
+}

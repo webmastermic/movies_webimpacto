@@ -1,0 +1,48 @@
+{
+  "name": "movies",
+  "version": "1.0.0",
+  "description": "Market Place Movies, implementado inicialmente por Marco Villegas Webimpacto",
+  "main": "src/inicio.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danidomen/movies_vtex"
+  },
+  "author": "Marco Villegas",
+  "license": "ISC",
+  "homepage": "https://github.com/danidomen/movies_vtex/blob/master/README.md",
+  "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.0",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.18.13",
+    "easyzoom": "^2.5.0",
+    "easyzoom-mp": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-install": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "html-loader": "^0.5.5",
+    "imports-loader": "^0.7.1",
+    "jquery": "^3.3.1",
+    "jquery-validation": "^1.17.0",
+    "jquery.scrollbar": "^0.2.11",
+    "js-cookie": "^2.1.4",
+    "nunjucks": "^3.0.1",
+    "nunjucks-intl": "^1.0.0",
+    "nunjucks-loader": "^2.4.9",
+    "slick-carousel": "^1.8.1",
+    "string-replace-loader": "^1.3.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "underscore": "^1.8.3",
+    "waypoints": "^4.0.1",
+    "webpack-stream": "^4.0.0"
+  },
+  "dependencies": {
+    "sweetalert2": "^8.0.3"
+  }
+}

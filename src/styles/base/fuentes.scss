@@ -1,0 +1,249 @@
+/*=============================================================*/
+/* OPEN */
+
+// -------------------------------------------------------------
+//	Las fuentes sólo tienen los subsets Latin y Latin Extended.
+//	Entre menos fuentes se cargen al sitio mejor. Se colocan tadas las fuentes
+//	por facilidad para llamarlas en proyectos posteriores a la implementación.
+//	El sitio sólo usa Medium, Bold y Light.
+// -------------------------------------------------------------
+$Montserrat: 'Montserrat', sans-serif;
+
+/*=============================================================*/
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-Regular.eot.css');
+    src: url('/arquivos/Montserrat-Regular.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-Regular.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-Regular.woff.css') format('woff'),
+        url('/arquivos/Montserrat-Regular.svg.css#Montserrat-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-ExtraLight.eot.css');
+    src: url('/arquivos/Montserrat-ExtraLight.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-ExtraLight.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-ExtraLight.woff.css') format('woff'),
+        url('/arquivos/Montserrat-ExtraLight.svg.css#Montserrat-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-ExtraLightItalic.eot.css');
+    src: url('/arquivos/Montserrat-ExtraLightItalic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-ExtraLightItalic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-ExtraLightItalic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-ExtraLightItalic.svg.css#Montserrat-ExtraLightItalic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-BoldItalic.eot.css');
+    src: url('/arquivos/Montserrat-BoldItalic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-BoldItalic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-BoldItalic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-BoldItalic.svg.css#Montserrat-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-ExtraBold.eot.css');
+    src: url('/arquivos/Montserrat-ExtraBold.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-ExtraBold.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-ExtraBold.woff.css') format('woff'),
+        url('/arquivos/Montserrat-ExtraBold.svg.css#Montserrat-ExtraBold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-Black.eot.css');
+    src: url('/arquivos/Montserrat-Black.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-Black.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-Black.woff.css') format('woff'),
+        url('/arquivos/Montserrat-Black.svg.css#Montserrat-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-SemiBoldItalic.eot.css');
+    src: url('/arquivos/Montserrat-SemiBoldItalic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-SemiBoldItalic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-SemiBoldItalic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-SemiBoldItalic.svg.css#Montserrat-SemiBoldItalic') format('svg');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-BlackItalic.eot.css');
+    src: url('/arquivos/Montserrat-BlackItalic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-BlackItalic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-BlackItalic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-BlackItalic.svg.css#Montserrat-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-SemiBold.eot.css');
+    src: url('/arquivos/Montserrat-SemiBold.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-SemiBold.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-SemiBold.woff.css') format('woff'),
+        url('/arquivos/Montserrat-SemiBold.svg.css#Montserrat-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-ExtraBoldItalic.eot.css');
+    src: url('/arquivos/Montserrat-ExtraBoldItalic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-ExtraBoldItalic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-ExtraBoldItalic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-ExtraBoldItalic.svg.css#Montserrat-ExtraBoldItalic') format('svg');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-MediumItalic.eot.css');
+    src: url('/arquivos/Montserrat-MediumItalic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-MediumItalic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-MediumItalic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-MediumItalic.svg.css#Montserrat-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-Light.eot.css');
+    src: url('/arquivos/Montserrat-Light.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-Light.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-Light.woff.css') format('woff'),
+        url('/arquivos/Montserrat-Light.svg.css#Montserrat-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-Thin.eot.css');
+    src: url('/arquivos/Montserrat-Thin.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-Thin.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-Thin.woff.css') format('woff'),
+        url('/arquivos/Montserrat-Thin.svg.css#Montserrat-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-ThinItalic.eot.css');
+    src: url('/arquivos/Montserrat-ThinItalic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-ThinItalic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-ThinItalic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-ThinItalic.svg.css#Montserrat-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-Medium.eot.css');
+    src: url('/arquivos/Montserrat-Medium.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-Medium.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-Medium.woff.css') format('woff'),
+        url('/arquivos/Montserrat-Medium.svg.css#Montserrat-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-Italic.eot.css');
+    src: url('/arquivos/Montserrat-Italic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-Italic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-Italic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-Italic.svg.css#Montserrat-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-Bold.eot.css');
+    src: url('/arquivos/Montserrat-Bold.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-Bold.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-Bold.woff.css') format('woff'),
+        url('/arquivos/Montserrat-Bold.svg.css#Montserrat-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/arquivos/Montserrat-LightItalic.eot.css');
+    src: url('/arquivos/Montserrat-LightItalic.eot.css?#iefix') format('embedded-opentype'),
+        url('/arquivos/Montserrat-LightItalic.woff2.css') format('woff2'),
+        url('/arquivos/Montserrat-LightItalic.woff.css') format('woff'),
+        url('/arquivos/Montserrat-LightItalic.svg.css#Montserrat-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+/*=============================================================*/
+/* ICONOS */
+
+// -------------------------------------------------------------
+//	Fuente para los iconos.
+// -------------------------------------------------------------
+
+$icomoon: 'icomoon';
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/arquivos/icomoon.eot.css?1mkqo6');
+  src:  url('/arquivos/icomoon.eot.css?1mkqo6#iefix') format('embedded-opentype'),
+    url('/arquivos/icomoon.ttf.css?1mkqo6') format('truetype'),
+    url('/arquivos/icomoon.woff.css?1mkqo6') format('woff'),
+    url('/arquivos/icomoon.svg.css?1mkqo6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

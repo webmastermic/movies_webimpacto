@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es-co">
+
+<head>
+    <title>Loja Online</title>
+    <!--  Component: Meta tags -->
+	<vtex:metaTags/>
+	<script src="/arquivos/lojavazia-general.js"></script>
+	<!--  Template: scripts -->
+	<vtex:template id="commonScripts" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">   
+			<div class="span12">
+				<!--  SubTemplate: Header -->
+				<vtex:template id="Header" />
+
+				<!--  Component: Breadcrumbs -->
+				<vtex.cmc:breadCrumb />
+
+				<div id="content" class="row-fluid">
+					<div class="span5">
+						<div class="thumbnail text-center">
+							<!--  Component: Product Images -->
+							<vtex.cmc:ProductImage />
+						</div>
+					</div>
+			
+					<div class="span7">
+						<div class="well">
+							<div class="pull-left span8">
+								<!--  Component: Product Name -->
+								<h1 class="lead"><vtex.cmc:productName /></h1>
+								<!--<vtex.cmc:stockKeepingUnitSelection />-->
+
+								<!--  Component: Short description -->
+								<vtex.cmc:productDescriptionShort />
+							</div>
+						
+							<!--  Component: Buy button / Notify me -->
+							<div id="BuyButton" class="pull-right span4">
+								<vtex.cmc:BuyButton />
+                                <vtex.cmc:GiftListInsertSkuV2 popup="true" />
+							</div>
+                            
+
+							<div class="seletorSku clearfix">
+								<!--  Component: SKU selector -->
+								<vtex.cmc:stockKeepingUnitSelection />
+							</div>
+						
+							<!--  Component: Sellers -->
+							<vtex.cmc:SellerOptions />
+					
+							<!--  Component: Price -->
+							<vtex.cmc:skuPrice />
+						
+							<!--  Component: Sales channels -->
+							<vtex.cmc:SalesChannelDropList />
+						
+							<!--  Component: Addicional services -->
+							<vtex.cmc:stockKeepingUnitService />
+							
+							<!--  Component: Payment methods -->
+							<vtex.cmc:OtherPaymentMethod/>                
+				
+							<!--Acessórios
+							<div id="boxConsumidoresCompraramCompraram" class="clearfix">
+								<vtex:contentPlaceHolder id="Acessorios" />
+							</div>-->
+							<!--Acessórios-->
+							
+							<!--Sugestões
+							<div id="boxConsumidoresCompraramCompraram" class="clearfix">
+								<vtex:contentPlaceHolder id="Sugestoes" />
+							</div>-->
+							<!--Sugestões-->
+						
+							<!--Similares
+							<div id="boxConsumidoresCompraramCompraram" class="clearfix">
+								<vtex:contentPlaceHolder id="Similares" />
+							</div>-->
+						</div>
+					</div>
+		
+					<hr class="clearfix" />
+					<div class="product-description">
+						<h2 class="title">Descrição do Produto</h2>
+						<!--  Component: Description -->
+						<vtex.cmc:ProductDescription />
+					</div>
+		
+					<!--  Component: Specification -->
+					<vtex.cmc:productSpecification />
+					
+					<!--  Component: Cross selling -->
+					<vtex.cmc:BuyTogether/>
+				
+					<div class="vitrine">
+						<!--  Placeholder: Recomentations -->
+						<vtex:contentPlaceHolder id="PHrecomendamos" />
+					</div>
+				</div>
+				<br />
+				<!--  SubTemplate: Footer -->
+				<vtex:template id="Footer" />                    
+			</div>
+		</div>
+	</div>
+	<script src="/arquivos/vtex-custom-scripts.js"></script>
+</body>
+</html>

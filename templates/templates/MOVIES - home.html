@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+
+<head>
+    <vtex:contentPlaceHolder id="metatags" />
+    <vtex:metaTags/>
+    <vtex:template id="MOVIES - CommonStyles" />
+    <link rel="stylesheet" href="/files/movies-inicio.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body id="home">
+    <vtex:template id="MOVIES - Header" />
+    <vtex:template id="MOVIES - HeaderMobile" />
+
+    <section class="bannerPrincipal">
+        <div id="bannerPrincipal">
+            <vtex:contentPlaceHolder id="bannerPrincipal" />
+        </div>
+    </section>
+
+    <section class="page container">
+        <div class="section banner-edits">
+            <vtex:contentPlaceHolder id="bannerEdits" />
+        </div>
+        <div class="section banner-categorias">
+            <p class="text-categoria">Categoría</p>
+            <vtex:contentPlaceHolder id="bannerCategorias" />
+        </div>
+        <div class="section productos">
+            <div class="productos_title">
+                <p>Productos Destacados</p>
+                <!--<img src="/arquivos/ArrowDownCorporare.png" />-->
+            </div>
+            <div class="content_tabs">
+                <vtex:contentPlaceHolder id="categorias-productos" />
+                <div class="content_container">
+                    <div class="item cat1 active" id="content_tab1">
+                        <vtex:contentPlaceHolder id="carousel-productos-1" />
+                    </div>
+                    <div class="item cat2" id="content_tab2">
+                        <vtex:contentPlaceHolder id="carousel-productos-2" />
+                    </div>
+                    <div class="item cat3" id="content_tab3">
+                        <vtex:contentPlaceHolder id="carousel-productos-3" />
+                    </div>
+                    <div class="item cat4" id="content_tab4">
+                        <vtex:contentPlaceHolder id="carousel-productos-4" />
+                    </div>
+                    <!--<div class="item cat4" id="content_tab5">
+                        <vtex:contentPlaceHolder id="carousel-productos-5" />
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section descuento">
+        <picture>
+            <source srcset="/arquivos/banner-fondo-primera-compra-min.jpg" media="(max-width:769px)" />
+            <img src="/arquivos/banner-fondo-primera-compra-min.jpg" />
+        </picture>
+        <div class="shadow"></div>
+        <div class="container">
+            <vtex:contentPlaceHolder id="bannerDescuento" />
+        </div>
+    </section>
+
+    <section class="section carousel-categorias">
+        <div class="container">
+            <div class="title">
+                <!--<p>¿Qué Buscas?</p>-->
+            </div>
+            <div class="content_tabs">
+                <vtex:contentPlaceHolder id="tabs-carousel" />
+                <div class="content_container">
+                    <div class="item cat1" id="content_tab_categoria">
+                        <vtex:contentPlaceHolder id="carousel-categorias" />
+                    </div>
+                    <div class="item cat2 active" id="content_tab_licencias">
+                        <vtex:contentPlaceHolder id="carousel-licencias" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section newsletter">
+        <div class="container">
+            <!--<picture>
+                <source srcset="/arquivos/banner-fondo-newsletter-mobile@2x-min.png" media="(max-width:769px)" />
+                <img src="/arquivos/banner-fondo-newsletter-desktop-min.png" class="newsletter-img" />
+            </picture>-->
+            <vtex:contentPlaceHolder id="newsletter" />
+        </div>
+    </section>
+
+    <vtex:template id="MOVIES - Footer" />
+</body>
+    <vtex:template id="MOVIES - CommonScripts" />
+    <script src="/files/movies-inicio.bundle.min.js"></script>
+</html>

@@ -1,0 +1,469 @@
+#corporate-pages {
+    .desktop {
+        display: none!important;
+    }
+    .mobile {
+        display: block!important;
+    }
+    .page {
+        #corporate-pages-header {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .corporate-title-container {
+                padding: 15px 15px 0 15px;
+                text-align: center;
+                background-color: $color-gris3;
+                color: $color-negro2;
+                font-weight: bold;
+                h2 {
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                    font-size: 23px;
+                }
+                .corporate-pages-links-container {
+                    font-size: 12px;
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                    .separador {
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+        #corporate-pages-body {
+            padding: 15px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: $color-gris3;
+            #corporate-pages-body-organize {
+                padding: 0;
+                .corporate-menu {
+                    .corporate-menu-list {
+                        list-style: none;
+                        .corporate-menu-item {
+                            @include prefix-val(display, flex, moz o ms webkit spec);
+                            @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                            @include prefix-prop(align-items, center, moz o ms webkit spec);
+                            background-color: $color-negro4;
+                            border: 1px solid $color-negro4;
+                            border-radius: 3px;
+                            padding: 3px 20px;
+                            margin: 20px 0 0 0;
+                            min-height: 34px;
+                            font-size: 13px;
+                            font-weight: 700;
+                            color: $color-blanco;
+                            cursor: pointer;
+                            &:first-child {
+                                margin-top: 0;
+                            }
+                            &.active {
+                                .arrow-container {
+                                    transform: rotate(0deg);
+                                    transition: transform .2s ease-in-out;
+                                }
+                            }
+                        }
+                        .arrow-container {
+                            transform: rotate(-90deg);
+                            transition: transform .2s ease-in-out;
+                            width: 16px;
+                            height: 16px;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        .corporate-content-collapsible {
+                            max-height: 0;
+                            overflow: hidden;
+                            transition: max-height 0.5s ease-out;
+                            .corporate-list {
+                                padding: 15px 15px 0 15px;
+                                list-style: none;
+                                .corporate-item {
+                                    padding: 10px;
+                                    font-weight: 600;
+                                    color: $color-negro2;
+                                    font-size: .8125rem;
+                                    transition: color .2s;
+                                    &:hover {
+                                        color: $color-rojo;
+                                    }
+                                    &.active {
+                                        color: $color-rojo;
+                                    }
+                                    .link-clear {
+                                        @include prefix-val(display, flex, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                        text-decoration: none;
+                                        color: inherit;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #corporate-pages-body-content {
+                padding: 0;
+                #corporate-content {
+                    padding: 15px 0 15px 0;
+                    color: $color-negro2;
+                    h1 {
+                        margin-top: 0;
+                        margin-bottom: 30px;
+                        font-size: 23px;
+                        font-weight: bold;
+                    }
+                    h2 {
+                        margin-top: 0;
+                        margin-bottom: 30px;
+                        font-size: 23px;
+                        font-weight: bold;
+                    }
+
+                    .block-content {
+                        margin-bottom: 30px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: initial;
+                        }
+                        p {
+                            font-size: 12px;
+                            line-height: 25px;
+                        }
+                        ul {
+                            text-align: justify;
+                            margin: 0 15px;
+                            padding-left: 30px;
+                            li {
+                                font-size: 12px;
+                                line-height: 25px;
+                                a {
+                                    color: $color-rojo;
+                                }
+                            }
+                        }
+                        ol {
+                            text-align: justify;
+                            margin: 0 15px;
+                            padding-left: 30px;
+                            li {
+                                font-size: 12px;
+                                line-height: 25px;
+                                a {
+                                    color: $color-rojo;
+                                }
+                            }
+                        }
+                        .secondary-title {
+                            font-weight: bold;
+                            margin: 15px 0;
+                        }
+                        .tertiary-title {
+                            text-align: center;
+                            margin: 15px;
+                        }
+                        .secondary-subtitle {
+                            font-weight: bold;
+                            margin-left: 15px;
+                        }
+                        .regular-content {
+                            margin-bottom: 15px;
+                            text-align: justify;
+                            a {
+                                color: $color-rojo;
+                            }
+                        }
+                        .italic-content {
+                            margin-bottom: 15px;
+                            font-style: italic;
+                            text-align: justify;
+                            a {
+                                color: $color-rojo;
+                            }
+                        }                        
+                        .twice-table-content {
+                            margin: 15px 0;
+                            display: grid;
+                            grid-template-columns: 100%;
+                            max-width: 570px;
+                            div:nth-child(even) {
+                                margin-bottom: 15px;
+                            }
+                            a {
+                                color: $color-rojo;
+                            }
+                        }
+                        .subtitle-content {
+                            margin-top: 20px;
+                        }
+                    }
+                    &.corporate-content-preguntas-frecuentes {
+                        .block-content{
+                            .regular-content{                        
+                                ul {
+                                    text-align: justify;
+                                    li {
+                                        list-style: decimal;
+                                    }
+                                }    
+                            }                    
+                        }                                        
+                    }
+                    &.corporate-content-privacidad {
+                        .block-content{
+                            text-align: justify;
+                            .italic-content {
+                                padding: 0 15px;
+                            }                    
+                        }                    
+                        
+                    }
+                    &.corporate-content-contactanos {
+                        .title-input {
+                            font-weight: bold;
+                        }
+                        .contact-input-container {
+                            input {
+                                @include prefix-val(display, flex, moz o ms webkit spec);
+                                @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                padding: 3px 20px;
+                                border: 1px solid;
+                                border-radius: 3px;
+                                border-color:  $color-gris2;
+                                min-height: 34px;
+                                width: 100%;
+                                font-size: 13px;
+                                color: $color-negro2;
+                                &::placeholder {
+                                    color: $color-gris2;
+                                    opacity: 1;
+                                }
+                                &:-ms-input-placeholder {
+                                   color: $color-gris2;
+                                }
+                                &::-ms-input-placeholder {
+                                   color: $color-gris2;
+                                }
+                            }
+                            textarea {
+                                width: 100%;
+                                min-height: 250px;
+                                padding: 20px;
+                                border: 1px solid;
+                                border-radius: 3px;
+                                border-color: $color-gris2;
+                                color: $color-negro2;
+                                font-size: 13px;
+                                &::placeholder {
+                                    color: $color-gris2;
+                                    opacity: 1;
+                                }
+                                &:-ms-input-placeholder {
+                                   color: $color-gris2;
+                                }
+                                &::-ms-input-placeholder {
+                                   color: $color-gris2;
+                                }
+                            }
+                        }
+                        .custom-select {
+                            position: relative;
+                            select {
+                                display: none;
+                            }
+                            .select-selected {
+                                @include prefix-val(display, flex, moz o ms webkit spec);
+                                @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                padding: 3px 20px;
+                                border: 1px solid;
+                                border-radius: 3px;
+                                border-color:  $color-gris2;
+                                min-height: 34px;
+                                width: 100%;
+                                font-size: 13px;
+                                color: $color-gris2;
+                                cursor: pointer;
+                                &::after {
+                                    position: absolute;
+                                    content: "";
+                                    background-image: url(/arquivos/ArrowDownCorporare.png);
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    transform: rotate(-90deg);
+                                    top: 9px;
+                                    right: 15px;
+                                    width: 16px;
+                                    height: 16px;
+                                    transition: transform .2s;
+                                }
+                                &.select-arrow-active {
+                                    &::after {
+                                        transform: rotate(0deg);
+                                    }
+                                }
+                            }
+                            .select-items {
+                                position: absolute;
+                                padding: 10px 0;
+                                border: 1px solid;
+                                border-color: $color-gris2;
+                                border-radius: 3px;
+                                background-color: $color-blanco;
+                                top: 115%;
+                                left: 0;
+                                right: 0;
+                                z-index: 1;
+                                div {
+                                    padding: 10px 20px;
+                                    font-size: 13px;
+                                    color: #898A8D;
+                                    cursor: pointer;
+                                    &.same-as-selected {
+                                        color: $color-blanco;
+                                        background-color: $color-gris2;
+                                        font-weight: bold;
+                                    }
+                                    &:hover {
+                                        color: $color-blanco;
+                                        background-color: $color-gris2;
+                                        font-weight: bold;
+                                    }
+                                }
+                                &.select-hide {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .contact-form-submit {
+                            position: relative;
+                            @include prefix-val(display, flex, moz o ms webkit spec);
+                            @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                            @include prefix-prop(align-items, center, moz o ms webkit spec);
+                            max-width: 335px;
+                            margin: auto;
+                            margin-top: 5px;
+                            padding: 11px 15px;
+                            border-radius: 3px;
+                            color: $color-blanco;
+                            font-size: 13px;
+                            font-weight: bold;
+                            background-color: $color-rojo;
+                            cursor: pointer;
+                            .contact-form-submit-title {
+                                width: 100%;
+                                cursor: pointer;
+                                .register-button {
+                                    width: 100%;
+                                    background-color: transparent;
+                                    color: $color-blanco;
+                                    font-size: 13px;
+                                    font-weight: bold;
+                                    border: none;
+                                    cursor: pointer;
+                                }
+                            }
+                            .contact-form-submit-img {
+                                position: absolute;
+                                right: 30px;
+                                width: 20px;
+                                height: 20px;
+                                img {
+                                    max-width: 100%;
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media(min-width:$breakpoint-mobile) {
+        .desktop {
+            display: block!important;
+        }
+        .mobile {
+            display: none!important;
+        }
+        .page {
+            #corporate-pages-header {
+                
+            }
+            #corporate-pages-body {
+                #corporate-pages-body-content {
+                    #corporate-content {
+                        padding: 0 0 0 30px;
+                        h1 {
+                            margin-top: 0;
+                            margin-bottom: 30px;
+                            font-size: 32px;
+                            font-weight: bold;
+                        }
+                        .block-content {
+                            margin-bottom: 30px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            p {
+                                font-size: 13px;
+                            }
+                            .twice-table-content {
+                                padding-left: 15px;
+                                grid-template-columns: 50% 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(min-width:$breakpoint-desktop) {
+        .page {
+            #corporate-pages-header {
+                .corporate-title-container{
+                    position: absolute;
+                    padding: 0 30px 0 30px;
+                    width: 100%;
+                    min-width: 768px;
+                    max-width: 1200px;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                    bottom: 35%;
+                    background: transparent;
+                    color: $color-blanco;
+                    text-align: right;
+                    h2 {
+                        font-size: 32px;
+                    }
+                    .corporate-pages-links-container {
+                        font-size: 13px;
+                    }
+                }
+            }
+            #corporate-pages-body {
+                position: relative;
+                padding: 30px;
+                margin-top: -60px;
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
+                background-color: $color-blanco;
+            }
+        }
+    }
+}

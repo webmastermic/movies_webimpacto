@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="en-us">
+
+<head>
+    <title>Loja Online</title>
+    <vtex:metaTags/>
+    <link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- ><link href="/arquivos/style.css" rel="stylesheet" type="text/css" /> -->
+    <script src="/arquivos/bootstrap.min.js"></script>
+    <vtex:template id="commonScripts" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+            
+                <!--  SubTemplate: Header -->
+                <vtex:template id="Header" />
+                <!-- /SubTemplate: Header -->
+                    
+                <div id="content" class="row-fluid">
+                    <div class="span3 giftlist-sidebar bs-docs-sidebar">
+                        <vtex:template id="new-GiftList-Sidebar-nav" />
+                        <vtex.cmc:giftListNavigation />
+                    </div>
+                    <div id="collections" class="span9">
+                        <h2>Produtos em sua lista</h2>
+                        <!-- Controle: Informações de uma Lista -->
+                        <vtex.cmc:GiftListInfoV2 />
+                        <!-- 
+                        os seguintes parâmtros são permitidos:
+                        urledit="http://mysite.com/alternatefolder" caminho customizado nos links para a página de edição da lista
+                        giftcard="true" exibe o saldo do vale compras para uma lista com conversão do valor do produto em vale
+                         -->
+                        <!-- /Controle: informações de uma Lista -->
+                        
+                        <!-- Controle: Estatísticas de uma Lista -->
+                        <vtex.cmc:GiftListStatisticsV2 />
+                        <!-- /Controle: Estatísticas de uma Lista -->
+                        
+                        <!-- Controle: Produtos de uma Lista -->
+                        <vtex.cmc:GiftListProductsV2 />
+                        <!-- 
+                        os seguintes parâmtros são permitidos:
+                        size="20" número de produtos exibidos por página. O padrão é 10
+                        image="3" ID do tipo da imagem do produto exibido. O padrão é 3 (thumb)
+                         -->
+                        <!-- /Controle: Produtos de uma Lista -->
+            		</div>
+                </div>
+                
+                <div class="footer clearfix">
+                    <!--  SubTemplate: Footer -->
+                    <vtex:template id="Footer" />
+                    <!-- /SubTemplate: Footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/arquivos/lojavazia-general.js"></script>
+</body>
+</html>

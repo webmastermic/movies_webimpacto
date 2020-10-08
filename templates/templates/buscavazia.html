@@ -1,0 +1,83 @@
+<!-- 
+ *
+ * Desenvolvido por Integrando.se
+ * hello@integrando.se
+ * 
+ * Bootstrap v.3
+ *
+ -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es-co">
+
+<head>
+    <title> Modelo Vtex</title>
+    <vtex:metaTags/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <link href="/arquivos/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/ion.rangeSlider.skinHTML5.css" rel="stylesheet" type="text/css" />
+    <script src="/arquivos/ion.rangeSlider.min.js"></script>
+
+    <vtex:template id="commonStyles" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body id="busca-vazia-page">
+
+    <div class="page">
+
+        <!--  SubTemplate: Header -->
+        <vtex:template id="Header" />
+        <!-- /SubTemplate: Header -->
+                    
+        <div id="busca-vazia-extra-top"></div>
+
+        <section id="busca-vazia-content" class="container">
+
+            <div id="box-bread-brumb">
+                <vtex.cmc:breadCrumb />
+            </div>
+        
+            <div id="busca-vazia-extra-middle"></div>
+
+            <div class="row">
+
+                <article id="main-content" class="col-xs-12">
+                                                                    
+                    <div class="title-category">
+                        <!--  Controle: Titulo -->
+                        <a href="#" class="pull-right" onclick="window.history.back();"><i class="fa fa-chevron-left"></i> Voltar</a> 
+                        <h2>Ops, n&#xE3;o encontramos nada em sua busca</h2>
+                        <!-- /Controle: Titulo -->
+                    </div><!-- .title-category -->
+                            
+                    <div id="collections">
+
+                        <div class="showcase-default showcase-owl">
+                            <vtex:contentPlaceHolder id="Destaques" />
+                        </div>
+                        
+                        <div class="showcase-default showcase-owl">
+                            <vtex:contentPlaceHolder id="Lan&#xE7;amentos" />   
+                        </div>
+
+                    </div><!-- #collections -->
+                
+                </article><!-- #main-content -->
+
+            </div><!-- .row -->
+        
+        </section><!-- #content -->
+        
+        <div id="busca-vazia-extra-bottom"></div>
+
+        <!--  SubTemplate: Footer -->
+        <vtex:template id="Footer" />
+        <!-- /SubTemplate: Footer -->
+    
+    </div><!-- .container-fluid -->
+
+</body>
+    <vtex:template id="commonScripts" />
+</html>

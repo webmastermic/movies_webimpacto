@@ -1,0 +1,70 @@
+<!-- 
+ *
+ * Desenvolvido por Integrando.se
+ * hello@integrando.se
+ * 
+ * Bootstrap v.3
+ *
+ -->
+
+ <!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es-co">
+ 
+ <head>
+     <title>Modelo Vtex</title>
+     <vtex:metaTags/>
+ 
+     <vtex:template id="commonStyles" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+ </head>
+ 
+ <body id="compare-page">
+ 
+     <div class="page">
+ 
+         <!--  SubTemplate: Header -->
+         <vtex:template id="Header" />
+         <!-- /SubTemplate: Header -->
+                     
+         <div id="compare-extra-top"></div>
+ 
+         <section id="content" class="container">
+ 
+             <div id="box-bread-brumb">
+                 <vtex.cmc:breadCrumb />
+             </div>
+                     
+             <div id="compare-extra-middle"></div>
+ 
+             <div class="row">
+ 
+                 <article id="main-content" class="col-xs-12">
+                                                                     
+                     <div id="compare-banner">
+                         <!--  placeholder -->
+                         <vtex:contentPlaceHolder id="Banner-Principal" />
+                         <!-- /placeholder -->
+                     </div><!-- #compare-banner -->
+                         
+                     <div id="compare">
+                         <vtex.cmc:ProductComparison ShelfLayoutId="ef3fcb99-de72-4251-aa57-71fe5b6e149f"/>
+                     </div><!-- #collections -->
+                 
+                 </article><!-- #main-content -->
+ 
+             </div><!-- .row -->
+         
+         </section><!-- #content -->
+                     
+         <div id="compare-extra-bottom"></div>
+ 
+         <!--  SubTemplate: Footer -->
+         <vtex:template id="Footer" />
+         <!-- /SubTemplate: Footer -->
+     
+     </div><!-- .container-fluid -->
+ 
+ </body>
+     <vtex:template id="commonScripts" />
+ </html>

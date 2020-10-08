@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title>404</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <vtex:metaTags/>
+        <vtex:template id="MOVIES - CommonStyles" /> 
+        <link rel="stylesheet" href="/files/movies-my-account.min.css" />
+    </head>
+<body>
+    <div class="all">
+        
+        <!--  SubTemplate: Header -->
+        <vtex:template id="MOVIES - Header" />
+        <vtex:template id="MOVIES - HeaderMobile" />
+        <!-- /SubTemplate: Header -->
+
+        <!-- Container -->
+
+        <div id="my-account-error" class="container">
+            <div class="page-header">
+                <img src="/arquivos/banner-404-notfound.png" alt="" />   
+            </div>
+            <!-- header -->
+            <div class="row content">
+                <span class="title-404">No podemos encontrar la página que estas buscando</span><br />
+                <span class="content-404">Puedes regresar a la página anterior o ir a la página de inicio</span>   
+            </div>
+            
+            <div class="button-404">
+                <div class="button-page-anterior">
+                    <a href="">Ir a la página anterior</a>
+                </div>
+                <div class="button-page-inicio">
+                    <a href="/">Ir a la página de inicio</a>
+                </div>                            
+            </div>
+        </div>
+        <!-- Container -->  
+
+        <!--  SubTemplate: Footer -->
+        <vtex:template id="MOVIES - Footer" />
+        <!-- /SubTemplate: Footer -->
+    </div>
+</body>
+<vtex:template id="MOVIES - CommonScripts" />
+<script type="text/javascript" src="/files/my-account.js"></script>
+</html>

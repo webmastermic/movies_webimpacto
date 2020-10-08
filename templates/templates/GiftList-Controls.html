@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+<head>
+<title>Controles de GiftList</title>
+</head>
+<body>
+
+<div id="all">
+<div id="content">
+
+<h2 class="titulo-sessao">Controles de GiftList</h2>
+<!-- Controle: Gerenciar uma Lista -->
+<vtex.cmc:GiftListManagerV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+types="1,2,3,..." especifica quais tipos de listas serão permitidos na criação. Por padrão, todos os tipos ativos são permitidos
+ignoretypes= "4, 5, 6, ..." especifica quais tipos de listas serão ignorados. Por padrão, todos os tipos ativos são permitidos
+urlmanage="http://mysite.com/alternatefolder" caminho customizado nos links para a página de gerenciamento da lista
+urledit="http://mysite.com/alternatefolder" caminho customizado nos links para a página de edição e criação da lista
+urlproduct="http://mysite.com/alternatefolder" caminho customizado nos links para a página de produtos da lista
+ -->
+<!-- /Controle: Gerenciar uma Lista -->
+
+<!-- Controle: Busca de Listas -->
+<vtex.cmc:GiftListSearchV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+types="1,2,3,..." especifica quais tipos de listas serão permitidos nos resultados de busca. Por padrão, todos os tipos ativos são permitidos
+ignoretypes= "4, 5, 6, ..." especifica quais tipos de listas serão ignorados. Por padrão, todos os tipos ativos são permitidos
+ -->
+<!-- /Controle: Busca de Listas -->
+
+<!-- Controle: Produtos de uma Lista -->
+<vtex.cmc:GiftListProductsV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+size="20" número de produtos exibidos por página. O padrão é 10
+image="3" ID do tipo da imagem do produto exibido. O padrão é 3 (thumb)
+ -->
+<!-- /Controle: Produtos de uma Lista -->
+
+<!-- Controle: Criar ou Editar uma Lista -->
+<vtex.cmc:GiftListFormV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+types="1,2,3,..." especifica quais tipos de listas serão permitidos na criação. Por padrão, todos os tipos ativos são permitidos
+ignoretypes= "4, 5, 6, ..." especifica quais tipos de listas serão ignorados. Por padrão, todos os tipos ativos são permitidos
+urlmanage="http://mysite.com/alternatefolder" caminho customizado nos links para a página de gerenciamento da lista
+urledit="http://mysite.com/alternatefolder" caminho customizado nos links para a página de edição da lista
+ -->
+<!-- /Controle: Criar ou Editar uma Lista -->
+
+<!-- Controle: enviar itens do carrinho para a lista -->
+<vtex.cmc:GiftListCartToListV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+mycart="_ID_" especifica o tipo de lista padrão do carrinho. O padrão é 6
+types="1,2,3,..." especifica quais tipos de listas serão permitidos. Por padrão, todos os tipos ativos são permitidos
+ignoretypes= "4, 5, 6, ..." especifica quais tipos de listas serão ignorados. Por padrão, todos os tipos ativos são permitidos
+ -->
+<!-- /Controle: enviar itens do carrinho para a lista -->
+
+<!-- Controle: Informações de uma Lista -->
+<vtex.cmc:GiftListInfoV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+urledit="http://mysite.com/alternatefolder" caminho customizado nos links para a página de edição da lista
+giftcard="true" exibe o saldo do vale compras para uma lista com conversão do valor do produto em vale
+ -->
+<!-- /Controle: informações de uma Lista -->
+
+<vtex.cmc:GiftListInsertSkuV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+mode= [list, combo, radio]: modo de exibição das listas do usuário para seleção
+popup= "false" exibe o controle incorporado à página, "true" exibe um link para um modal (popup)
+select= "true" seleciona os skus do produto individualmente, "false" seleciona o sku padrão ou o sku selecionado apenas
+types="1,2,3,..." especifica quais tipos de listas serão permitidos. Por padrão, todos os tipos ativos são permitidos
+ignoretypes= "4, 5, 6, ..." especifica quais tipos de listas serão ignorados. Por padrão, todos os tipos ativos são permitidos
+urlproduct="http://mysite.com/alternatefolder" caminho customizado nos links para a página de produtos da lista
+ -->
+<!-- /Controle: informações de uma Lista -->
+
+</div>
+</div>
+
+</body>
+</html>

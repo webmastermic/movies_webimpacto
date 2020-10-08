@@ -1,0 +1,122 @@
+#login-page {
+    overflow: hidden;
+    #vtexIdContainer {
+        position: absolute;
+        background: url('/arquivos/Banner-desktop-login-movie.jpg') no-repeat right top;
+        background-size: cover;
+        border: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        /*height: -webkit-fill-available;*/
+        .vtexIdUI {
+            width: 400px;
+            overflow: initial!important;
+            margin-top: 50px;
+            margin-left: -220px;
+            height: 420px!important;
+            background: rgba(19,30,41,0.8);
+            height: 420px !important;
+            border: 2px solid rgba(19,30,41,0.8);
+            box-shadow: none;
+            color: $color-blanco;
+            .vtexIdUI-page {
+                position: absolute;
+                clear: both;
+                min-height: 282px;
+                width: 100%;
+                .modal-header {
+                    position: relative;
+                    padding: 1px 15px;
+                    background: $color-negro3;
+                    text-align: center;
+                    border: none;
+                    h4.vtexIdUI-heading span {
+                        font-size: 0px;
+                    }
+                    h4.vtexIdUI-heading:before {
+                        content: 'Ingresa a tu cuenta con una de las siguientes opciones';
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: $color-blanco;
+                        text-align: center;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        letter-spacing: normal;
+                    }
+                }
+                .modal-body {
+                    background: transparent;
+                    border-top: 1px solid $color-gris2;
+                }
+            }
+            .vtexIdUI-auth-code {
+                margin-top: 80px;
+            }
+            
+            .Logo-login {
+                width: 100%;
+                padding-top: 80px;
+                background: $color-negro3;
+                @include prefix-val(display,
+                flex,
+                moz o ms webkit spec);
+                @include prefix-prop(justify-content,
+                center,
+                moz o ms webkit spec);
+                @include prefix-prop(align-items,
+                center,
+                moz o ms webkit spec);
+                text-align: -webkit-match-parent;
+                .img-login {
+                    width: 80px;
+                    position: absolute;
+                    top: -30px;
+                }
+            }
+            .vtexid-icon-lock.bottom-icon {
+                background-color: $color-negro3;
+            }
+        }
+    }
+}
+
+#vtexIdUI-form-classic-login {
+    .vtexIdUI-classic-login-control {
+        a[tabindex='5']{
+            font-size: 0;
+            text-align: center;
+            padding: 3px;
+            &:before {
+                content: 'No sabes, no recuerdas o no tienes? Regístrate ahora';
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media(max-width: $breakpoint-mobile) {
+    #login-page {
+        overflow: hidden;
+        #vtexIdContainer {
+            position: absolute;
+            background: url('/arquivos/Banner-mobile-login-movie.jpg') no-repeat right top;
+            background-size: cover;
+            border: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            /*height: -webkit-fill-available;*/
+
+            .vtexIdUI {
+                width: 300px;
+                margin-left: -152px;
+                margin-top: 8%;
+                font-size: 14px;
+                .btn-large {
+                    padding: 10px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

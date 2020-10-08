@@ -1,0 +1,46 @@
+/*=============================================================*/
+/* keyframes */
+
+// -------------------------------------------------------------
+
+//loader
+@keyframes loader {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+@keyframes rotate-right-to-down {
+	0% {
+	  transform: rotate(-90deg);
+	}
+	100% {
+	  transform: rotate(0);
+	}
+}
+@keyframes rotate-down-to-right {
+	0% {
+	  transform: rotate(0);
+	}
+	100% {
+	  transform: rotate(-90deg);
+	}
+}
+@keyframes rotate-down-to-left {
+	0% {
+	  transform: rotate(0);
+	}
+	100% {
+	  transform: rotate(90deg);
+	}
+}
+@keyframes rotate-left-to-down {
+	0% {
+	  transform: rotate(90deg);
+	}
+	100% {
+	  transform: rotate(0);
+	}
+}

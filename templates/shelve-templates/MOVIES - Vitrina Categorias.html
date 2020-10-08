@@ -1,0 +1,121 @@
+#set($id = $product.Id)
+#set($idSku = $product.productVariantId)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+#set($categoryName = $product.CategoryName)
+#set($CategoryId = $product.CategoryId)
+#set($departmentName = $product.DepartmentName)
+#set($hightLight = $product.HightLight)
+#set($brandName = $product.BrandName)
+#set($insertSku = $product.InsertSku)
+
+#if ($product.IsInStock)
+<span class="box-item text-center $departmentName" id="$id" data-category="$categoryName" data-departament="$departmentName">
+#else
+    <span class="box-item text-center $departmentName product-off" id="$id" data-category="$categoryName" data-departament="$departmentName">
+#end
+    <div class="image-product">
+        #if($hightLight != "")
+            <div class="grupos-destacados" style="display:none;">
+                <div class="highlight">$hightLight</div>
+            </div>
+        #end
+        #if ($product.HasBestPrice)   
+            <div class="discount-percent">
+                <p class="tag-discount"></p>
+                <span class="flag-best-price" style="display:none;">
+                    $product.BestPrice
+                </span>
+                <span class="flag-old-price" style="display:none;">
+                    $product.ListPrice
+                </span>   
+            </div>                                 
+        #end        
+        <a class="product-image" title="$escapedName" href="$uri">
+            $product.GetImageTag(2)
+        </a>
+        <div class="product-brand" id="$brandName">
+        </div>
+        <div class="button-product">
+            <div class="button-talla-1">
+                <div class="talla-produc">
+                    <span class="talla-elegida">Elegir Talla</span>
+                    <div class="talla-text-product"></div>
+                    <div class="sku-tallas-1">$insertSku</div>
+                </div>
+            </div>
+            <div class="button-shop-1">
+                $product.BottomBuyAsynchronous
+            </div>
+        </div>
+    </div>
+
+    <div class="attribute-product">
+        <div class="top-name-marca-product">
+            <div class="marca-product"> 
+                $brandName               
+            </div>
+            <div class="category-product">
+                <!--<div class="$categoryName">
+                </div>-->
+            </div>
+            <!--<div class="category-product $departmentName">
+                $departmentName
+            </div>-->
+        </div>        
+        <div class="product-name">
+            <a title="$escapedName" href="$uri">
+                $product.Name
+            </a>            
+        </div>
+
+        #if ($product.IsInStock)
+            <span class="price">
+                <a title="$escapedName" href="$uri">
+                    #if ($product.HasBestPrice)                        
+                        <span class="best-price">
+                            $product.BestPrice
+                        </span>
+                        <span class="old-price">
+                            $product.ListPrice
+                        </span>
+                    #else                        
+                        <span class="best-price">
+                            $product.BestPrice
+                        </span>                    
+                    #end
+                    <!--#if ($product.NumbersOfInstallment > 1)
+                        <span class="installment">
+                            ou ${product.NumbersOfInstallment}x de $product.InstallmentValue
+                        </span>
+                    #end-->
+                </a>                
+            </span>
+            <div class="description-product">
+                <span>$product.DescriptionShort</span>                    
+            </div>
+            
+            <div class="button-product-2">
+                <div class="button-talla-2">
+                    <div class="talla-produc">
+                        <span class="talla-elegida">Elegir Talla</span>
+                        <div class="talla-text-product"></div>
+                        <div class="sku-tallas-2">$insertSku</div>
+                    </div>
+                </div>
+                <div class="button-shop-2">
+                    $product.BottomBuyAsynchronous
+                </div>
+            </div>
+        
+    
+        <span class="compare">
+            $product.Compare
+        </span>
+    
+        #else
+            <span class="out-of-stock">Produto Esgotado</span> 
+        #end
+    </div>
+    
+</span>

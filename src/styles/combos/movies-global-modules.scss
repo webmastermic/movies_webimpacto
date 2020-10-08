@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/*============================================================================
+  FRUTA FRESCA  | Globales
+==============================================================================*/
+
+/*================ BASE ================*/
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
+@import "../base/fuentes.scss";
+@import "../base/keyframes.scss";
+@import "../base/normalize.scss";
+@import "../base/globales.scss";
+@import "../vendor-local/bootstrap-columns.scss";
+
+/*================ VENDOR ================*/
+@import "../vendor-global/slick-1.6.0.scss";
+@import "../vendor-global/slick-theme-1.6.0";
+@import "../vendor-global/easyzoom.scss";
+
+/*================ LOCAL MODULES ================*/
+@import "../modules-local/vitrinas.scss";
+/*================ GLOBAL MODULES ================*/
+@import "../modules-global/header.scss";
+@import "../modules-global/footer.scss";
+@import "../modules-global/modalpopup.scss";
+

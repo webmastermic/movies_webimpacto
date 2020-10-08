@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title>Tienda</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <vtex:metaTags/>
+        <vtex:template id="MOVIES - CommonStyles" /> 
+        <link rel="stylesheet" href="/files/movies-store.min.css" />
+    </head>
+<body>
+    <div class="all">
+        
+        <!--  SubTemplate: Header -->
+        <vtex:template id="MOVIES - Header" />
+        <vtex:template id="MOVIES - HeaderMobile" />
+        <!-- /SubTemplate: Header -->
+
+        <!-- Container -->
+
+        <div id="mic-tiendas" class="mic-tienda-contenedor">
+            <section class="mainContent">
+                <div class="wrapper">
+                    <div class="site-locator">
+                        <div class="search-tools">
+                            <div class="text-tienda">
+                                <h2>Buscador de Tiendas</h2>
+                                <img class="img-search-tienda" src="/arquivos/ShopPoint.png" />
+                            </div>
+                        </div>
+            
+                        <div id="map-canvas"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Container -->  
+
+        <!--  SubTemplate: Footer -->
+        <vtex:template id="MOVIES - Footer" />
+        <!-- /SubTemplate: Footer -->
+    </div>
+</body>
+    <vtex:template id="MOVIES - CommonScripts" />
+    <script type="text/javascript" src="/files/movies-store.js"></script>
+    <script type="text/javascript" src="/files/my-account.js"></script>
+</html>

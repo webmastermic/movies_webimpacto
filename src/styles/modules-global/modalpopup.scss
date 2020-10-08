@@ -1,0 +1,76 @@
+.movies-container-class{
+    .movies-popup-class{
+        width: 28em;
+        padding: 1em 1.5em;
+        font-size: $font12;
+        .movies-header-class{
+            .movies-icon-class{
+                border-color: $color-rojo;
+                margin: 0 auto 1em;
+                &.swal2-success{
+                    border-color: $color-negro4;
+                    [class^=swal2-success-line]{
+                        background-color: $color-negro4;
+                    }
+                    .swal2-success-ring{
+                        border-color: $color-negro4;
+                    }
+                }
+                [class^=swal2-x-mark-line]{
+                    background-color: $color-rojo;
+                }
+            }
+            .movies-title-class{
+                font-size: $font16;
+                color: $color-negro;
+            }
+        }
+        .movies-content-class{
+            ul{
+                list-style: none;
+                li{
+                    font-size: $font13;
+                    color: $color-negro;
+                }
+            }
+        }
+        .movies-actions-class{
+            .movies-cancel-button-class{
+                background-color: $color-gris2;
+                color: $color-blanco;
+                font-size: $font14;
+                padding: 10px 15px;
+                font-weight: bold;
+                border:0;
+                cursor: pointer;
+                text-transform: uppercase;
+                border-radius: 30px;
+                width: 100%;
+                margin: 5px;
+                &:focus{
+                    outline: none;
+                }
+            }
+            .movies-confirm-button-class{
+                background-color: $color-rojo;
+                color: $color-blanco;
+                font-size: $font14;
+                padding: 10px 15px;
+                font-weight: bold;
+                border:0;
+                cursor: pointer;
+                text-transform: uppercase;
+                border-radius: 30px;
+                margin-left: 10px;
+                width: 100%;
+                margin: 5px;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .mic-footer-class{
+
+        }
+    }
+}

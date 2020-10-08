@@ -1,0 +1,1367 @@
+body {
+    padding-top: 0;
+    background: $color-gris3;
+    font-family: $Montserrat;
+    .movies-footer {
+        padding-top: 30px;
+        border-top: 1px solid $color-gris;
+        background: $color-blanco;
+        //position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        .movies-contenedor {
+            @include prefix-val(display, flex, moz o ms webkit spec);
+            @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+            @include prefix-prop(align-items, center, moz o ms webkit spec);
+            text-align: -webkit-match-parent;
+            
+            .movies-footer-metodo-pago {
+                max-width: 500px;   
+            }
+        }        
+    }
+    .contenedor-share {
+        position: relative;
+        width: 970px;
+        margin: auto;
+        .texto-share{
+            margin: 0 25px;
+            font-size: $font14;
+            line-height: 1.36;
+            color: $color-negro4;   
+        }
+        .cart-link-share{
+            @include prefix-val(display, flex, moz o ms webkit spec);
+            @include prefix-prop(justify-content, flex-start, moz o ms webkit spec);
+            @include prefix-prop(align-items, center, moz o ms webkit spec);
+            margin: 5px 20px;
+            .cart-share-btn{ 
+                font-size: $font13;                    
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.38;
+                letter-spacing: normal;                    
+                margin: 5px;
+                background: $color-naranja;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 3px;
+                color: $color-blanco;
+                padding: 10px 40px;
+            }  
+            #cart-sharing-info {
+                input {
+                    width: auto;
+                }                
+            }
+            .msj-copy {
+                position: absolute;
+                top: -30px;
+                left: 100px;
+                background-color: #e3e3e3;
+                padding: 5px 10px;
+                border-radius: 3px;
+                text-align: center;
+            }
+            .msj-copy:after {
+                transform: rotate(-180deg);
+                content: '';
+                position: absolute;
+                bottom: -11px;
+                left: 60%;
+                width: 0;
+                height: 0;
+                border: 12px solid transparent;
+                border-bottom-color: #e3e3e3;
+                border-top: 0;
+                margin-left: -8px;
+                margin-top: -8px;
+            }
+            .image-whatsapp {
+                margin-left: 10px;
+                text-align: center;            
+                img {
+                    height: 45px;
+                }
+            }
+        }
+        #cart-sharing-info {
+            @include prefix-val(display, flex, moz o ms webkit spec);
+            @include prefix-prop(justify-content, center, moz o ms webkit spec);
+            @include prefix-prop(align-items, center, moz o ms webkit spec);
+        }
+    }    
+    
+    .container-cart{
+        margin-top: 30px;
+        h1 {
+            font-size: $font22;
+            font-weight: bold;
+            line-height: 1.36;
+            text-align: center;
+            color: $color-negro;  
+            text-transform: uppercase;         
+        }
+        .checkout-container.cart-active {
+            #cartLoadedDiv {
+                .cart {
+                    border: none;
+                    .cart-items{
+                        thead {
+                            tr {
+                                .shipping-date {
+                                    display: none;
+                                }
+                            }
+                        }
+                        tbody{                            
+                            border-radius: 3px;
+                            border: 1px solid $color-gris;
+                            background-color: $color-blanco;
+                            .product-item{
+                                .product-image {
+                                    img {
+                                        color: transparent;
+                                        max-width: 50px;
+                                        width: 50px;
+                                        height: 60px;
+                                        object-fit: contain;
+                                        border-radius: 3px;
+                                        border: solid 1px $color-gris;
+                                    }
+                                }                                
+                                .quantity{
+                                    vertical-align: middle;
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    transform: translate(0, 20px);
+                                    .item-quantity-change {
+                                        font-size: $font26;
+                                        vertical-align: middle;
+                                        .icon-minus-sign{
+                                            
+                                            &::before{
+                                                background-image: url(/arquivos/restar-negro.png);
+                                                background-size: 25px;
+                                                display: inline-block;
+                                                width: 25px;
+                                                height: 25px;
+                                                content: "";
+                                                background-repeat: no-repeat;     
+                                            }
+                                        }
+                                        .icon-plus-sign{
+
+                                            &::before{
+                                                background-image: url(/arquivos/sumar-negro.png);
+                                                background-size: 25px;
+                                                display: inline-block;
+                                                width: 25px;
+                                                height: 25px;
+                                                content: "";
+                                                background-repeat: no-repeat;     
+                                            }
+                                        }
+                                    }
+                                    input {
+                                        margin: 0;
+                                        text-align: center;
+                                        width: 15px;
+                                        background-color: $color-blanco;
+                                        border: none;
+                                        box-shadow: none;
+                                        font-weight: 600;
+                                    }
+                                    a {
+                                        position: relative;
+                                        top: inherit;
+                                        right: inherit;
+                                        bottom: inherit;
+                                        left: inherit;
+                                    }
+                                }                                
+                                .icon-remove:before {
+                                    background-image: url(/arquivos/cerrar-transparente-negro.png);
+                                    background-size: 15px;
+                                    display: inline-block;
+                                    width: 15px;
+                                    height: 15px;
+                                    content: "";
+                                    background-repeat: no-repeat;                                 
+                                }                                
+                            }
+                            tr {
+                                padding: 10px;
+                                .shipping-date {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .product-name {
+                            /*width: 350px;*/
+                            font-size: $font13;
+                            font-weight: 600;
+                            line-height: 1.38;
+                            letter-spacing: normal;
+                            text-align: left;
+                            a{
+                                color: $color-negro;
+                                text-transform: uppercase;
+                            }
+                            .seller {
+                                display: none;
+                            }
+                        }
+                        .product-price {
+                            min-width: 90px;
+                            .list-price {
+                                .old-product-price-label {
+                                    display: none;
+                                }
+                            }
+                            .best-price {
+                                .new-product-price-label {
+                                    display: none;
+                                }
+                                /*.discount {
+                                    position: absolute;
+                                    top: 16px;
+                                    right: 10px;
+                                }*/
+                            }
+                        }
+                        th {
+                            font-size: $font12;
+                            font-weight: 600;
+                            line-height: 1.38;
+                            letter-spacing: normal;
+                            color: $color-negro;
+                            text-transform: uppercase;
+                            .shipping-date {
+                                display: none;
+                            }
+                        }
+                        span {
+                            font-size: $font13;
+                            font-weight: 600;
+                            line-height: 1.38;
+                            letter-spacing: normal;
+                            color: $color-negro;
+                        }
+                    }
+                }            
+            }
+            #cart-choose-more-products {
+                background: $color-negro3;
+                font-size: $font14;
+                border-radius: 3px;
+                color: $color-blanco;
+                padding: 10px 40px;
+                text-decoration: none;
+                margin-bottom: 5px;
+            }
+            #cart-to-orderform {
+                background: $color-rojo;
+                font-size: $font14;
+                border-radius: 3px;
+                color: $color-blanco;
+                padding: 7px 40px;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+            .summary-template-holder {
+                .cart-more-options {
+                    display: none;
+                }
+                .summary-totalizers:before {
+                    content: 'Resumen de tu compra';
+                    font-size: $font22;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.36;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: $color-negro3;
+                    text-transform: uppercase;
+                }
+                .summary-totalizers {
+                    width: 40%;
+                    .summary-coupon-wrap {
+                        border-top: 2px solid $color-gris;
+                        margin-top: 10px;
+                    }
+                    .coupon-form {
+                        .coupon-fieldset {
+                            padding: 0;
+                            div {
+                                @include prefix-val(display, flex!important, moz o ms webkit spec);
+                                @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                text-align: -webkit-match-parent;
+                                #cart-coupon {
+                                    width: 150px;
+                                    border-radius: 3px;
+                                    border: solid 1px $color-blanco;
+                                }
+                                #cart-coupon-add {
+                                    display: contents;
+                                    font-size: 0;
+                                }
+                                #cart-coupon-add:before {
+                                    content: 'Aplicar';
+                                    font-size: $font13;
+                                }
+                            }
+                            .link-coupon-add {
+                                display: none;
+                            }
+
+                            .coupon-label {
+                                margin-left: 5px;
+                                label {
+                                    text-align: left;
+                                    font-size: $font13;
+                                    font-weight: 600;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                    letter-spacing: normal;
+                                }                                    
+                            }
+                        }
+                    }
+                    .summary-coupon {
+                        margin-bottom: 0px;
+                        margin-left: 0px;
+                        margin-top: 10px;        
+                    }
+                    .info {
+                        text-align: left;
+                        font-size: $font13;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.38;
+                        letter-spacing: normal;
+                    }
+                    .monetary {
+                        font-size: $font13;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.38;
+                        letter-spacing: normal;
+                        text-align: right;
+                    }
+                    .totalizers-list {
+                        tr {
+                            border-bottom: none;
+                        }
+                    }
+                }                
+            }
+        }
+    }
+    .container-order-form {
+        margin-top: 30px;
+        width: 80%;
+        h1 {
+            font-size: $font22;
+            font-weight: bold;
+            line-height: 1.36;
+            text-align: center;
+            color: $color-negro;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .orderform-active {
+            .orderform-template {
+                width: 100%;
+                margin: 0;
+                .orderform-template-holder {
+                    padding: 0 15px;
+                    #client-profile-data {
+                        .client-pre-email {
+                            background: $color-gris3;
+                            border: none;
+                            .link-cart {
+                                display: none;
+                            }
+                            .pre-email {
+                                width: 50%;
+                                display: inline-block;
+                                h3 {
+                                    line-height: 1em;
+                                    margin: 15px 20px;
+                                }
+                                .client-pre-email-h {                                    
+                                    span {
+                                        font-size: 0;
+                                    }
+                                    span:before {
+                                        content: 'Ingresa tu correo electrónico para continuar con la compra';
+                                        font-size: $font13;
+                                        line-height: $font18;
+                                        font-weight: 600;
+                                        align-items: center;
+                                        text-transform: uppercase;
+                                    }
+                                    label {
+                                        margin-top: 0;
+                                    }
+                                    small {
+                                        display: none;
+                                    }
+                                }
+                                .client-email {
+                                    margin-left: 15px;
+                                    width: 93%;                                    
+                                    #client-pre-email {
+                                        font-size: $font14;
+                                        height: 35px;
+                                        border-radius: 3px;
+                                        line-height: 100%;
+                                        padding-left: 20px;                                    
+                                    }
+                                    #btn-client-pre-email {
+                                        border-radius: 3px;
+                                        width: calc(30% + 40px);
+                                        height: 31px;
+                                        background: $color-rojo;
+                                        text-transform: uppercase;  
+                                        font-size: $font15; 
+                                        span:after {
+                                            background-image: url(/arquivos/Icon-Select-Checkout.png);
+                                            background-size: 15px;
+                                            display: inline-block;
+                                            width: 15px;
+                                            height: 15px;
+                                            margin-left: 10px;
+                                            content: "";
+                                            background-repeat: no-repeat;
+                                        }                                     
+                                    }
+                                }
+                            }
+
+                            .emailInfo {
+                                display: inline-block;
+                                width: 50%;
+                                margin: 0;
+                                background: transparent;
+                                border: none;
+                                padding: 0;
+                                text-align: justify;
+                                h3 {
+                                    font-size: 0;
+                                    padding-left: 92px;
+                                    padding-right: 141px;
+                                    
+                                }
+                                h3:before {
+                                    content: 'Guardamos tu correo electrónico de manera segura para identificar tu perfil, notificar sobre el estado de tu compra, guardar el historial de compra, facilitar el proceso de compra y la entrega de tu producto.';
+                                    font-size: $font13;
+                                    align-items: center;
+                                    line-height: $font18;
+                                    color: $color-gris4;                                    
+                                }
+                                .unstyled {
+                                    display: none;
+                                }
+                                .icon-lock {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .client-profile-data{
+                            border-radius: 3px;
+                            border: 1px solid $color-gris;
+                            background-color: $color-blanco;   
+                            padding: 5px;                     
+                            .accordion-heading{
+                                .accordion-toggle{
+                                    @include prefix-val(display, flex!important, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, inherit, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    text-align: -webkit-match-parent;
+                                    .icon-user:before {
+                                        background-image: url(/arquivos/Icon-Users-Checkout.png);
+                                        background-size: 22px;
+                                        display: inline-block;
+                                        width: 0;
+                                        height: 22px;
+                                        margin-right: 15px;
+                                        content: "";
+                                        background-repeat: no-repeat;  
+                                    }
+                                    span {
+                                        font-size: $font13;
+                                        font-weight: 800;
+                                        font-stretch: normal;
+                                        font-style: normal;
+                                        line-height: 1.38;
+                                        text-transform: uppercase;
+                                    }
+                                    span:before {
+                                        content: '1. ';
+                                        font-size: $font13;
+                                        font-weight: 800;
+                                        font-stretch: normal;
+                                        font-style: normal;
+                                        line-height: 1.38;
+                                    }
+                                }
+                                
+                            }
+                            .accordion-body {
+                                .accordion-inner {
+                                    .form-step.box-edit {
+                                        .box-client-info {
+                                            .box-client-info-pf {                                            
+                                                .client-notice.notice {
+                                                    font-size: 0;
+                                                }
+                                                .client-notice.notice:before {
+                                                    content: 'Ingresa tus datos para facturación';
+                                                    font-size: $font13;
+                                                    font-weight: bold;
+                                                    font-stretch: normal;
+                                                    font-style: normal;
+                                                    line-height: 1.38;
+                                                    letter-spacing: normal;
+                                                    text-align: left;
+                                                    color: $color-gris4;
+                                                }
+                                                .client-email {
+                                                    label {
+                                                    font-size: 0;                                                
+                                                    }
+                                                    label:before {
+                                                        content: 'Correo electrónico';
+                                                        font-size: $font13;
+                                                        font-weight: bold;
+                                                        font-stretch: normal;
+                                                        font-style: normal;
+                                                        line-height: 1.38;
+                                                        letter-spacing: normal;
+                                                        text-align: left;
+                                                        color: $color-negro2;
+                                                    }
+                                                }
+                                                .client-first-name, 
+                                                .client-last-name,
+                                                .client-document,
+                                                .client-phone {
+                                                    width: 50%;
+                                                    margin: 10px 0;
+                                                }
+                                            }
+                                        }
+                                        #go-to-shipping {
+                                            width: 100%;
+                                            border-radius: 3px;
+                                            height: 35px;
+                                            padding: 9px;
+                                            margin: 0;
+                                            font-size: 0;
+                                            background: $color-rojo;
+                                            border: 0;
+                                        }
+                                        #go-to-shipping:before {
+                                            content: 'CONTINUAR CON ENTREGA';
+                                            font-size: $font14;
+                                            font-weight: bold;
+                                            font-stretch: normal;
+                                            font-style: normal;
+                                            line-height: 1.36;
+                                            letter-spacing: normal;
+                                            text-align: center;
+                                            color: $color-blanco;
+                                        }#go-to-payment {
+                                            width: 100%;
+                                            border-radius: 3px;
+                                            height: 35px;
+                                            padding: 6px;
+                                            margin: 0;
+                                            font-size: 0;
+                                            background: $color-rojo;
+                                            border: 0;
+                                        }
+                                        #go-to-payment:before {
+                                            content: 'IR PARA EL PAGO';
+                                            font-size: $font14;
+                                            font-weight: bold;
+                                            font-stretch: normal;
+                                            font-style: normal;
+                                            line-height: 1.36;
+                                            letter-spacing: normal;
+                                            text-align: center;
+                                            color: $color-blanco;
+                                        }                                        
+                                    }
+                                }
+                                input.success {                             
+                                    background-position: right;
+                                    background-repeat: no-repeat;
+                                }                            
+                                input {
+                                    border-radius: 3px;
+                                }
+                                label {
+                                    font-size: $font13;
+                                    font-weight: bold;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                    letter-spacing: normal;
+                                    text-align: left;
+                                    color: $color-negro2;
+                                }
+                                a {
+                                    font-size: $font13;
+                                    font-weight: bold;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                    letter-spacing: normal;
+                                    text-align: left;
+                                    color: $color-gris4;
+                                }
+                            }
+                        }
+                    }
+                    #shipping-data {
+                        .shipping-data {
+                            border-radius: 3px;
+                            border: 1px solid $color-gris;
+                            background-color: $color-blanco;
+                            padding: 5px;
+                            .accordion-heading {
+                                .accordion-toggle {
+                                    .icon-home:before {
+                                        background-image: url(/arquivos/Icon-Location-Checkout.png);
+                                        background-size: 18px;
+                                        display: inline-block;
+                                        width: 0;
+                                        height: 24px;
+                                        margin-right: 15px;
+                                        content: "";
+                                        background-repeat: no-repeat;
+                                    }                                                                  
+                                }
+                                span:after {
+                                    content: '2. Entrega';
+                                    font-size: $font13;                                    
+                                    font-weight: 800;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                    text-transform: uppercase;
+                                }
+                                span {
+                                    font-size: 0;
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, unset, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    font-weight: 800;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                }   
+                            }
+                            .accordion-inner {
+                                label {
+                                    font-size: $font13;
+                                    font-weight: bold;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                    letter-spacing: normal;
+                                    text-align: left;
+                                    color: $color-negro2;
+                                }
+                                a {
+                                    font-size: $font13;
+                                    font-weight: bold;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                    letter-spacing: normal;
+                                    text-align: left;
+                                    color: $color-gris4;
+                                }
+                                input.success {                             
+                                    background-position: right;
+                                    background-repeat: no-repeat;
+                                }                            
+                                input {
+                                    border-radius: 3px;
+                                    width: 90%;
+                                    margin-bottom: 5px;
+                                }
+                                #btn-go-to-payment {
+                                    width: 100%;
+                                    border-radius: 3px;
+                                    height: 35px;
+                                    padding: 6px;
+                                    margin: 0;
+                                    font-size: $font13;
+                                    background: $color-rojo;
+                                    border: 0;
+                                    text-transform: uppercase;
+                                    font-weight: bold;
+                                }
+                            }
+                            
+                        }
+                    }
+                    #payment-data {
+                        .store-country-COL {
+                            border-radius: 3px;
+                            border: 1px solid $color-gris;
+                            background-color: $color-blanco;   
+                            padding: 5px; 
+                            .accordion-heading {
+                                .accordion-toggle {
+                                    .icon-credit-card:before {
+                                        background-image: url(/arquivos/Icon-Payment-Checkout.png);
+                                        background-size: 24px;
+                                        display: inline-block;
+                                        width: 0;
+                                        height: 24px;
+                                        margin-right: 15px;
+                                        content: "";
+                                        background-repeat: no-repeat;
+                                    }                                                                  
+                                }
+                                span:first-child:after {
+                                    content: '3. Pago';
+                                    font-size: $font13;
+                                    font-weight: 800;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                    text-transform: uppercase;
+                                }
+                                span {
+                                    font-size: 0;
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, unset, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    font-weight: 800;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.38;
+                                }   
+                            }
+                            .accordion-body {
+                                .accordion-inner {
+                                    .box-step {
+                                        .payment-group {
+                                            a {
+                                                &.pg-efecty {
+                                                    span {
+                                                        font-size: 0;
+                                                        &::before {
+                                                            content: 'Pago en efectivo';
+                                                            font-size: $font12;
+                                                        }
+                                                    }                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .cart-template.mini-cart {      
+                    .cart-fixed{
+                        background: $color-blanco;
+                        border: 1px solid $color-gris;
+                        padding: 0 10px;
+                        height: 400px!important;
+                        h2 {
+                            font-size: $font13;
+                            font-weight: bold;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: 1.38;
+                            letter-spacing: normal;
+                            text-align: left;
+                            color: $color-negro2;
+                            background-color: $color-blanco;
+                        }
+                        .summary-cart-template-holder {
+                            
+                            .cart {
+                                max-height: 160px;
+                                .cart-items {
+                                    thead {
+                                        tr {
+                                            .shipping-date {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                    .hproduct {
+                                        .product-name {
+                                            font-size: $font13;
+                                            font-weight: 600;
+                                            font-stretch: normal;
+                                            font-style: normal;
+                                            line-height: 1.38;
+                                            letter-spacing: normal;
+                                            text-align: left;
+                                            color: $color-negro2;
+                                            text-transform: uppercase;
+                                        }
+                                        .quantity.badge {
+                                            position: absolute;
+                                            top: 4px;
+                                            left: 30px;
+                                            display: inline-block;
+                                            padding: 2px 4px;
+                                            font-size: $font10;
+                                            font-weight: bold;
+                                            line-height: 11px;
+                                            color: $color-blanco;
+                                            white-space: nowrap;
+                                            vertical-align: baseline;
+                                            background-color: $color-rojo;
+                                            border-radius: 3px;
+                                            cursor: default;
+                                        }
+                                        .description {
+                                            .shipping-date {
+                                                display: none;
+                                            }
+                                            span {
+                                                font-size: $font13;
+                                                font-weight: 600;
+                                                font-stretch: normal;
+                                                font-style: normal;
+                                                line-height: 1.38;
+                                                letter-spacing: normal;
+                                                text-align: left;
+                                                color: $color-negro2;
+                                            }
+                                            strong {
+                                                    font-size: $font13;
+                                                    font-weight: 600;
+                                                    font-stretch: normal;
+                                                    font-style: normal;
+                                                    line-height: 1.38;
+                                                    letter-spacing: normal;
+                                                    text-align: left;
+                                                    color: $color-negro2;
+                                                    float: left;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        #payment-data-submit {
+                            border-radius: 3px;
+                            background: $color-rojo;
+                            height: 35px;
+                            padding: 0;
+                            .icon-lock {
+                                display: none;
+                            }
+                            span {
+                                font-size: 0;
+                            }
+                            span:before {
+                                content: 'Finalizar Compra';
+                                font-size: $font14;
+                                padding: 0;
+                                text-transform: uppercase;
+                            }
+                        }
+                        #go-to-cart-button {
+                            float: none;
+                            text-align: center;
+                            margin: 15px 0px;
+                            margin: 15px 0px;
+                            border-radius: 3px;
+                            background: $color-negro4;
+                            height: 30px;
+                            padding-top: 8px;
+                            #orderform-minicart-to-cart {
+                                font-size: $font12;
+                                font-stretch: normal;
+                                font-weight: 100;
+                                font-style: normal;
+                                line-height: 1.36;
+                                letter-spacing: normal;
+                                text-align: center;
+                                color: $color-blanco;
+                                text-transform: uppercase;
+                                text-decoration: none;
+                                padding: 10px 50px;
+                            }
+                            /*#orderform-minicart-to-cart:before {
+                                background-image: url(/arquivos/Icon-Arrow-Checkout.png);
+                                background-size: 16px;
+                                display: inline-block;
+                                width: 0;
+                                height: 10px;
+                                margin-right: 15px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                transform: rotate(90deg);
+                            }*/
+                        }
+                        .summary-template-holder {
+                            background: $color-blanco;
+                            .summary {
+                                .cart-totalizers {
+                                    .accordion-group {
+                                        .accordion-body {
+                                            table {
+                                                .totalizers-list {
+                                                    tr {
+                                                        .info {
+                                                            font-size: $font13;
+                                                            font-weight: bold;
+                                                            font-stretch: normal;
+                                                            font-style: normal;
+                                                            line-height: 1.38;
+                                                            letter-spacing: normal;
+                                                            text-align: left;
+                                                            color: $color-negro2;
+                                                            width: 100%;
+                                                        }
+                                                        .monetary {
+                                                            font-size: $font13;
+                                                            font-weight: bold;
+                                                            font-stretch: normal;
+                                                            font-style: normal;
+                                                            line-height: 1.38;
+                                                            letter-spacing: normal;
+                                                            text-align: right;
+                                                            color: $color-gris4;
+                                                            width: 100%;
+                                                        }
+                                                    }
+                                                }
+                                                tfoot {
+                                                    .info {
+                                                        font-size: $font13;
+                                                        font-weight: bold;
+                                                        font-stretch: normal;
+                                                        font-style: normal;
+                                                        line-height: 1.38;
+                                                        letter-spacing: normal;
+                                                        text-align: left;
+                                                        color: $color-rojo;
+                                                        width: 100%;
+                                                    }
+                                                    .monetary {
+                                                        font-size: $font13;
+                                                        font-weight: bold;
+                                                        font-stretch: normal;
+                                                        font-style: normal;
+                                                        line-height: 1.38;
+                                                        letter-spacing: normal;
+                                                        text-align: right;
+                                                        color: $color-rojo;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }                                  
+                }
+            }
+        }
+        .cart-template {
+            padding: 0 15px;
+        }
+    }
+}
+
+@media(max-width: $breakpoint-mobile) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+        .movies-footer {
+            height: 117px;
+            .movies-contenedor {
+                display: contents;
+
+                .movies-footer-metodo-pago {
+                    max-width: 100%;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
+                .movies-footer-message {
+                    text-align: center;
+                    margin-top: 15px;
+                }
+            }
+        }        
+        .checkout-container.cart-active {
+            .cart-template.active {
+                padding: 0 10px;
+            }
+            #cartLoadedDiv {
+                .cart {
+                    .cart-items{
+                        thead {
+                            .shipping-date {
+                                display: none;
+                            }
+                        }
+                        tbody{
+                            .product-item{
+                                .product-image img {
+                                    margin-left: 5px;
+                                }
+                                .product-name{
+                                    margin-left: 80px;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    line-height: 1.42;
+                                    color: $color-negro3;
+                                    letter-spacing: normal;
+                                    text-align: left;
+                                    .seller {
+                                        display: none;
+                                    }
+                                }
+                                .product-price {
+                                    width: 90px;
+                                    .list-price {
+                                        .old-product-price-label {
+                                            display: none;
+                                        }
+                                    }
+                                    .best-price {
+                                        .new-product-price-label {
+                                            display: none;
+                                        }
+                                        .discount {
+                                            position: absolute;
+                                            top: 16px;
+                                            left: 10px;
+                                        }
+                                    }
+                                }
+                                .shipping-date {
+                                    display: none;
+                                }
+                                .quantity {
+                                    width: 100px;
+                                    padding: 0px;
+                                    /*margin-left: 80px;*/
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .link-choose-more-products-wrapper {
+                display: flex;
+                text-align: center;
+                #cart-choose-more-products {
+                    background: $color-gris2;
+                    font-size: 14px;
+                    border-radius: 3px;
+                    color: white;
+                    padding: 10px 30px;
+                    text-decoration: none;
+                    width: 100%;
+                    text-transform: uppercase;
+                }
+            }
+            
+            .summary-template-holder {
+                .cart-more-options {
+                    display: none;
+                }
+                .summary-totalizers { 
+                    width: 100%!important;
+                }
+            }
+        }
+        .container-order-form {
+            width: auto;
+            .cart-template {
+                float: none;
+                width: 100%;
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+@media(max-width: $breakpoint-mobile1) {
+    body {
+        .contenedor-share {
+            position: relative;
+            width: 100%;
+            .texto-share{
+                font-size: $font14;                    
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.38;
+                letter-spacing: normal;                    
+                padding: 10px;
+                margin: 5px;
+                cursor: pointer;
+                margin: auto;
+                color: #333;
+                text-align: center;
+            }
+            .cart-link-share{
+                display: block;
+                margin: auto;
+                .cart-share-btn{                     
+                    font-size: $font13;                    
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.38;
+                    letter-spacing: normal;                    
+                    margin: 5px;
+                    background: $color-naranja;
+                    cursor: pointer;
+                    text-align: center;
+                    border-radius: 3px;
+                    color: $color-blanco;
+                    padding: 10px 20px;
+                }
+                .msj-copy {
+                    position: absolute;
+                    top: -30px;
+                    left: 30px;
+                    right: 30px;
+                    background-color: #e3e3e3;
+                    padding: 5px;
+                    border-radius: 3px;
+                    text-align: center;
+                }
+                .msj-copy:after {
+                    transform: rotate(-180deg);
+                    content: '';
+                    position: absolute;
+                    bottom: -11px;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border: 12px solid transparent;
+                    border-bottom-color: #e3e3e3;
+                    border-top: 0;
+                    margin-left: -8px;
+                    margin-top: -8px;
+                }
+                #cart-sharing-info  {                    
+                    input {
+                        width: auto;
+                    }                    
+                }
+                .image-whatsapp {
+                    margin: auto;
+                    text-align: center;                
+                    img {
+                        height: 45px;
+                    }
+                }
+            }
+            #cart-sharing-info  {
+                @include prefix-val(display, flex, moz o ms webkit spec);
+                @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                @include prefix-prop(align-items, center, moz o ms webkit spec);
+            }
+        } 
+        .container-order-form {
+            width: auto;
+            margin-top: 30px;
+            .orderform-active {
+                .orderform-template {
+                    .orderform-template-holder {
+                        #client-profile-data {
+                            .client-pre-email {
+                                .pre-email{
+                                    width: 94%;
+                                    .client-email {
+                                        #btn-client-pre-email {
+                                            width: 100%!important;
+                                            height: 35px!important;                                      
+                                        }
+                                    }
+                                    .client-pre-email-h {
+                                        span:before {
+                                            content: "Ingresa tu correo electrónico para continuar con la compra";
+                                            font-size: $font18!important;
+                                            line-height: $font22;
+                                            font-weight: 600;
+                                            align-items: center;
+                                        }
+                                    } 
+                                }
+                                .emailInfo {
+                                    width: 70%;
+                                    h3 {
+                                        font-size: 0;
+                                        text-align: justify;
+                                        padding-left: 20px;
+                                        padding-right: 20px;
+                                    }                                                                                                       
+                                }                             
+                            }
+                            .client-profile-data {
+                                .accordion-body {
+                                    .accordion-inner {
+                                        .form-step.box-edit {
+                                            .box-client-info {
+                                                .box-client-info-pf {
+                                                    width: 95%;
+                                                    .client-first-name, 
+                                                    .client-last-name,
+                                                    .client-document,
+                                                    .client-phone {
+                                                        width: 100%;
+                                                        margin: 10px 0;
+                                                    }
+                                                    input {
+                                                        width: 90%!important;
+                                                    }
+                                                    input[type="email"] {
+                                                        width: 93%!important;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .container-cart{
+            .checkout-container.cart-active {
+                #cartLoadedDiv {
+                    .cart {
+                        .cart-items{
+                            thead {
+                                tr {
+                                    .shipping-date {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            tbody{                            
+                                .product-item {
+                                    .product-price {
+                                        .best-price {
+                                            .discount {
+                                                position: absolute;
+                                                top: 0;
+                                                left: 20px;
+                                            }
+                                        }
+                                    }
+                                    .quantity{
+                                        vertical-align: middle;
+                                        @include prefix-val(display, flex, moz o ms webkit spec);
+                                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                        transform: translate(10px, 5px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .cart-template {
+            width: 95%;
+            margin: 10px auto;
+        }
+    }
+}
+
+@media(min-width: $breakpoint-mobile) {
+    body {
+        .container-cart{
+            .checkout-container.cart-active {
+                #cartLoadedDiv {
+                    .cart {
+                        .cart-items{
+                            thead {
+                                tr {
+                                    .shipping-date {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            tbody{                            
+                                .product-item {
+                                    .product-price {
+                                        .best-price {
+                                            .discount {
+                                                position: absolute;
+                                                top: 16px;
+                                                right: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: $breakpoint-grid-checkout) {
+    body {
+        .container-cart{
+            .checkout-container.cart-active {
+                #cartLoadedDiv {
+                    .cart {
+                        .cart-items{
+                            thead {
+                                tr {
+                                    .shipping-date {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            tbody{                            
+                                .product-item {
+                                    .product-price {
+                                        .best-price {
+                                            .discount {
+                                                position: absolute;
+                                                top: 16px;
+                                                right: 50px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

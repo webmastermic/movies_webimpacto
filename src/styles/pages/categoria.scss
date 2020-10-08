@@ -1,0 +1,1017 @@
+#category-page{
+    #category-header{
+        position: relative;
+        > img{
+            width: 100%;
+            @include for-size(phone-and-tablet) {    
+                &.desktop{display:none;}
+                &.mobile{display: block;}
+            }
+            @include for-size(small-desktop) {    
+                &.mobile{display:none;}
+                &.desktop{display: block;}
+            }
+        }
+
+        .category-header-content{
+            position: absolute;
+            right: 5%;
+            margin: auto;
+            text-align: right;
+            bottom: 30%;
+            
+            .category-header-name{
+                font-size: $font24;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.13;
+                letter-spacing: normal;
+                text-align: left;
+                color: $color-negro3;
+                h1{
+                    font-size: $font24;
+                    color: $color-negro3;
+                    text-align: right;
+                    text-transform: uppercase;
+                }
+            }
+
+            .category-header-breadcrum{                                
+                .bread-crumb{
+                    ul{
+                        list-style: none;
+                        display: inline-flex;
+                        
+                        li:first-child {
+                            display: none;
+                        }
+
+                        li a{
+                                text-decoration: none;
+                                font-size: $font13;
+                                font-weight: bold;
+                                font-stretch: normal;
+                                font-style: normal;
+                                line-height: 1.38;
+                                letter-spacing: normal;
+                                text-align: left;
+                                color: $color-negro3;
+                                text-transform: capitalize;
+                        }
+                        li:not(.last) a:after {
+                                content: "/";
+                                padding: 10px;
+                        }
+                        li a:hover{
+                            text-decoration: none;
+                        }                        
+                    }
+                }
+            }
+        }
+    }
+
+    #category-body{
+        max-width: 1200px;
+        position: relative;
+        background-color: $color-gris3;
+        padding-left: 32px;
+        padding-right: 32px;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        margin:auto;
+        #category-body-organize{
+            height: 60px;
+            margin-top: -60px;
+            padding-top: 15px;
+            @include prefix-val(display, flex, moz o ms webkit spec);
+            @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+            @include prefix-prop(align-items, normal, moz o ms webkit spec);
+            > div {
+                height: 35px;
+            }
+            .delivery{
+                @include prefix-val(display, flex, moz o ms webkit spec);
+                @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                img{
+                    width: 32px;
+                    height: auto;
+                    margin-right: 10px;
+                }
+                h2{
+                    font-size: $font12;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.38;
+                    letter-spacing: normal;
+                    text-align: left;
+                    text-transform: uppercase;
+                }
+            }
+            .return{
+                @include prefix-val(display, flex, moz o ms webkit spec);
+                @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                visibility: hidden;
+                img{
+                    width: 32px;
+                    height: auto;
+                    margin-right: 10px;
+                }
+                h2{
+                    font-size: $font13;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.38;
+                    letter-spacing: normal;
+                    text-align: left;
+                }
+            }
+            #filters {
+                display: none;
+            }
+            #ordering{
+                select{
+                    padding: 5px 25px;
+                    background-color: $color-gris;
+                    border-radius: 3px;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.36;
+                    letter-spacing: normal;
+                    text-align: left;
+                    background: URL("/arquivos/ArrowDownCorporare.png") no-repeat $color-gris;
+                    background-size: 20px;
+                    background-position: right;
+                    background-position-x: 100%;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                }
+            }
+            #grids{
+                div[class^='grid']{
+                    
+                    display: inline-block;
+                    padding: 5px 15px;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                        display: block;
+                        margin:auto;
+                    }
+                }
+                .grid1{
+                    background-color: $color-negro3;
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                }
+                .grid2{
+                    background-color: $color-negro3;
+                }
+                .grid3{
+                    border-top-right-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                    background-color: $color-negro3;
+                }
+                .active {
+                    background-color: $color-rojo;
+                }
+            
+            }
+        }
+        #category-body-content {
+            @include prefix-val(display, flex, moz o ms webkit spec);
+            @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+            @include prefix-prop(align-items, unset, moz o ms webkit spec);
+
+            .category-body-content-left {
+                width: 30%;
+
+                #departament-navegador {
+                    margin: 0 30px;
+                    .navigation-tabs {
+                        .menu-departamento {
+                            .menu-navegue {
+                                display: none;
+                            }
+                            .search-multiple-navigator {
+                                h3 {
+                                    display: none;
+                                }
+                                h4 {
+                                    display: none;
+                                }
+                                .productClusterSearchableIds{
+                                    display: none!important;
+                                }
+                                display: block!important;
+                                margin-bottom: 50px;
+                                .search-filter-button {
+                                    height: 35px;
+                                    border-radius: 3px;
+                                    border: solid 1px $color-negro;
+                                    background-color: $color-gris;
+                                    padding: 7px;
+                                    text-align: center;
+                                    display: none;
+                                    justify-content: center;
+                                    align-items: center;
+                                    text-decoration: none;
+                                    color: $color-negro;
+                                    width: auto;
+                                    margin: 5px 10px;
+                                    font-size: $font13;
+                                    font-weight: 600;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 2.69;
+                                    letter-spacing: normal;
+                                }
+                                h3, h4 {
+                                    padding: 10px;
+                                    text-align: center;
+                                    a {
+                                        text-decoration: none;
+                                        color: $color-blanco;
+                                    }
+                                }                                 
+                                h5 {
+                                    height: 35px;
+                                    border-radius: 3px;
+                                    border: solid 1px $color-negro3;
+                                    background-color: $color-negro3;
+                                    padding: 10px 20px;
+                                    color: $color-blanco;
+                                    text-align: center;  
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    text-transform: uppercase;
+                                    a {
+                                        text-decoration: none;
+                                        color: $color-blanco;
+                                    }                                  
+                                }
+                                fieldset {
+                                    padding: 10px;
+                                    border: none;                                                                      
+                                    div {
+                                        padding: 10px 20px;
+                                        display: none;
+                                        label {
+                                            @include prefix-val(display, flex, moz o ms webkit spec);
+                                            @include prefix-prop(justify-content, left, moz o ms webkit spec);
+                                            @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                            font-size: $font13;
+                                            font-weight: 600;
+                                            font-stretch: normal;
+                                            font-style: normal;
+                                            line-height: 2.69;
+                                            letter-spacing: normal;
+                                            text-align: left;
+                                            color: $color-negro;      
+                                            text-transform: capitalize;                                 
+                                            input {
+                                                margin-right: 30px;
+                                            }                                            
+                                        }
+                                    }
+                                    div.display {
+                                        display: block!important;
+                                        label {
+                                            .colores {
+                                                display: block;
+                                                font-size: $font13;
+                                                padding: 0px;
+                                            }
+                                        }
+                                        a.ver-filtros {
+                                            font-size: 0;
+                                            text-decoration: none;
+                                        }                                    
+                                        a.ver-filtros:after {
+                                            content: 'Ver Todos';
+                                            font-size: 14px;
+                                            color: black;
+                                        }
+                                    }
+                                    h5:after {
+                                        background-image: url(/arquivos/ArrowDown.png);
+                                        background-size: 15px;
+                                        display: inline-block;
+                                        content: "";
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        transform: rotate(-90deg);
+                                        transition: transform .2s ease-in-out;
+                                        width: 16px;
+                                        height: 16px;
+                                    }   
+                                    h5.display:after {                            
+                                        animation: rotate-right-to-down .3s linear;
+                                        transform: rotate(0)!important;
+                                    }                                    
+                                }
+                                fieldset.filtro_talla {
+                                    div.display {                                                                               
+                                        @include prefix-val(display, flex!important, moz o ms webkit spec);
+                                        @include prefix-prop(flex-wrap, wrap, moz o ms webkit spec);
+                                        label {
+                                            @include prefix-val(display, flex, moz o ms webkit spec);
+                                            @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                                            @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                            cursor: pointer;
+                                            width: 50px;
+                                            height: 35px;
+                                            background: $color-blanco;
+                                            border-radius: 3px;
+                                            text-align: center;
+                                            border: 1px solid $color-gris;
+                                            margin: 2px;
+                                            input {
+                                                display: none;
+                                            }                                            
+                                        }
+                                        label.sr_selected {
+                                            background-color: $color-rojo !important;
+                                            color: $color-blanco;
+                                        }                                  
+                                    }                                    
+                                }    
+                                fieldset.filtro_faixa-de-preco {
+                                    h5 {
+                                        font-size: 0;
+                                    }
+                                    h5:before {
+                                        content: 'Precios';
+                                        font-size: $font13;
+                                        
+                                    }
+                                }     
+                                fieldset.filtro_marca {
+                                    h5 {
+                                        font-size: 0;
+                                    }
+                                    h5:before {
+                                        content: 'Licencia';
+                                        font-size: $font13;
+                                        
+                                    }
+                                }   
+                                fieldset.filtro_edad {
+                                    h5 {
+                                        font-size: 0;
+                                    }
+                                    h5:before {
+                                        content: 'Rango de edad';
+                                        font-size: $font13;
+                                        
+                                    }
+                                }            
+                            }
+                            .search-single-navigator {
+                                display: none;
+                                h3, h4 {
+                                    padding: 10px;
+                                    text-align: center;
+                                    a {
+                                        text-decoration: none;
+                                        color: $color-blanco;
+                                    }
+                                }                                
+                                h5 {
+                                    height: 35px;
+                                    border-radius: 3px;
+                                    border: solid 1px $color-negro3;
+                                    background-color: $color-negro3;
+                                    padding: 10px 20px;
+                                    color: $color-blanco;
+                                    margin: 15px;
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    text-transform: uppercase;
+                                    a {
+                                        text-decoration: none;
+                                        color: $color-blanco;
+                                    }                                  
+                                }
+                                h5:after {
+                                    background-image: url(/arquivos/ArrowDown.png);
+                                    background-size: 15px;
+                                    display: inline-block;
+                                    content: "";
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    transform: rotate(-90deg);
+                                    transition: transform .2s ease-in-out;
+                                    width: 16px;
+                                    height: 16px;
+                                }
+                                h5.display:after {                                    
+                                    animation: rotate-right-to-down .3s linear;
+                                    transform: rotate(0)!important;
+                                }
+                                ul {
+                                    padding: 10px 30px;
+                                    display: none;
+                                    li {
+                                        display: block;
+                                        font-size: $font13;
+                                        font-weight: 600;
+                                        font-stretch: normal;
+                                        font-style: normal;
+                                        line-height: 2.69;
+                                        letter-spacing: normal;
+                                        text-align: left;
+                                        color: $color-negro;
+                                        padding: 5px;                           
+                                        a {
+                                            text-decoration: none;
+                                            color: $color-negro;
+                                        }
+                                    }
+                                }
+                                ul.display {
+                                    display: block!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .category-body-content-right {
+                width: 70%;
+                #collections {
+                    .showcase-default {
+                        .main {
+                            .searchResultsTime{
+                                display: none;
+                            }
+                            .sub {
+                                display: none;
+                            }
+                            .pager.top {
+                                display: none;
+                            }
+                            .prateleira{
+                                padding: 10px;
+                                ul{
+                                    width: 100%;
+                                    @include prefix-prop(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(flex-wrap, wrap, moz o ms webkit spec);
+                                    
+                                }
+                            }
+                            .pager.bottom {
+                                margin-top: 20px;
+                                display: none;
+                                .pages {
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, space-evenly, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    padding: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.resultado-busca {
+        #departament-navegador {            
+            a{
+                text-decoration: none;
+                color: $color-blanco;
+                text-align: left;
+            }         
+            h3,.single-navigator-collapsible {
+                margin: 10px;
+                height: 35px;
+                border-radius: 3px;
+                border: solid 1px $color-negro3;
+                background-color: $color-negro3;
+                padding: 10px 20px!important;
+                text-align: center;
+                font-size: $font13;
+                @include prefix-val(display, flex, moz o ms webkit spec);
+                @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                text-transform: uppercase;                        
+                &::after {
+                    background-image: url(/arquivos/ArrowDown.png);
+                    background-size: 15px;
+                    display: inline-block;
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform: rotate(-90deg);
+                    transition: transform .2s ease-in-out;
+                    width: 16px;
+                    height: 16px;
+                }
+                &.active {
+                    &::after {
+                        background-image: url(/arquivos/ArrowDown.png);
+                        background-size: 15px;
+                        display: inline-block;
+                        content: "";
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transform: rotate(0deg);
+                        transition: transform .2s ease-in-out;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+                &h3 {
+                    color: $color-blanco;
+                }
+            }
+            li,.single-navigator-content {
+                padding: 0px 30px!important;
+                list-style-type: none;
+            }                
+        }
+    }
+    &.movies-marca {
+        #departament-navegador {   
+            a{
+                text-decoration: none;
+                color: $color-blanco;
+                text-align: left;
+            }         
+            h3, .single-navigator-collapsible {
+                margin: 10px;
+                height: 35px;
+                border-radius: 3px;
+                border: solid 1px $color-negro3;
+                background-color: $color-negro3;
+                padding: 10px 20px!important;
+                text-align: center;
+                font-size: $font13;
+                @include prefix-val(display, flex, moz o ms webkit spec);
+                @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                text-transform: uppercase;                        
+                &::after {
+                    background-image: url(/arquivos/ArrowDown.png);
+                    background-size: 15px;
+                    display: inline-block;
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform: rotate(-90deg);
+                    transition: transform .2s ease-in-out;
+                    width: 16px;
+                    height: 16px;
+                }
+                &.active {
+                    &::after {
+                        background-image: url(/arquivos/ArrowDown.png);
+                        background-size: 15px;
+                        display: inline-block;
+                        content: "";
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transform: rotate(0deg);
+                        transition: transform .2s ease-in-out;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+                &h3 {
+                    color: $color-blanco;
+                }
+            }
+            li,.single-navigator-content {
+                padding: 0px 30px!important;
+                list-style-type: none;
+            }                
+        }
+    }
+}
+
+@media(max-width: $breakpoint-tablet) {
+    #category-page{ 
+        #category-header{
+            .category-header-content {
+                position: initial;
+                color: $color-negro;
+                text-align: center;
+                background-color: $color-gris3;
+                padding: 10px;
+                margin: 0;
+                width: 100%;
+                .category-header-name{                    
+                    color: $color-negro3;
+                    h1{
+                        font-size: $font16;
+                        color: $color-negro;
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+                }
+                .category-header-breadcrum{
+                    .bread-crumb{
+                        ul {
+                            li{
+                                a {
+                                    font-size: $font11;
+                                    color: $color-negro;
+                                    text-align: center;
+                                   }
+                            }
+
+                        }
+                    }                   
+                }
+            }
+        }
+        #category-body{
+            padding-left: 0;
+            padding-right: 0;
+            margin-top: 60px;
+            #category-body-organize{
+                padding: 0!important;
+                @include prefix-val(display, flex, moz o ms webkit spec);
+                @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                @include prefix-prop(align-items, end, moz o ms webkit spec);
+                position: sticky;
+                top: 50px;
+                left: 0;
+                z-index: 1;
+                .delivery {
+                    display: none;
+                }
+                .return {
+                    display: none;
+                }
+                .filters {
+                    @include prefix-val(display, flex!important, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    width: 44%;
+                    padding: 10px;                    
+                    height: 50px;
+                    background-color: $color-blanco;
+                    border: 1px solid $color-gris;
+                }
+                #filters:before {
+                    background-image: url(/arquivos/filtro-mic-categorias.png);
+                    background-size: 15px;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                
+                #filters:after {
+                    background-image: url(/arquivos/ArrowDownCorporare.png);
+                    background-size: 15px;
+                    display: inline-block;
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform: rotate(-90deg);
+                    transition: transform .2s ease-in-out;
+                    width: 16px;
+                    height: 16px;
+                }
+                .ordering {
+                    width: 44%;
+                    height: 50px;
+                    width: 44%;
+                    height: 50px;
+                    @include prefix-val(display, flex!important, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    border-radius: 0!important;
+                    background-color: $color-blanco!important;
+                    border: 1px solid $color-gris;
+                    select {
+                        padding: 10px!important;
+                        height: 50px;
+                        width: 100%;
+                        border-radius: 0!important;
+                        background-color: transparent!important;
+                        border: 0;
+                        -moz-appearance: none;
+                        background: URL("/arquivos/ArrowDownCorporare.png") no-repeat #fff;
+                        background-size: 20px;
+                        background-position: right;
+                        background-position-x: 100%;
+                        -moz-appearance: none;
+                        -webkit-appearance: none;
+                    }
+                }            
+                .grids {
+                    width: 12%;
+                    height: 50px;
+                    div[class^='grid']{
+                        display: flex;
+                        padding: 5px 15px;
+                        height: 50px!important;
+                        img{
+                            width: 20px;
+                            height: 20px;
+                            display: block;
+                            margin:auto;
+                            margin-top: 10px!important;
+                        }
+                    }                    
+                    .grid1 {
+                        width: 100%;
+                        background-color: #00ae61;
+                        border-top-left-radius: 0px!important;
+                        border-bottom-left-radius: 0px!important;
+                        border-top-right-radius: 0px!important;
+                        border-bottom-right-radius: 0px!important;
+                    }
+                    .grid2 {
+                        width: 100%;
+                        background-color: #00ae61;
+                        border-top-left-radius: 0px!important;
+                        border-bottom-left-radius: 0px!important;
+                        border-top-right-radius: 0px!important;
+                        border-bottom-right-radius: 0px!important;
+                    }
+                    .grid3 {
+                        display: none!important;
+                    }
+                }
+            }
+            #category-body-content {
+                .category-body-content-left {
+                    display: none;
+                }
+                .category-body-content-left.active {
+                    display: block;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                    background: $color-negro3;
+                    overflow: scroll;
+                    #departament-navegador {
+                        margin: 0;
+                        .navigation-tabs {
+                            .menu-departamento {
+                                .turn-back {
+                                    height: 35px;
+                                    width: 100%;
+                                    @include prefix-val(display, flex!important, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    background-color: $color-gris2;
+                                    .contenedor {
+                                        width: 50%;
+                                        height: 50px;
+                                        font-size: $font13;
+                                        font-weight: 700;
+                                        font-stretch: normal;
+                                        font-style: normal;
+                                        line-height: 1.38;
+                                        letter-spacing: normal;
+                                        text-align: left;
+                                        color: $color-negro3;
+                                        @include prefix-val(display, flex!important, moz o ms webkit spec);
+                                        @include prefix-prop(justify-content, space-evenly, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                        p.mic-arrow-right {
+                                            background-image: url(/arquivos/ArrowDownCorporare.png);
+                                            background-size: 15px;
+                                            display: inline-block;
+                                            width: 15px;
+                                            height: 13px;
+                                            content: "";
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            transform: rotate(90deg);
+                                        }
+                                    }
+                                    .contenedor-limpiar {
+                                        width: 50%;
+                                        height: 50px;
+                                        font-size: $font13;
+                                        font-weight: 400;
+                                        line-height: 1.4;
+                                        text-align: center;
+                                        color: $color-negro3;
+                                        text-transform: uppercase;
+                                        @include prefix-val(display, flex!important, moz o ms webkit spec);
+                                        @include prefix-prop(justify-content, space-evenly, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                        p.mic-exit {
+                                            background-image: url(/arquivos/Icon-Remove-Checkout.png);
+                                            background-size: 15px;
+                                            display: none;
+                                            width: 25px;
+                                            height: 24px;
+                                            content: "";
+                                            border: 1px solid $color-negro;
+                                            border-radius: 3px;
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                        }
+                                    }
+                                }
+                                .title-filters {
+                                    height: 50px;
+                                    width: 100%;
+                                    border-bottom: 1px solid $color-rojo;
+                                    .filters {    
+                                        @include prefix-val(display, flex!important, moz o ms webkit spec);
+                                        @include prefix-prop(justify-content, end, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);                                    
+                                        height: 50px;
+                                        font-size: $font13;
+                                        font-weight: 700;
+                                        font-stretch: normal;
+                                        font-style: normal;
+                                        line-height: 1.38;
+                                        letter-spacing: normal;
+                                        text-align: left;
+                                        color: $color-blanco;
+                                        text-transform: uppercase;
+                                        margin-left: 20px;
+                                        p.mic-filter {
+                                            background-image: url(/arquivos/Grid3-icon.png);
+                                            background-size: 20px;
+                                            display: inline-block;
+                                            width: 16px;
+                                            height: 16px;
+                                            content: "";
+                                            background-repeat: no-repeat;
+                                            background-position: center;  
+                                            margin-right: 10px;                                      
+                                        }
+                                    }
+                                }
+                                .search-multiple-navigator {
+                                    h3 {
+                                        display: none;
+                                    }
+                                    fieldset {
+                                        padding: 10px;
+                                        border: none;                                                                      
+                                        div {
+                                            label {                                                
+                                                color: $color-blanco;                                                                                                                                 
+                                            }                                            
+                                        } 
+                                        &.filtro_talla {
+                                            label{
+                                                color: $color-negro3;
+                                            }
+                                        }                                                                                                           
+                                    }
+                                }
+                                .search-single-navigator {                                    
+                                    ul {                                        
+                                        li {                                                                      
+                                            a {
+                                                color: $color-blanco;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .category-body-content-right {
+                    width: 100%;
+                    #collections {
+                        .showcase-default {
+                            .main {
+                                .sub{
+                                    display: none;
+                                }
+                                .prateleira {
+                                    padding: 0;
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.resultado-busca {
+            #departament-navegador {                
+                .single-navigator-collapsible {
+                    margin: 10px;
+                    height: 35px;
+                    border-radius: 3px;
+                    border: solid 1px $color-negro3;
+                    background-color: $color-negro3;
+                    padding: 10px 20px!important;
+                    text-align: center;
+                    font-size: $font13;
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    text-transform: uppercase;
+                    color: $color-blanco;
+                    &::after {
+                        background-image: url(/arquivos/ArrowDown.png);
+                        background-size: 15px;
+                        display: inline-block;
+                        content: "";
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transform: rotate(-90deg);
+                        transition: transform .2s ease-in-out;
+                        width: 16px;
+                        height: 16px;
+                    }
+                    &.active {
+                        &::after {
+                            background-image: url(/arquivos/ArrowDown.png);
+                            background-size: 15px;
+                            display: inline-block;
+                            content: "";
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            transform: rotate(0deg);
+                            transition: transform .2s ease-in-out;
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+                    &h3 {
+                        color: $color-blanco;
+                    }
+                }
+                li,.single-navigator-content {
+                    padding: 0px 30px!important;
+                    color: $color-blanco;
+                    list-style-type: none;
+                }                   
+            }
+        }
+        &.movies-marca {
+            #departament-navegador {                
+                .single-navigator-collapsible {
+                    margin: 10px;
+                    height: 35px;
+                    border-radius: 3px;
+                    border: solid 1px $color-negro3;
+                    background-color: $color-negro3;
+                    padding: 10px 20px!important;
+                    text-align: center;
+                    font-size: $font13;
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    text-transform: uppercase;
+                    color: $color-blanco;
+                    &::after {
+                        background-image: url(/arquivos/ArrowDown.png);
+                        background-size: 15px;
+                        display: inline-block;
+                        content: "";
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transform: rotate(-90deg);
+                        transition: transform .2s ease-in-out;
+                        width: 16px;
+                        height: 16px;
+                    }
+                    &.active {
+                        &::after {
+                            background-image: url(/arquivos/ArrowDown.png);
+                            background-size: 15px;
+                            display: inline-block;
+                            content: "";
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            transform: rotate(0deg);
+                            transition: transform .2s ease-in-out;
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+                    &h3 {
+                        color: $color-blanco;
+                    }
+                }
+                li,.single-navigator-content {
+                    padding: 0px 30px!important;
+                    color: $color-blanco;
+                    list-style-type: none;
+                }                   
+            }
+        }
+    }
+}

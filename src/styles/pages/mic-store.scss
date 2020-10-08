@@ -1,0 +1,432 @@
+@media(min-width: 992px) {
+    #mic-tiendas {
+        width: 100%;
+        height: 550px;
+        position: relative;
+        .mainContent{
+            width: 100%;
+            height: 100%;
+            .wrapper{
+                width: 100%;
+                height: 100%;
+            }
+            .site-locator {
+                width: 100%;
+                height: 100%;
+                .search-tools {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 10%;
+                    width: 80%;
+                    height: 100px;
+                    z-index: 1;
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                    @include prefix-prop(align-items, baseline, moz o ms webkit spec);
+                    background: $color-negro3;
+                    margin: auto;
+                    border-radius: 3px;                
+                    #storeContent {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        background-color: $color-negro4;
+                        #content {
+                            #bodyContent{
+                                @include prefix-val(display, flex, moz o ms webkit spec);
+                                @include prefix-prop(justify-content, space-evenly, moz o ms webkit spec);
+                                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                div{
+                                    margin: 10px 20px;
+                                    color: $color-blanco;
+                                }
+                            }
+                            #siteNotice {
+                                display: none;
+                            }
+                            #texto-info {
+                                display: none;
+                            }
+                            .button {
+                                display: none;
+                            }
+                            .Horario-tienda{
+                                display: none;
+                            }
+                        }
+                    }
+                    #container_country {
+                        display: none;
+                        select {
+                            height: 35px;
+                            width: 120%!important;
+                            border-radius: 3px;
+                            padding: 5px 10px;
+                            background: URL("/arquivos/ArrowDownCorporare.png") no-repeat $color-blanco;
+                            background-size: 13px;
+                            background-position: right;
+                            background-position-x: 95%;
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
+                        }
+                    }
+                    #container_city {
+                        select {
+                            height: 35px;
+                            width: 120%!important;
+                            border-radius: 3px;
+                            padding: 5px 10px;
+                            background: URL("/arquivos/ArrowDownCorporare.png") no-repeat $color-blanco;
+                            background-size: 13px;
+                            background-position: right;
+                            background-position-x: 95%;
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
+                        }
+                    }
+                    .stores_ul {
+                        select {
+                            height: 35px;
+                            width: 110%!important;
+                            border-radius: 3px;
+                            padding: 5px 10px;
+                            cursor: pointer;
+                            background: URL("/arquivos/ArrowDownCorporare.png") no-repeat $color-blanco;
+                            background-size: 13px;
+                            background-position: right;
+                            background-position-x: 95%;
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
+                        }
+                    }
+                    .text-tienda {
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        margin-top: 20px;
+                        h2{
+                            color: $color-blanco;
+                            text-transform: uppercase;
+                        }
+                        img {
+                            display: none;
+                        }
+                    }
+                }
+                #map-canvas {
+                    .gm-style-iw.gm-style-iw-c {
+                        padding: 0;
+                        margin: 0;
+                        width: 250px;
+                        max-height: 230px!important;
+                        border-radius: 3px;
+                        .gm-style-iw-d {
+                            padding: 0;
+                            margin: 0;
+                            overflow: auto!important;
+                            max-height: 357px!important;
+                            #content {
+                                #texto-info {
+                                    text-align: center;
+                                    background: $color-negro4;
+                                    padding: 5px;
+                                    color: $color-blanco;
+                                    text-transform: uppercase;
+                                }                                
+                                #siteNotice {  
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, space-evenly, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    .info {
+                                        width: 50%;
+                                        text-align: center;
+                                        padding: 5px;
+                                        background: $color-blanco;
+                                        font-weight: 600;
+                                    }
+                                    .hora {
+                                        width: 50%;
+                                        text-align: center;
+                                        padding: 5px;
+                                        background: $color-gris;
+                                        font-weight: 600;
+                                    }
+                                }
+                                #bodyContent {
+                                    div{
+                                        padding: 10px;
+                                    }
+                                }
+                                .Horario-tienda{
+                                    display: none;
+                                    height: auto;
+                                    padding: 15px;
+                                }
+                                .button {
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    height: 40px;
+                                    border: 1px solid $color-gris;
+                                    .button-llamar {
+                                        @include prefix-val(display, flex, moz o ms webkit spec);
+                                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                        height: 35px;
+                                        background-color: $color-gris2;
+                                        width: 50%;
+                                        text-align: center;
+                                        border-radius: 3px;
+                                        color: $color-blanco;
+                                        a{
+                                            text-decoration: none;
+                                            color: $color-blanco;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                    .button-dir {
+                                        @include prefix-val(display, flex, moz o ms webkit spec);
+                                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                        height: 35px;
+                                        background-color: $color-rojo;
+                                        width: 50%;
+                                        text-align: center;
+                                        border-radius: 3px;
+                                        color: $color-blanco;
+                                        a{
+                                            text-decoration: none;
+                                            color: $color-blanco;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .gm-ui-hover-effect {
+                            top: 0px!important;
+                            right: 0px!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 992px) {
+    #mic-tiendas {        
+        .mainContent{
+            .wrapper{
+                .search-tools {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    top: 0;
+                    left: 0;
+                    padding: 10px;
+                    z-index: 1;
+                    @include prefix-val(display, grid, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, initial, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    background: $color-negro3;
+                    margin: auto;
+                    border-radius: 0;
+                    .text-tienda {
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        margin: 5px;                       
+                        h2{
+                            color: $color-blanco;
+                            font-size: $font17;
+                            margin-right: 15px;
+                            text-transform: uppercase;
+                        }
+                        img {
+                            display: none;
+                        }
+                    }
+                    #container_country {
+                        display: none;
+                        margin: 5px;
+                        select {
+                            font-size: $font14;
+                            height: 30px;
+                            border-radius: 3px;
+                            padding: 5px 10px;
+                            background: URL("/arquivos/ArrowDownCorporare.png") no-repeat $color-blanco;
+                            background-size: 13px;
+                            background-position: right;
+                            background-position-x: 95%;
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
+                        }
+                    }
+                    #container_city {
+                        margin: 5px;
+                        select {
+                            font-size: $font14;
+                            height: 30px;
+                            border-radius: 3px;
+                            padding: 5px 10px;
+                            background: URL("/arquivos/ArrowDownCorporare.png") no-repeat $color-blanco;
+                            background-size: 13px;
+                            background-position: right;
+                            background-position-x: 95%;
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
+                        }
+                    }
+                    .stores_ul {
+                        margin: 5px;
+                        select {
+                            font-size: $font14;
+                            width: 100%;
+                            height: 30px;
+                            border-radius: 3px;
+                            padding: 5px 10px;
+                            background: URL("/arquivos/ArrowDownCorporare.png") no-repeat $color-blanco;
+                            background-size: 13px;
+                            background-position: right;
+                            background-position-x: 95%;
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
+                        }
+                    }
+                    #storeContent {
+                        position: absolute;
+                        bottom: -29px;
+                        left: 0;
+                        background: $color-negro4;
+                        width: 100%;
+                        height: auto;
+                        #content {
+                            #siteNotice {
+                                display: none;
+                            }
+                            #texto-info {
+                                display: none;
+                            }
+                            .button {
+                                display: none;
+                            }
+                            .Horario-tienda{
+                                display: none;
+                            }
+                            #bodyContent {
+                                @include prefix-val(display, flex, moz o ms webkit spec);
+                                @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                font-size: $font10;
+                                color: $color-blanco;
+                                div {
+                                    margin: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+                #map-canvas {
+                    height: 360px!important;
+                    object-fit: cover;
+                    object-position: center center;
+                    .gm-style-iw.gm-style-iw-c {
+                        padding: 0;
+                        margin: 0;
+                        width: 250px;
+                        border-radius: 3px;
+                        .gm-style-iw-d {
+                            padding: 0;
+                            margin: 0;
+                            overflow: auto!important;
+                            max-height: 357px!important;
+                            #content {
+                                #bodyContent {
+                                    div {
+                                        padding: 5px 10px;
+                                        text-align: left;
+                                    }
+                                }
+                                #texto-info {
+                                    text-align: center;
+                                    background: $color-negro4;
+                                    padding: 5px;
+                                    color: $color-blanco;
+                                    text-transform: uppercase;
+                                }
+                                #siteNotice {  
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, space-evenly, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    .info {
+                                        width: 50%;
+                                        text-align: center;
+                                        padding: 5px;
+                                        background: $color-blanco;
+                                        font-weight: 600;
+                                    }
+                                    .hora {
+                                        width: 50%;
+                                        text-align: center;
+                                        padding: 5px;
+                                        background: $color-gris;
+                                        font-weight: 600;
+                                    }
+                                }
+                                .Horario-tienda{
+                                    display: none;
+                                    height: auto;
+                                    padding: 10px;
+                                }
+                                .button {
+                                    @include prefix-val(display, flex, moz o ms webkit spec);
+                                    @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                    height: 40px;
+                                    border: 1px solid $color-gris;
+                                    .button-llamar {
+                                        @include prefix-val(display, flex, moz o ms webkit spec);
+                                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                        height: 35px;
+                                        background-color: $color-gris2;
+                                        width: 50%;
+                                        text-align: center;
+                                        border-radius: 3px;
+                                        color: $color-blanco;
+                                        a{
+                                            text-decoration: none;
+                                            color: $color-blanco;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                    .button-dir {
+                                        @include prefix-val(display, flex, moz o ms webkit spec);
+                                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                        height: 35px;
+                                        background-color: $color-rojo;
+                                        width: 50%;
+                                        text-align: center;
+                                        border-radius: 3px;
+                                        color: $color-blanco;
+                                        a{
+                                            text-decoration: none;
+                                            color: $color-blanco;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .gm-ui-hover-effect {
+                            top: 0px!important;
+                            right: 0px!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

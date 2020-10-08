@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Movies</title>
+
+    <style type="text/css">
+        body {padding:0; margin: 0;}
+        img { display: block; }
+        table td {border-collapse:collapse;}
+
+        body > tbody { box-shadow: 0 0 0 1px #ffffff; border-radius: 3px; }
+        tbody ul { margin: 0; padding: 0; }
+        tbody ul li { margin-left: 0; list-style: none; }
+        tbody ul li table { margin: 0; padding: 15px 30px; }
+        tbody ul li a img { width: 100%; max-width: 60px; height: auto; }
+    </style>
+
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <table border="0" cellspacing="0" cellpadding="0" width="600"  style="margin: auto; padding: 60px 30px 30px 30px; font-family: 'Open Sans','Roboto',sans-serif; background-image: url('https://moviesshopco.myvtex.com/arquivos/Email-Background.png'); background-repeat: no-repeat; background-size: 100%;">
+        <tr>
+            <td colspan="2" style="background-color: #ffffff; border-radius: 9px 9px 0 0; position: relative;">
+                <a href="https://www.moviesshop.co/" title="Movies" style="display: block; position: absolute; min-height: 100%; width: 100%; right: 0;"></a>
+                <img src="https://moviesshopco.myvtex.com/arquivos/logo-movies-email.png" alt="Movies" title="Movies" style="display:block;margin:auto;margin-top: -45px;"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="background-color: #ffffff;">
+                <p style="margin: 45px 0 15px 0;font-size: 13px;font-weight: bold;text-align: center;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;">
+                    
+                    {{#if orders}}
+                        {{#if orders.0.clientProfileData.firstName}}    
+                            {{#compare orders.0.clientProfileData.firstName '!=' 'isAnonymous'}}
+                            ¡Hola    , {{orders.0.clientProfileData.firstName}}!
+                            {{/compare}}
+                        {{/if}}
+                        {{else}}
+                        {{#if clientProfileData.firstName}}
+                            {{#compare clientProfileData.firstName '!=' 'isAnonymous'}}
+                            ¡Hola {{clientProfileData.firstName}}!
+                            {{/compare}}
+                        {{/if}}
+                    {{/if}}                                
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="background-color: #ffffff;">
+                <p style="font-size: 18px;font-weight: bold;text-align: center;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #ea0029;">RECUPERACION DE CONTRASEÑA</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #ffffff;">
+                <table style="width: 100%; padding: 20px;">
+                    <tbody>
+                        <tr style="display: flex;justify-content: center;align-items: center;">
+                            <td style="width: 35%;"></td>
+                            <td colspan="2" style="width: 30%;background-color: #ffffff;display: grid;justify-content: center;align-items: center;padding: 10px 0px;">
+                                <img src="https://moviesshopco.myvtex.com/arquivos/UserIcon-email.png" width="40" height="40" alt="Movies - Movies" title="Movies - Movies" style="display:block;margin:auto;"/>
+                                <p style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #EA0029;margin: 5px;">Usuario<br/> Datos</p>
+                            </td>
+                            <td style="width: 35%;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>            
+        </tr>
+
+        
+        <!--START CONTENEDOR-->
+
+        <tr>
+            <td style="background-color: #ffffff;">
+                <table style="width: 100%; padding: 20px;">
+                    <tbody>
+                        <tr style="display: flex;justify-content: space-evenly;align-items: center;">
+                            <td>
+                                <p>
+                                    Este es un mensaje automático.
+                                </p>
+                                <p>
+                                    <strong>Nombre:</strong> {{name}}
+                                    <br />
+                                    <strong>Usuario:</strong> {{login}}
+                                    <br />
+                                    <strong>Contraseña:</strong> {{password}}                                              
+                                </p>
+                            </td>                            
+                        </tr>
+                    </tbody>
+                </table>                
+            </td>
+        </tr>
+
+        <!--END CONTENEDOR-->
+
+        <tr>
+            <td colspan="2" style="background-color: #F9F9F9;text-align: center;width: 100%;display: inline-flex;">
+                <a href="https://www.moviesshop.co/hombre" title="Movies" style="width: 50%;">
+                    <img src="https://moviesshopco.myvtex.com/arquivos/banner-hombre-mails-2.png" alt="Hombre" title="Hombre" style="margin-top: 20px;"/>
+                </a>    
+                <a href="https://www.moviesshop.co/mujer" title="Movies" style="width: 50%;">
+                    <img src="https://moviesshopco.myvtex.com/arquivos/banner-mujer-mails-2.png" alt="Mujer" title="Mujer" style="margin-top: 20px;"/>
+                </a>                    
+            </td>                                
+        </tr>
+
+        <tr>
+            <td style="background-color: #131e29;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr style="display: flex;justify-content: space-evenly;align-items: center;">
+                            <td colspan="2" style="background-color: #131e29;text-align: center;padding: 15px;width: 25%;">
+                                <a href="https://www.moviesshop.co/hombre" style="
+                                    display: block;
+                                    padding: 7px 0;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    color: #ffffff;
+                                    background-color: #1a2939;
+                                    border-radius: 3px;
+                                    text-align: center;                
+                                ">
+                                    Hombres
+                                </a>
+                            </td>
+                            <td colspan="2" style="background-color: #131e29;text-align: center;padding: 15px;width: 25%;">
+                                <a href="https://www.moviesshop.co/mujer" style="
+                                    display: block;
+                                    padding: 7px 0;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    color: #ffffff;
+                                    background-color: #1a2939;
+                                    border-radius: 3px;
+                                    text-align: center;                
+                                ">
+                                    Mujeres
+                                </a>
+                            </td>
+                            <td colspan="2" style="background-color: #131e29;text-align: center;padding: 15px;width: 25%;">
+                                <a href="https://www.moviesshop.co/157?PS=24&map=c,productClusterIds&O=OrderByReleaseDateDESC" style="
+                                    display: block;
+                                    padding: 7px 0;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    color: #ffffff;
+                                    background-color: #1a2939;
+                                    border-radius: 3px;
+                                    text-align: center;                
+                                ">
+                                    News
+                                </a>
+                            </td>
+                            <td colspan="2" style="background-color: #131e29;text-align: center;padding: 15px;width: 25%;">
+                                <a href="https://www.moviesshop.co/148?PS=24&map=c,productClusterIds&O=OrderByReleaseDateDESC" style="
+                                    display: block;
+                                    padding: 7px 0;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    color: #ffffff;
+                                    background-color: #1a2939;
+                                    border-radius: 3px;
+                                    text-align: center;                
+                                ">
+                                    Ofertas
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            
+        </tr>
+
+        <tr>
+            <td colspan="2" width="542.5px" height="110px" style="background-color: #ea0029; border-radius: 3px; padding: 0 15px;">
+                <table style="min-height: 100%;">
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="https://moviesshopco.myvtex.com/arquivos/ic_mail1.png" width="40" height="40" alt="Tip 1" title="Tip 1" style="display:block;margin-right:10px;"/>
+                                    </td>
+                                    <td>
+                                        <p style="font-size: 12px;font-weight: bold;text-align: left;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #ffffff; text-transform: uppercase;">Productos con licencias 100% originales</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="https://moviesshopco.myvtex.com/arquivos/ic_mail2.png" width="40" height="40" alt="Tip 2" title="Tip 2" style="display:block;margin-right:10px;"/>
+                                    </td>
+                                    <td>
+                                        <p style="font-size: 12px;font-weight: bold;text-align: left;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #ffffff; text-transform: uppercase;">Múltiples métodos de pagos seguros</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="https://moviesshopco.myvtex.com/arquivos/ic_mail3.png" width="40" height="40" alt="Tip 3" title="Tip 3" style="display:block;margin-right:10px;"/>
+                                    </td>
+                                    <td>
+                                        <p style="font-size: 12px;font-weight: bold;text-align: left;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #ffffff; text-transform: uppercase;">Devolución gratuita y envíos a toda colombia</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!-- 
+ *
+ * Desarrollado por WebImpacto - The Ecommerce Agency
+ *
+ -->
+
+ <!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es">
+ 
+ <head>    
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <vtex:metaTags/>
+     <vtex:template id="MOVIES - CommonStyles" /> 
+     <link rel="stylesheet" href="/files/movies-corporate-pages.min.css" />
+ </head> 
+ <body id="corporate-pages">
+     <div class="page"> 
+         <!--  SubTemplate: Header -->
+         <vtex:template id="MOVIES - Header" />
+         <vtex:template id="MOVIES - HeaderMobile" />
+         <!-- /SubTemplate: Header -->
+                     
+         <section id="corporate-pages-header">
+             <vtex:contentPlaceHolder id="Corporate-Header-Banner-Desktop"/>
+             <vtex:contentPlaceHolder id="Corporate-Header-Banner-Mobile"/>
+             <div class="corporate-title-container">
+                 <vtex:contentPlaceHolder id="Corporate-Title"/>
+             </div>
+         </section>
+         <section id="corporate-pages-body" class="row">
+             <div id="corporate-pages-body-organize" class="col-xs-12 col-sm-3">
+                 <div class="corporate-menu">
+                     <ul class="corporate-menu-list">
+                         <li class="corporate-menu-item corporate-menu-collapsible">
+                             <div class="text-container">
+                                 <span class="text-item">SOBRE NOSOTROS</span>
+                             </div>
+                             <div class="arrow-container">
+                                 <img class="arrow-item" src="/arquivos/ArrowDown.png" />
+                             </div>
+                         </li>
+                         <li class="corporate-content-collapsible">
+                             <ul class="corporate-list">
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/sobre-nosotros">
+                                         Sobre nosotros
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/trabaja-con-nosotros">
+                                         Trabaja con nosotros
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/legales">
+                                         Legales campañas
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/terminos-y-condiciones">
+                                         Términos y condiciones
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/politicas-de-privacidad">
+                                         Políticas de privacidad
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/aviso-de-privacidad">
+                                         Aviso de privacidad
+                                     </a>
+                                 </li>
+                             </ul>
+                         </li>
+                         <li class="corporate-menu-item corporate-menu-collapsible">
+                             <div class="text-container">
+                                 <span class="text-item">PARA CLIENTES</span>
+                             </div>
+                             <div class="arrow-container">
+                                 <img class="arrow-item" src="/arquivos/ArrowDown.png" />
+                             </div>
+                         </li>
+                         <li class="corporate-content-collapsible">
+                             <ul class="corporate-list">
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/contactanos">
+                                         Contáctanos
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/preguntas-frecuentes">
+                                         Preguntas frecuentes
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/como-comprar">
+                                         ¿Cómo comprar?
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/reversiones">
+                                         Reversiones
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/retracto">
+                                         Derecho de retracto
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/garantia-de-productos">
+                                         Garantía legal
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                     <a class="link-clear" href="/paginas-corporativas/cambios-y-devoluciones">
+                                         Cambios y devoluciones
+                                     </a>
+                                 </li>
+                                 <li class="corporate-item">
+                                    <a class="link-clear" href="/paginas-corporativas/queremos-cuidarte">
+                                        Queremos cuidarte
+                                    </a>
+                                </li>
+                             </ul>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+             <div id="corporate-pages-body-content" class="col-xs-12 col-sm-9">
+                 <vtex:contentPlaceHolder id="Corporate-Main-Content"/>
+             </div>
+         </section>
+         <vtex:template id="MOVIES - Footer" />
+     </div> 
+ </body>
+     <vtex:template id="MOVIES - CommonScripts" />
+     <script src="/files/movies-corporate-pages.bundle.min.js"></script>
+ </html>

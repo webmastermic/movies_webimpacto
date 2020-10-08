@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es-co">
+
+<head>
+    <vtex:metaTags/>
+    <vtex:contentPlaceHolder id="metatags" />
+    <vtex:contentPlaceHolder id="open graph" />
+    <vtex:template id="ff-favicon" />
+    <vtex:template id="ff-commonStyles" />
+    <link rel="stylesheet" href="/files/ff-categoria.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body class="categoria" id="category-page">
+
+    <div class="page">
+
+        <!--  SubTemplate: Header -->
+        <vtex:template id="ff-header" />
+        <!-- /SubTemplate: Header -->
+
+        <section class="container">
+
+            <div class="ff-container">
+        <vtex.cmc:breadCrumb />
+        <!-- banner categoria :start -->
+        <div class="cat-container__banner">
+            <vtex:contentPlaceHolder id="bannerCategoria"/>
+                <h1><vtex:contentPlaceHolder id="h1-categoria"/></h1>
+            <vtex.cmc:searchTitle />
+        </div>
+        <!-- banner categoria :end -->
+        <div class="cat-container">
+            <!-- filtros :start -->
+            <div class="cat-container__filtros">
+            <div class="filters__links">
+                <a class="filter_link filter_link__filtrar">FILTRAR POR <i class="WIM-FF-arrow-down"></i></a>
+                <a class="filter_link filter_link__ordenar">ORDENAR POR <i class="WIM-FF-arrow-down"></i></a>
+                <div class="product-display">
+                <div class="product-display__selector threecolumns">
+                    <i class="icon-show-three"></i>
+                </div>
+                <div class="product-display__selector twocolumns">
+                    <i class="WIM-FF-grid-2-columns-on"></i>
+                </div>
+                <div class="product-display__selector onecolumns">
+                    <i class="WIM-FF-grid-1-column-on"></i>
+                </div>
+                </div>
+            </div>
+            <div class="filters-container">
+                <div class="filters__filter">
+                <h2>FILTRAR POR</h2>
+                <i class="icon-close"></i>
+                <vtex.cmc:searchNavigator/>
+                </div>
+                <div class="filters__ordenar">
+                <h2>ORDENAR POR</h2>
+                <i class="icon-close"></i>
+                <ul>
+                    <li query="OrderByPriceASC">Menor Precio <i class="icon-angle"></i></li>
+                    <li query="OrderByPriceDESC">Mayor Precio <i class="icon-angle"></i></li>
+                    <li query="OrderByTopSaleDESC">Más Vendidos<i class="icon-angle"></i></li>
+                    <li query="OrderByReviewRateDESC">Mejor Evaluados<i class="icon-angle"></i></li>
+                    <li query="OrderByNameASC">A -Z <i class="icon-angle"></i></li>
+                    <li query="OrderByReleaseDateDESC">Lo nuevo <i class="icon-angle"></i></li>
+                    <li query="OrderByBestDiscountDESC">Mejor Descuento<i class="icon-angle"></i></li>
+                </ul>
+                </div>
+                <div class="filters__categorias visually-hidden">
+                <h2>ENCUENTRA OTRAS CATEGORÍAS</h2>
+                <ul class="site-nav__submenu site-nav__submenu__marcas visually-hidden">
+                    <li class="site-nav__submenu--has-sub-submenu site-nav__marca">
+                    <ul class="site-nav__sub-submenu">
+                        <li><a href="/new-balance" class="site-nav__link">New Balance</a></li>
+                        <li><a href="/urban-rock" class="site-nav__link">Urban Rock</a></li>
+                        <li><a href="/tecno-sport" class="site-nav__link">Tecno Sport</a></li>
+                        <li><a href="/black-diamond" class="site-nav__link">Black Diamond</a></li>
+                        <li><a href="/adidas" class="site-nav__link">Adidas</a></li>
+                        <li><a href="/americanino" class="site-nav__link">Americanino</a></li>
+                        <li><a href="/chevignon" class="site-nav__link">Chevingnon</a></li>
+                    </ul>
+                    </li>
+                    <li class="site-nav__submenu--has-sub-submenu site-nav__marca">
+                    <ul class="site-nav__sub-submenu">
+                        <li><a href="/converse" class="site-nav__link">Converse</a></li>
+                        <li><a href="/diesel" class="site-nav__link">Diesel</a></li>
+                        <li><a href="/f-net" class="site-nav__link">F> Net</a></li>
+                        <li><a href="/fossil" class="site-nav__link">Fossil</a></li>
+                        <li><a href="/fox" class="site-nav__link">Fox</a></li>
+                        <li><a href="/gir" class="site-nav__link">Girbaud</a></li>
+                        <li><a href="/lacoste" class="site-nav__link">Lacoste</a></li>
+                    </ul>
+                    </li>
+                    <li class="site-nav__submenu--has-sub-submenu site-nav__marca">
+                    <ul class="site-nav__sub-submenu">
+                        <li><a href="/miracle" class="site-nav__link">Miracle</a></li>
+                        <li><a href="/new-project" class="site-nav__link">New Project</a></li>
+                        <li><a href="/oakley" class="site-nav__link">Oakley</a></li>
+                        <li><a href="/sketchers" class="site-nav__link">Sketchers</a></li>
+                        <li><a href="/superdry" class="site-nav__link">Superdry</a></li>
+                        <li><a href="/unico" class="site-nav__link">Único</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+            <!-- filtros :end -->
+            <!-- vitrinas :start -->
+            <div class="cat-container__products">
+            <div class="product-display">
+                <div class="product-display__selector threecolumns">
+                <i class="icon-show-three"></i>
+                </div>
+                <div class="product-display__selector twocolumns">
+                <i class="icon-show-two"></i>
+                </div>
+                <div class="product-display__selector onecolumns">
+                <i class="icon-show-one"></i>
+                </div>
+            </div>
+            <div class="cat-container__products__vitrine">
+                <vtex.cmc:searchResult layout="4989dbf3-e677-45b9-a71e-47edfbb7e349" itemCount="12"  columnCount="1" />
+            </div>
+            </div>
+            <!-- vitrinas :end -->
+        </div>
+        <div class="textSEO">
+            <vtex:contentPlaceHolder id="textoSEO"/>
+        </div>
+            </div>
+        </section>
+        <!--  SubTemplate: Footer -->
+        <vtex:template id="ff-footer" />
+        <!-- /SubTemplate: Footer -->
+        <!--  SubTemplate: lightbox de producto agregado al carrito -->
+        <vtex:template id="ff-lightboxProductoAgregado" />
+        <!-- /SubTemplate: lightbox de producto agregado al carrito -->
+    </div>
+</body>
+    <vtex:template id="ff-commonScripts" />
+    <script type="text/javascript" src="/files/ff-categoria.bundle.min.js"></script>
+</html>

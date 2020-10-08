@@ -1,0 +1,506 @@
+@media(max-width: $breakpoint-mobile){
+    footer{
+        &.mic-footer {
+            background-color: $color-negro3;
+            .datos-entrega {
+                margin: 15px 0;
+                background-color: $color-gris3;
+                .datos {
+                    width: 100%;
+                    .item {
+                        width: 50%;
+                        display: inline-block;
+                        p {
+                            @include prefix-val(display, flex, moz o ms webkit spec);
+                            @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                            @include prefix-prop(align-items, center, moz o ms webkit spec);
+                            font-size: $font12;
+                            padding: 10px;
+                            font-weight: bold;
+                            img {
+                                margin-right: 20px;
+                                width: 35px;
+                            }
+                        }
+                    }
+                }
+            }
+            .legales{
+                margin-bottom: 30px;
+                padding: 0 15px;
+                .item{
+                    p {
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        border-radius: 18px;
+                        border: solid 1px $color-negro3;
+                        background-color: $color-negro3;
+                        padding: 7px 15px;
+                        text-align: left;
+                        color: $color-blanco;
+                        font-size: $font14;
+                        font-weight: 800;
+                        line-height: normal;
+                        text-transform: uppercase;
+                        + ul {
+                            max-height: 0;
+                            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+                            overflow: hidden;
+                        }
+                        &.show{
+                            background-color: $color-negro3;
+                            color: $color-blanco;
+                            + ul {
+                                max-height: 2000px;
+                                transition: max-height 1s ease-in-out;
+                            }
+                            img{
+                                animation: rotate-right-to-down .3s linear ;
+                                transform: rotate(0);
+                            }
+                        }
+                        img{
+                            animation: rotate-down-to-right .3s linear ;
+                            transform: rotate(-90deg);
+                            width: 25px;
+                        }
+                    }
+                    ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0 30px;
+                        margin: 10px 0;
+                        li {
+                            font-size: $font14;
+                            margin: 0;
+                            padding: 15px 0;
+                            color: $color-negro2;
+                            font-weight: 600;
+                            width: 100%;
+                            a {
+                                color: $color-blanco;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    &.tiendas{
+                        p{
+                            @include prefix-val(display, flex, moz o ms webkit spec);
+                            @include prefix-prop(justify-content, start, moz o ms webkit spec);
+                            @include prefix-prop(align-items, center, moz o ms webkit spec);
+                            background-color: transparent;
+                            + span{
+                                display: none;
+                            }
+                            ~ select{
+                                border-radius: 5px;
+                                border: solid 1px $color-gris;
+                                background-color: $color-blanco;
+                                padding: 6px 15px;
+                                margin: 0 15px;
+                                @include prefix-val(width, fill-available, moz o ms webkit spec);
+                                font-size: $font14;
+                                height: 35px;
+                                color: $color-gris2;
+                                background: URL("/arquivos/ArrowDownCorporare.png") no-repeat #fff;
+                                background-size: 13px;
+                                background-position: right;
+                                background-position-x: 90%;
+                                -moz-appearance: none;
+                                -webkit-appearance: none;
+                                &:focus{
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .item.tiendas {
+                    p {
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, left, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        .img-point-2 {
+                            transform: rotate(0);
+                            margin-right: 10px;
+                            display: none;
+                        }
+                    }
+                    .busca-tienda {
+                        display: none;
+                        .img-point-1 {
+                            transform: rotate(0);
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .promesas {
+                .logo-y-redes {
+                    padding: 5px 0;
+                    background-color: $color-gris2;
+                    border: $color-gris2;
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    .logo-mic {
+                        display: none;
+                        vertical-align: middle;
+                        margin-right: 30px;
+                        img {
+                            display: block;
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                    .redes{
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        img {
+                            margin-right: 10px;
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+                .metodos-de-pago{
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    background-color: $color-gris2;
+                    border: $color-gris2;
+                    @include prefix-val(width, fill-available, moz o ms webkit spec);
+                    padding: 10px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .flotante {
+                display: block;
+                position: fixed;
+                right: 0;
+                bottom: 30%;
+                width: auto;
+                z-index: 1;
+                .call-flotante {
+                    position: relative;
+                    .objetoflot {
+                        display: grid;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        padding: 10px;
+                        border-radius: 50px;
+                        border: 1px solid $color-gris2;
+                        background-color: $color-blanco;
+                        z-index: 4;
+                        position: absolute;
+                        top: 0;
+                        right: 6px;
+                        height: 60px;
+                        transition: all .2s ease-in-out;
+                        cursor:pointer;
+                        img {
+                            margin: auto;
+                            height: 30px;
+                        }
+                        span {
+                            font-size: 10px;
+                        }
+                    }
+                    .objetoflot:hover {
+                        text-decoration: none;
+                        transition: all .2s ease-in-out;
+                        transform: scale(1.1);
+                        background-color: $color-rojo;
+                    }
+                    .desplegable {
+                        background-color: $color-blanco;
+                        position: absolute;
+                        right: 20px;
+                        width: 150px;
+                        top: 0;
+                        height: 60px;
+                        border: 1px solid $color-gris2;
+                        z-index: 1;
+                        display: none;
+                        align-items: center;
+                        padding: 10px;
+                        border-radius: 20px;
+                        .telefono {
+                            a {
+                                font-size: 14px;
+                                color: $color-negro2;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    .objetoflot.active {
+                        background-color: $color-rojo;
+                        span {
+                            color: $color-blanco;
+                        }
+                    }
+                    .desplegable.active {
+                        display: flex;
+                        //animation: rotate-right-to-down .3s linear;
+                        transition: rigth 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(min-width: $breakpoint-mobile){
+    footer{
+        &.mic-footer {
+            padding: 0;
+            .datos-entrega {
+                background-color: $color-gris3;
+                .container{
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    padding: 0;
+                    height: 140px;
+                    .datos {
+                        width: 100%;
+                        .item {
+                            width: 50%;
+                            display: inline-block;
+                            p {
+                                @include prefix-val(display, flex, moz o ms webkit spec);
+                                @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                padding: 0 15px;
+                                font-size: $font13;
+                                font-weight: bold;
+                                font-stretch: normal;
+                                font-style: normal;
+                                line-height: 1.38;
+                                letter-spacing: normal;
+                                text-align: left;
+                                color: $color-negro5
+                                img {
+                                    margin-right: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .legales{
+                background-color: $color-negro3;
+                .container{
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                    //@include prefix-prop(align-items, flex-start, moz o ms webkit spec);
+                    padding-top: 30px;
+                    .item{
+                        max-width: 200px;
+                        p {
+                            color:  $color-blanco;
+                            font-weight: 800;
+                            font-size: $font14;
+                            text-transform: uppercase;
+                            img{
+                                display: none;
+                            }
+                        }
+                        ul {
+                            list-style: none;
+                            margin: 0;
+                            margin: 20px 0;
+                            li {
+                                font-size: $font13;
+                                margin: 0;
+                                padding: 0 0 15px;
+                                color: $color-blanco;
+                                width: auto;
+                                a {
+                                    color: $color-blanco;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                        &.tiendas{
+                            p{
+                                background-color: transparent;
+                                @include prefix-val(display, flex, moz o ms webkit spec);
+                                @include prefix-prop(justify-content, start, moz o ms webkit spec);
+                                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                                + span{
+                                    display: block;
+                                    margin: 20px 0 15px;
+                                    font-size: $font13;
+                                    color: $color-negro2;
+                                    font-weight: normal;
+                                }
+                                ~ select{
+                                    border-radius: 5px;
+                                    border: solid 1px $color-gris;
+                                    background-color: $color-blanco;
+                                    padding: 10px 15px;
+                                    @include prefix-val(width, fill-available, moz o ms webkit spec);
+                                    font-size: $font13;
+                                    height: 35px;
+                                    color: $color-gris2;
+                                    background: URL("/arquivos/ArrowDownCorporare.png") no-repeat #fff;
+                                    background-size: 13px;
+                                    background-position: right;
+                                    background-position-x: 90%;
+                                    -moz-appearance: none;
+                                    -webkit-appearance: none;
+                                    &:focus{
+                                        outline: none;
+                                    }
+                                }
+                                img {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                    .item.tiendas {
+                        p {
+                            .img-point-2 {
+                                display: none;
+                            }
+                        }
+                        .busca-tienda {
+                            @include prefix-val(display, flex, moz o ms webkit spec);
+                            @include prefix-prop(justify-content, left, moz o ms webkit spec);
+                            @include prefix-prop(align-items, center, moz o ms webkit spec);
+                            color: $color-blanco;
+                            .img-point-1 {
+                                transform: rotate(0);
+                                margin-right: 10px;
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .promesas {
+                background-color: $color-gris2;
+                .container{
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    .logo-y-redes {
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        padding: 10px 0;
+                        .logo-mic {
+                            display: none;
+                            vertical-align: middle;
+                            margin-right: 50px;
+                            img {
+                                display: block;
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                        .redes{
+                            img {
+                                width: 40px;
+                                height: 40px;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                    .metodos-de-pago{
+                        display: inline-block;
+                        vertical-align: middle;
+                        padding: 10px 0;
+                        order: 1;
+                        img {
+                            width: auto;
+                            height: 30px;
+                            margin-right: 10px;
+                            &:last-child{
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .flotante {
+                display: block;
+                position: fixed;
+                right: 0;
+                bottom: 30%;
+                width: auto;
+                z-index: 1;
+                .call-flotante {
+                    position: relative;
+                    .objetoflot {
+                        display: grid;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        padding: 10px;
+                        border-radius: 50px;
+                        border: 1px solid $color-gris2;
+                        background-color: $color-blanco;
+                        z-index: 4;
+                        position: absolute;
+                        top: 0;
+                        right: 6px;
+                        height: 60px;
+                        transition: all .2s ease-in-out;
+                        cursor:pointer;
+                        img {
+                            margin: auto;
+                            height: 30px;
+                        }
+                        span {
+                            font-size: 10px;
+                        }
+                    }
+                    .objetoflot:hover {
+                        text-decoration: none;
+                        transition: all .2s ease-in-out;
+                        transform: scale(1.1);
+                        background-color: $color-rojo;
+                    }
+                    .desplegable {
+                        background-color: $color-blanco;
+                        position: absolute;
+                        right: 20px;
+                        width: 150px;
+                        top: 0;
+                        height: 60px;
+                        border: 1px solid $color-gris2;
+                        z-index: 1;
+                        display: none;
+                        align-items: center;
+                        padding: 10px;
+                        border-radius: 20px;
+                        .telefono {
+                            a {
+                                font-size: 14px;
+                                color: $color-negro2;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    .objetoflot.active {
+                        background-color: $color-rojo;
+                        span {
+                            color: $color-blanco;
+                        }
+                    }
+                    .desplegable.active {
+                        display: flex;
+                        //animation: rotate-right-to-down .3s linear;
+                        transition: rigth 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>image - Carrito abandonado</title>
+
+    <style type="text/css">
+        body {padding:0; margin: 0;}
+        img { display: block; }
+        table td {border-collapse:collapse;}
+
+        body > tbody { box-shadow: 0 0 0 1px #ffffff; border-radius: 10px; }
+        tbody ul { margin: 0; padding: 0; }
+        tbody ul li { margin-left: 0; list-style: none; }
+        tbody ul li table { margin: 0; padding: 15px 30px; }
+        tbody ul li a img { width: 100%; max-width: 60px; height: auto; }
+    </style>
+
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <table border="0" cellspacing="0" cellpadding="0" width="600"  style="margin: auto; padding: 60px 30px 30px 30px; font-family: 'Open Sans','Roboto',sans-serif; background-image: url('https://moviesshopco.myvtex.com/arquivos/Email-Background.png'); background-repeat: no-repeat; background-size: 100%;">
+        <tr>
+            <td colspan="2" style="background-color: #ffffff; border-radius: 9px 9px 0 0; position: relative;">
+                <a href="https://www.moviesshop.co/" title="Movies" style="display: block; position: absolute; min-height: 100%; width: 100%; right: 0;"></a>
+                <img src="https://moviesshopco.myvtex.com/arquivos/logo-movies-email.png" alt="Movies" title="Movies" style="display:block;margin:auto;margin-top: -45px;"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="background-color: #ffffff;">
+                <p style="margin: 20px 0 15px 0;font-size: 13px;font-weight: bold;text-align: center;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;">¡Hola {{clientProfileData.firstName}}!</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="background-color: #ffffff;">
+                <h1 style="font-size: 18px;font-weight: bold;text-align: center;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: rgb(1, 2, 1);">Su pedido se ha entregado al transportista.</h1>                
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #ffffff;">
+                <table style="width: 100%; padding: 20px;">
+                    <tbody>
+                        <tr style="display: flex;justify-content: space-evenly;align-items: center;">   
+                            <td style="width: 35%;"></td>
+                            <td colspan="2" style="width: 30%;background-color: #ffffff;display: grid;justify-content: center;align-items: center;padding: 10px 0px;">
+                                <img src="https://moviesshopco.myvtex.com/arquivos/mail_ic_pago_rojo.png" width="40" height="40" alt="MIC - LittleMIC" title="MIC - LittleMIC" style="display:block;margin:auto;"/>
+                                <p style="font-size: 12px;text-transform: uppercase;font-weight: bold;text-align: center;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #EA0029;margin: 5px;">Pedido<br/>entregado</p>
+                            </td>
+                            <td style="width: 35%;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>            
+        </tr>
+
+        <tr>
+            <td colspan="2" style="background-color: #FFFFFF;text-align: center;padding: 15px;">
+                <div style="width: 50%;"></div>
+                <div style="width: 50%;"></div>
+                <h2 style="margin: 0; font-size: 20px; line-height: 24px; font-weight: 300; box-sizing: border-box; color: #898a8d;">Número de pedido <span style="font-weight: 500 !important;">{{orderId}}</span></h2>                
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="background-color: #FFFFFF;text-align: center;padding: 15px;">
+                {{#richShippingData shippingData}}
+                    {{#group logisticsInfo by="addessId"}}
+                    <div style="width: 100%; padding:10px">
+
+                        {{#compare items.0.selectedDeliveryChannel '==' null}}
+                        <div style="text-align: left;">
+                            <h4 style="margin: 0;
+                            font-size: 16px;
+                            line-height: 29px;
+                            text-transform: capitalize;
+                            letter-spacing: .9pt;
+                            box-sizing: border-box !important;">Dirección de entrega</h4>
+                            <div style="font-size: 13px;
+                            font-weight: 600;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: 1.92;
+                            letter-spacing: normal;
+                            text-align: left;
+                            color: #131e29;">
+                                {{#if orders.0.giftRegistryData}}
+                                    {{orders.0.giftRegistryData.description}}
+                                {{else}}
+                                    {{#each ../../shippingData.availableAddresses}}
+                                    {{#eq ../addressId AddressId}}
+                                    <strong>{{receiverName}}</strong>
+                                    <br/>{{street}}, {{number}}{{#if complement}} - {{complement}}{{/if}}
+                                    <br/>{{neighborhood}} - {{city}} - {{state}}
+                                    <br/>CEP {{postalCode}}
+                                    {{/eq}}
+                                    {{/each}}
+                                {{/if}}
+                            </div>
+                        </div>
+                        {{/compare}}
+
+                        {{#eq items.0.selectedDeliveryChannel "delivery"}}
+                            <div style="text-align: left;">
+                                <h4 style="margin: 0;
+                                font-size: 16px;
+                                line-height: 29px;
+                                text-transform: capitalize;
+                                letter-spacing: .9pt;
+                                box-sizing: border-box !important;">Dirección de entrega</h4>
+                                <div style="font-size: 13px;
+                                font-weight: 600;
+                                font-stretch: normal;
+                                font-style: normal;
+                                line-height: 1.92;
+                                letter-spacing: normal;
+                                text-align: left;
+                                color: #131e29;">
+                                    {{#if orders.0.giftRegistryData}}
+                                        {{orders.0.giftRegistryData.description}}
+                                    {{else}}
+                                        {{#each ../../shippingData.availableAddresses}}
+                                        {{#eq ../addressId AddressId}}
+                                        <strong>{{receiverName}}</strong>
+                                        <br/>{{street}}, {{number}}{{#if complement}} - {{complement}}{{/if}}
+                                        <br/>{{neighborhood}} - {{city}} - {{state}}
+                                        <br/>CEP {{postalCode}}
+                                        {{/eq}}
+                                        {{/each}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        {{/eq}}
+                        {{#eq items.0.selectedDeliveryChannel "pickup-in-point"}}
+                            <di>
+                                <h4 style="margin: 0; font-size: 16px; line-height: 29px; text-transform: uppercase; letter-spacing: .9pt; box-sizing: border-box !important;">Retirar</h4>
+                                <div style="font-size: 13px;
+                                    font-weight: 600;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.92;
+                                    letter-spacing: normal;
+                                    text-align: left;
+                                    color: #131e29;">
+                                    {{#each items.0.slas}}
+                                        {{#compare ../items.0.selectedSla '==' id}}
+                                        <strong>{{pickupStoreInfo.friendlyName}}</strong>
+                                            {{#with pickupStoreInfo.address}}
+                                                <br/>{{street}}, {{number}}{{#if complement}}, {{complement}}{{/if}}
+                                                <br/>{{neighborhood}}
+                                            {{/with}}
+                                        {{/compare}}
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/eq}}                        
+                        </div>
+                    {{/group}}
+                {{/richShippingData}}
+            </td>
+        </tr>     
+
+        <tr style="display: none;">
+            <td colspan="2" style="background-color: #FFFFFF;text-align: center;padding: 15px;">                
+                <div style="display: flex; justify-content: space-around; align-items: initial;">
+                    <div style="width: 33.3%;">
+                        <p style="margin: 0;
+                        box-sizing: border-box;
+                        margin-bottom: .5rem !important;
+                        font-size: 13px;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.92;
+                        letter-spacing: normal;
+                        text-align: center;
+                        text-transform: capitalize;">Tipo de entrega</p>                        
+                            {{#richShippingData shippingData}}
+                                {{#group logisticsInfo by="addessId"}}
+                                {{#group items by="packageId"}}
+                                {{#compare item.length '>' 1}}
+                                    <h3 style="text-align: center;margin: 0; font-size: 20px; line-height: 36px; text-transform: uppercase; letter-spacing: 1.2pt; font-weight: 300; margin-top: 16px; box-sizing: border-box; margin-bottom: .5rem !important;">Pacote {{#math index '+' 1}}{{/math}}</h3>
+                                {{/compare}}
+
+                                {{#each items}}
+                                    {{#compare @index '==' 0}}
+                                        {{#each ../../../../items}}
+                                            {{#eq id ../itemId}}
+                                                <div>
+                                                {{#compare ../selectedDeliveryChannel "!=" "pickup-in-point"}}
+                                                    {{#if ../deliveryWindow}}
+                                                    <div style="font-size: 12px !important;">Agendada para</div>
+                                                    {{else}}
+                                                    <div style="font-size: 12px !important;">{{../selectedSla}}</div>
+                                                    {{/if}}
+                                                {{/compare}}
+                                                </div>
+                                            {{/eq}}
+                                        {{/each}}
+                                    {{/compare}}
+                                {{/each}}
+                            {{/group}}
+                                {{/group}}
+                            {{/richShippingData}}
+                    </div>
+                    <div style="width: 33.3%;">
+                    {{#richShippingData shippingData}}
+                    {{#group logisticsInfo by="packageId"}}
+                        {{#each items}}
+                        {{#compare @index '==' 0}}
+                                <div>
+                                {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                                    <p style="margin: 0;
+                                    box-sizing: border-box;
+                                    margin-bottom: .5rem !important;
+                                    font-size: 13px;
+                                    font-weight: bold;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.92;
+                                    letter-spacing: normal;
+                                    text-align: center;
+                                    text-transform: capitalize;">Retirar</p>
+                                {{else}}
+                                    <p style="margin: 0;
+                                    box-sizing: border-box;
+                                    margin-bottom: .5rem !important;
+                                    font-size: 13px;
+                                    font-weight: bold;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.92;
+                                    letter-spacing: normal;
+                                    text-align: center;
+                                    text-transform: capitalize;">Entrega estimada</p>
+                                {{/eq}}
+                            
+                                {{#if deliveryWindow}}
+                                        en
+                                    <div style="font-size: 12px;
+                                    font-stretch: normal;
+                                    font-style: normal;
+                                    line-height: 1.92;
+                                    letter-spacing: normal;
+                                    text-align: center;
+                                    text-transform: capitalize;">
+                                        {{formatDate deliveryWindow.startDateUtc}}
+                                    </div>
+                                    <div style="box-sizing: border-box; padding-bottom: 1rem !important;">
+                                        entre
+                                        {{formatTime deliveryWindow.startDateUtc}}
+                                        y
+                                        {{formatTime deliveryWindow.endDateUtc}}
+                                    </div>
+                                {{else}}
+
+                                    {{#if shippingEstimateDate}}
+                                        {{#eq deliveryChannel "pickup-in-point"}}
+                                            a partir de
+                                        {{else}}
+                                        hasta
+                                        {{/eq}}
+                                        {{formatDate shippingEstimateDate}}
+                                    {{else}}
+                                        {{#eq shippingEstimateDays "0"}}
+                                        <div style="font-size: 12px;
+                                        font-stretch: normal;
+                                        font-style: normal;
+                                        line-height: 1.92;
+                                        letter-spacing: normal;
+                                        text-align: center;
+                                        text-transform: capitalize;">
+                                            {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                                            a partir de hoy
+                                            {{else}}
+                                            hoy
+                                            {{/eq}}
+                                        </div>
+
+                                {{else}}
+                                        {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                                            a partir de                                            
+                                        {{/eq}}
+
+                                        <div style="font-size: 12px;
+                                        font-stretch: normal;
+                                        font-style: normal;
+                                        line-height: 1.92;
+                                        letter-spacing: normal;
+                                        text-align: center;
+                                        text-transform: capitalize;">
+                                        {{#compare shippingEstimateDays ">" "1"}}
+                                            {{#eq shippingEstimateDaysType "bd"}}
+                                                {{shippingEstimateDays}} dias hábiles
+                                            {{else}}
+                                                {{#eq shippingEstimateDaysType "d"}}
+                                                    {{shippingEstimateDays}} dias
+                                                {{else}}
+                                                    {{#eq shippingEstimateDaysType "h"}}
+                                                        {{shippingEstimateDays}} horas
+                                                    {{else}}
+                                                        {{shippingEstimateDays}} minutos
+                                                    {{/eq}}
+                                                {{/eq}}
+                                            {{/eq}}
+                                        {{else}}
+                                        {{#eq shippingEstimateDaysType "bd"}}
+                                            {{shippingEstimateDays}} dia hábil
+                                        {{else}}
+                                            {{#eq shippingEstimateDaysType "d"}}
+                                            {{shippingEstimateDays}} dia
+                                            {{else}}
+                                            {{#eq shippingEstimateDaysType "h"}}
+                                                {{shippingEstimateDays}} hora
+                                            {{else}}
+                                                {{shippingEstimateDays}} minuto
+                                            {{/eq}}
+                                            {{/eq}}
+                                        {{/eq}}
+                                        {{/compare}}
+                                        </div>
+                                        {{/eq}}
+                                    {{/if}}
+                                {{/if}}
+                                  
+                            </div>
+                        {{/compare}}
+                        {{/each}}
+                    {{/group}}
+                    {{/richShippingData}}
+                    </div>  
+                    <div style="width: 33.3%;">
+                        {{#each paymentData.transactions}}
+                        <p style="margin: 0;
+                        box-sizing: border-box;
+                        margin-bottom: .5rem !important;
+                        font-size: 13px;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.92;
+                        letter-spacing: normal;
+                        text-align: center;
+                        text-transform: capitalize;">Medio de pago</p>
+                        
+                            {{#compare payments.length "==" 1}}
+                                {{#each payments}}
+                                <div style="font-size: 12px;
+                                font-stretch: normal;
+                                font-style: normal;
+                                line-height: 1.92;
+                                letter-spacing: normal;
+                                text-align: center;
+                                text-transform: capitalize;">
+                                    {{paymentSystemName}} -
+                                    {{#if lastDigits}} final {{lastDigits}} {{/if}}
+                                        ${{formatCurrency value}}                        
+                                </div>
+                                {{/each}}
+                            {{/compare}}
+            
+                            {{#compare payments.length "!=" 1}}
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                                {{#each payments}}
+                                <tr style="box-sizing: border-box !important;">
+                                    <td style="line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; font-size: 12px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="center">
+                                    {{paymentSystemName}}
+                                    {{#if lastDigits}} final {{lastDigits}} {{/if}}
+            
+                                    </td>
+                                    <td style="line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; font-size: 12px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="center">R$ {{formatCurrency value}}</td>
+                                </tr>
+                                {{/each}}
+                                </table>
+                            {{/compare}}                
+                        {{/each}}
+                    </div>
+                </div>
+                
+            </td>            
+        </tr>
+
+        <tr>
+            <td colspan="2" style="width: 50%;background-color: #FFFFFF;text-align: center;padding: 15px;">  
+                <div style="display: flex;justify-content: space-around;align-items: initial;">
+                    <div style="width: 50%;">
+                        <p style="margin: 0;box-sizing: border-box;margin-bottom: .5rem !important;font-size: 13px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: 1.92;letter-spacing: normal;text-align: center;text-transform: capitalize;">Transportista</p>
+                        <div style="font-size: 12px;font-stretch: normal;font-style: normal;line-height: 1.92;letter-spacing: normal;text-align: center;text-transform: capitalize;">
+                            {{package.courier}}    
+                        </div>
+                        
+                    </div>
+                    <div style="width: 50%;">
+                        <p style="margin: 0;box-sizing: border-box;margin-bottom: .5rem !important;font-size: 13px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: 1.92;letter-spacing: normal;text-align: center;text-transform: capitalize;">Numero de rastreo</p>
+                        <div style="font-size: 12px;font-stretch: normal;font-style: normal;line-height: 1.92;letter-spacing: normal;text-align: center;text-transform: capitalize;">
+                            {{package.trackingNumber}}  
+                        </div>                        
+                    </div>
+                </div>                              
+            </td>            
+        </tr>
+
+
+        <tr style="box-sizing: border-box !important;">
+            <td colspan="2" style="background-color: #FFFFFF;text-align: center;padding: 15px;">
+                <h3 style="margin: 0; font-size: 20px; line-height: 36px; text-transform: uppercase; letter-spacing: 1.2pt; font-weight: 300; box-sizing: border-box; margin-top: 0 !important;">Resumen de su compra</h3>                
+                
+                {{#richShippingData shippingData}}
+                    {{#group logisticsInfo by="addessId"}}
+                        <div style="box-sizing: border-box; clear: both; float: none; padding-top: 1rem !important;padding: 30px;
+                        border-radius: 7px;
+                        border: solid 1px #e3e3e3;
+                        background-color: #ffffff">                                                
+                        {{#group items by="packageId"}}
+                            {{#compare items.0.selectedDeliveryChannel '==' 'pickup-in-point'}}
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                    {{#each items}}
+                                        {{#each ../../../../items}}
+                                            {{#eq id ../itemId}}
+                                                <tr style="box-sizing: border-box !important;border-bottom: 1px solid #e3e3e3;">
+                                                    <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; width: 4rem; padding-right: .5rem; padding-top: .5rem; padding-bottom: .5rem; vertical-align: top; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left" valign="top"><img alt="" src="{{imageUrl}}" style="vertical-align: top; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100% !important;"/></td>
+                                                    <td style="    font-size: 14px;
+                                                    line-height: 20px;
+                                                    box-sizing: border-box;
+                                                    border-collapse: collapse;
+                                                    text-align: left;
+                                                    padding: 25px 5px;
+                                                    vertical-align: top !important;
+                                                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                                                    display: flex;" align="left" valign="top">
+                                                        <div align="left" class="mv1-ns" style="width: 80%;box-sizing: border-box; line-height: 1.25; font-size: 1rem !important;">{{name}}</div>
+                                                        <div align="right" style="width: 20%;font-size: 13px;
+                                                        font-weight: bold;
+                                                        font-stretch: normal;
+                                                        font-style: normal;
+                                                        line-height: 1.31;
+                                                        letter-spacing: normal;">                                    
+                                                            {{#if sellingPrice}}
+                                                            ${{formatCurrency sellingPrice}}
+                                                            {{else}}
+                                                            Gratis
+                                                            {{/if}}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {{#each bundleItems}}
+                                                    {{#if name}}
+                                                        <tr style="box-sizing: border-box !important;">
+                                                            <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; width: 4rem; padding-right: .5rem; padding-top: .5rem; padding-bottom: .5rem; vertical-align: top; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left" valign="top"><img alt="" src="{{imageUrl}}" style="vertical-align: top; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100% !important;"/></td>
+                                                            <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; padding-top: .5rem; padding-bottom: .5rem; vertical-align: top !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex;" align="left" valign="top">
+                                                                <div align="left" class="mv1-ns" style="width: 80%;box-sizing: border-box; line-height: 1.25; font-size: 1rem !important;">{{name}}</div>
+                                                                <div align="right" style="width: 20%;font-size: 13px;
+                                                                font-weight: bold;
+                                                                font-stretch: normal;
+                                                                font-style: normal;
+                                                                line-height: 1.31;
+                                                                letter-spacing: normal;">                                            
+                                                                    {{#if price}}
+                                                                        ${{formatCurrency price}}
+                                                                    {{else}}
+                                                                        Gratis
+                                                                    {{/if}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    {{/if}}
+                                                {{/each}}
+                                            {{/eq}} 
+                                        {{/each}}
+                                        </tbody>
+                                    {{/each}}
+                                </table>
+                                {{else}}
+                                
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                    {{#each items}}
+                                        {{#each ../../../../items}}
+                                            {{#eq id ../itemId}}
+                                                <tr style="box-sizing: border-box !important;border-bottom: 1px solid #e3e3e3;">
+                                                    <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; width: 4rem; padding-right: .5rem; padding-top: .5rem; padding-bottom: .5rem; vertical-align: top; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left" valign="top"><img alt="" src="{{imageUrl}}" style="vertical-align: top; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100% !important;"/></td>
+                                                    <td style="    font-size: 14px;
+                                                    line-height: 20px;
+                                                    box-sizing: border-box;
+                                                    border-collapse: collapse;
+                                                    text-align: left;
+                                                    padding: 25px 5px;
+                                                    vertical-align: top !important;
+                                                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                                                    display: flex;" align="left" valign="top">
+                                                        <div align="left" class="mv1-ns" style="width: 80%;box-sizing: border-box; line-height: 1.25; font-size: 1rem !important;">{{name}}</div>
+                                                        <div align="right" style="width: 20%;font-size: 13px;
+                                                        font-weight: bold;
+                                                        font-stretch: normal;
+                                                        font-style: normal;
+                                                        line-height: 1.31;
+                                                        letter-spacing: normal;">                                    
+                                                            {{#if sellingPrice}}
+                                                            ${{formatCurrency sellingPrice}}
+                                                            {{else}}
+                                                            Grátis
+                                                            {{/if}}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {{#each bundleItems}}
+                                                    {{#if name}}
+                                                        <tr style="box-sizing: border-box !important;">
+                                                            <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; width: 4rem; padding-right: .5rem; padding-top: .5rem; padding-bottom: .5rem; vertical-align: top; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left" valign="top"><img alt="" src="{{imageUrl}}" style="vertical-align: top; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100% !important;"/></td>
+                                                            <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; padding-top: .5rem; padding-bottom: .5rem; vertical-align: top !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex;" align="left" valign="top">
+                                                                <div align="left" class="mv1-ns" style="width: 80%;box-sizing: border-box; line-height: 1.25; font-size: 1rem !important;">{{name}}</div>
+                                                                <div align="right" style="width: 20%;font-size: 13px;
+                                                                font-weight: bold;
+                                                                font-stretch: normal;
+                                                                font-style: normal;
+                                                                line-height: 1.31;
+                                                                letter-spacing: normal;">                                            
+                                                                    {{#if price}}
+                                                                        ${{formatCurrency price}}
+                                                                    {{else}}
+                                                                        Gratis
+                                                                    {{/if}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    {{/if}}
+                                                {{/each}}
+                                            {{/eq}} 
+                                        {{/each}}
+                                        </tbody>
+                                    {{/each}}
+                                </table>
+                                {{/compare}}
+                            {{/group}}
+                            </div>
+                        {{/group}}
+                    {{/richShippingData}}
+            </td>
+        </tr>
+
+        <!--Resumen de compra precios items,descuento y valor total-->
+        <tr style="box-sizing: border-box !important;">
+            <td colspan="2" style="background-color: #F9F9F9;text-align: center;padding: 15px;display: flex;justify-content: center;align-items: center;">
+                <div class="pr4-ns" style="box-sizing: border-box; float: left; _display: inline; width: 100%; padding-bottom: 1rem; vertical-align: top !important;">
+                    <!--<h3 style="margin: 0; font-size: 20px; line-height: 36px; text-transform: uppercase; letter-spacing: 1.2pt; font-weight: 300; margin-top: 16px; box-sizing: border-box !important;">Resumo</h3>-->
+                    <table width="50%" align="right" border="0" cellpadding="0" cellspacing="0" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                        {{#each totals}}
+                            {{#if value}}
+                            <tr style="box-sizing: border-box !important;">
+                                <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left">
+                                {{#eq id "Items"}}Items{{/eq}}
+                                {{#eq id "Shipping"}}Entrega{{/eq}}
+                                {{#eq id "Discounts"}}Descuentos{{/eq}}
+                                {{#eq id "Tax"}}Taxas{{/eq}}
+                                </td>
+                                <td Style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; border-bottom-style: solid; border-bottom-width: 1px; border-color: #eee; padding-top: .25rem; padding-bottom: .25rem; text-align: right !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="right">
+                                    ${{formatCurrency value}}
+                                </td>
+                            </tr>
+                            {{/if}}
+                        {{/each}}
+                        {{#if value}}
+                            <tr style="box-sizing: border-box !important;">
+                                <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; text-align: left; font-weight: 500; padding-top: .25rem; padding-bottom: .25rem !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="left">Total</td>
+                                <td style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; font-weight: 500; padding-top: .25rem; padding-bottom: .25rem; text-align: right; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" align="right">${{formatCurrency value}}</td>
+                            </tr>
+                        {{/if}}
+                    </table>
+                </div>
+            </td>
+        </tr>      
+          
+        <!--END CONTENEDOR-->
+
+        <tr>
+            <td colspan="2" style="background-color: #F9F9F9;text-align: center;padding: 15px;">
+                <a href="{{ordersUrl}}" style="
+                    display: block;
+                    padding: 7px 0;
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    color: #ffffff;
+                    background-color: #131e29;
+                    border-radius: 3px;
+                    text-align: center; 
+                    text-transform: uppercase;                             
+                ">
+                    Rastrear tu pedido aquí
+                </a>
+            </td>
+        </tr>        
+
+        <tr>
+            <td colspan="2" style="background-color: #F9F9F9;text-align: center;width: 100%;display: inline-flex;">
+                <a href="https://www.moviesshop.co/hombre" title="Movies" style="width: 50%;">
+                    <img src="https://moviesshopco.myvtex.com/arquivos/banner-hombre-mails-2.png" alt="Hombre" title="Hombre" style="margin-top: 20px;"/>
+                </a>    
+                <a href="https://www.moviesshop.co/mujer" title="Movies" style="width: 50%;">
+                    <img src="https://moviesshopco.myvtex.com/arquivos/banner-mujer-mails-2.png" alt="Mujer" title="Mujer" style="margin-top: 20px;"/>
+                </a>                    
+            </td>                                
+        </tr>
+
+        <tr>
+            <td style="background-color: #131e29;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr style="display: flex;justify-content: space-evenly;align-items: center;">
+                            <td colspan="2" style="background-color: #131e29;text-align: center;padding: 15px;width: 25%;">
+                                <a href="https://www.moviesshop.co/hombre" style="
+                                    display: block;
+                                    padding: 7px 0;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    color: #ffffff;
+                                    background-color: #1a2939;
+                                    border-radius: 3px;
+                                    text-align: center;                
+                                ">
+                                    Hombres
+                                </a>
+                            </td>
+                            <td colspan="2" style="background-color: #131e29;text-align: center;padding: 15px;width: 25%;">
+                                <a href="https://www.moviesshop.co/mujer" style="
+                                    display: block;
+                                    padding: 7px 0;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    color: #ffffff;
+                                    background-color: #1a2939;
+                                    border-radius: 3px;
+                                    text-align: center;                
+                                ">
+                                    Mujeres
+                                </a>
+                            </td>
+                            <td colspan="2" style="background-color: #131e29;text-align: center;padding: 15px;width: 25%;">
+                                <a href="https://www.moviesshop.co/157?PS=24&map=c,productClusterIds&O=OrderByReleaseDateDESC" style="
+                                    display: block;
+                                    padding: 7px 0;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    color: #ffffff;
+                                    background-color: #1a2939;
+                                    border-radius: 3px;
+                                    text-align: center;                
+                                ">
+                                    News
+                                </a>
+                            </td>
+                            <td colspan="2" style="background-color: #131e29;text-align: center;padding: 15px;width: 25%;">
+                                <a href="https://www.moviesshop.co/148?PS=24&map=c,productClusterIds&O=OrderByReleaseDateDESC" style="
+                                    display: block;
+                                    padding: 7px 0;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                    color: #ffffff;
+                                    background-color: #1a2939;
+                                    border-radius: 3px;
+                                    text-align: center;                
+                                ">
+                                    Ofertas
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            
+        </tr>
+
+        <tr>
+            <td colspan="2" width="542.5px" height="110px" style="background-color: #ea0029; border-radius: 3px; padding: 0 15px;">
+                <table style="min-height: 100%;">
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="https://moviesshopco.myvtex.com/arquivos/ic_mail1.png" width="40" height="40" alt="Tip 1" title="Tip 1" style="display:block;margin-right:10px;"/>
+                                    </td>
+                                    <td>
+                                        <p style="font-size: 12px;font-weight: bold;text-align: left;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #ffffff; text-transform: uppercase;">Productos con licencias 100% originales</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="https://moviesshopco.myvtex.com/arquivos/ic_mail2.png" width="40" height="40" alt="Tip 2" title="Tip 2" style="display:block;margin-right:10px;"/>
+                                    </td>
+                                    <td>
+                                        <p style="font-size: 12px;font-weight: bold;text-align: left;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #ffffff; text-transform: uppercase;">Múltiples métodos de pagos seguros</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="https://moviesshopco.myvtex.com/arquivos/ic_mail3.png" width="40" height="40" alt="Tip 3" title="Tip 3" style="display:block;margin-right:10px;"/>
+                                    </td>
+                                    <td>
+                                        <p style="font-size: 12px;font-weight: bold;text-align: left;line-height: 1.4;font-family: 'Open Sans','Roboto',sans-serif;color: #ffffff; text-transform: uppercase;">Devolución gratuita y envíos a toda colombia</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

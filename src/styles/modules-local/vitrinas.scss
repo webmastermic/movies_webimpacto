@@ -1,0 +1,971 @@
+.prateleira {
+    li {                                        
+        width: 33.3%;
+        padding: 10px;
+        display: block;
+        .box-item {
+            position: relative;
+            .image-product{
+                position: relative;
+                .out-of-stock {
+                    position: absolute;
+                    width: auto;
+                    height: 25px;
+                    border-radius: 3px;
+                    padding: 8px;
+                    background-color: $color-gris2;
+                    text-transform: uppercase;
+                    text-transform: uppercase;
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    color: $color-blanco;
+                    left: 10px;
+                    top: -10px;
+                    font-size: $font14;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.36;
+                    letter-spacing: normal;
+                    text-align: center;                    
+                }
+                p.tag-discount {
+                    position: absolute;
+                    width: 50px;
+                    height: 25px;
+                    border-radius: 7px;
+                    background-color: $color-rojo;
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    color: $color-blanco;
+                    left: 10px;
+                    top: -10px;
+                    font-size: $font14;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.36;
+                    letter-spacing: normal;
+                    text-align: center;
+                }
+                a {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }   
+                    @supports(object-fit: cover){
+                        img {
+                            height: 100%;
+                            //object-fit: cover;
+                            object-fit: contain;
+                            object-position: center center;
+                            border-radius: 3px;
+                            border: 1px solid $color-gris;
+                        }
+                    }                                                
+                    
+                }
+                .button-product {
+                    display: none;
+                    .button-talla-1 {   
+                        display: none;  
+                        position: relative;   
+                        text-transform: uppercase;    
+                        font-size: $font14;
+                        font-weight: bold;
+                        .talla-text-product{
+                            .Tallas-niños { 
+                                display: none;                           
+                                position: absolute;
+                                top: 45px;
+                                left: 0;
+                                background-color: #fff;
+                                padding: 10px 30px;
+                                text-align: center;
+                                border-radius: 3px;
+                                width: 100%;
+                                border: 1px solid $color-gris;
+                                z-index: 1;
+                                span {
+                                    display: block;
+                                    padding: 10px;
+                                    cursor: pointer;
+                                }
+                                span.active {
+                                    display: block;
+                                    text-align: center;
+                                }
+                            }                                                            
+                        }  
+                        .sku-tallas-1 {
+                            position: absolute;
+                            top: 33px;
+                            left: 0;
+                            width: 100%;
+                            background-color: #fff;
+                            padding: 0;
+                            text-align: center;
+                            border-radius: 3px;
+                            border: 1px solid #E3E3E3;
+                            z-index: 1;
+                            display: none;
+                            .product-insertsku {
+                                fieldset {
+                                    border: none;
+                                    padding: 0;
+                                    .insert-sku-checklist {
+                                        @include prefix-prop(display, flex, moz o ms webkit spec);
+                                        @include prefix-prop(flex-wrap, wrap, moz o ms webkit spec); 
+                                        li {
+                                            width: 100%;
+                                            padding: 5px;
+                                            margin: 0;
+                                        }
+                                        .is-checklist-item {
+                                            input {
+                                                display: none;   
+                                            }
+                                            label {
+                                                display: block;
+                                                padding: 5px;
+                                                cursor: pointer;  
+                                                .insert-sku-count {
+                                                    display: none;   
+                                                }
+                                            }
+                                        }
+                                    }
+                                }                                
+                            }
+                            .selector-talla {
+                                margin: 10px;
+                            }
+                        }                                                      
+                    }
+                    .button-talla-1.active {
+                        .sku-tallas-1 {
+                            display: block;
+                            .product-insertsku {
+                                display: block!important;
+                            }
+                        }
+                    }
+                    .button-talla-1.active:after {
+                        animation: rotate-right-to-down .3s linear;
+                        transform: rotate(0)!important;
+                    }                                                    
+                    .button-shop-1 {
+                        background-color: $color-rojo;
+                        display: none;
+                    }
+                }
+            }
+            
+            .attribute-product{
+                padding: 10px;
+                width: 100%;
+                .top-name-marca-product{
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    min-height: 35px;
+                    .marca-product {
+                        font-size: $font11;
+                        color: $color-rojo;
+                        line-height: 28px;
+                        text-align: left;
+                        text-transform: uppercase;
+                    }
+                        div[id="15"]{
+                            div {
+                                background-image: url(/arquivos/accesorios-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="12"]{
+                            div {
+                                background-image: url(/arquivos/sacos-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="13"] {
+                            div {
+                                background-image: url(/arquivos/zapato-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="5"] {
+                            div {
+                                background-image: url(/arquivos/camiseta-ninas-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="10"] {
+                            div {
+                                background-image: url(/arquivos/sacos-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="9"] {
+                            div {
+                                background-image: url(/arquivos/pantalon-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="8"] {
+                            div {
+                                background-image: url(/arquivos/swiming-niñas-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="14"] {
+                            div {
+                                background-image: url(/arquivos/bolso-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="6"] {
+                            div {
+                                background-image: url(/arquivos/pijama-niñas-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="11"] {
+                            div {
+                                background-image: url(/arquivos/boxer-niña-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="19"] {
+                            div {
+                                background-image: url(/arquivos/sacos-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="25"] {
+                            .div {
+                                background-image: url(/arquivos/accesorios-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="21"] {
+                            div {
+                                background-image: url(/arquivos/pantalon-niños-vitrina.png);
+                                background-size: 20px;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="23"] {
+                            div {
+                                background-image: url(/arquivos/zapato-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="16"] {
+                            div {
+                                background-image: url(/arquivos/camiseta-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="20"] {
+                            div {
+                                background-image: url(/arquivos/pantalon-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="18"] {
+                            div {
+                                background-image: url(/arquivos/swiming-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="24"] {
+                            div {
+                                background-image: url(/arquivos/bolso-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        } 
+                        div[id="17"] {
+                            div {
+                                background-image: url(/arquivos/pijama-niños-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                        div[id="22"] {
+                            div {
+                                background-image: url(/arquivos/boxer-niño-vitrina.png);
+                                background-size: contain;
+                                display: inline-block;
+                                width: 32px;
+                                height: 32px;
+                                content: "";
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }  
+                    
+                }
+    
+                .product-name {
+                    a {
+                        color: $color-negro;
+                        font-size: $font15;
+                        font-weight: 600;
+                        line-height: 25px;
+                        text-decoration: none;    
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }   
+                        @supports(object-fit: cover){
+                            img {
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center center;
+                            }
+                        }
+                    }                                                                                              
+                }
+                
+                .price {
+                    display: table-caption;
+                    a {
+                        text-decoration: none;
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        .best-price {
+                            color: $color-negro;
+                            font-size: $font15;
+                            font-weight: bold;
+                            line-height: 25px;                                                        
+                        }
+                        .old-price {
+                            color: $color-gris2;
+                            font-size: $font15;
+                            font-weight: bold;
+                            line-height: 25px;
+                            margin-left: 10px;      
+                            text-decoration-line: line-through;                                            
+                        }
+                        .installment {
+                            display: none;
+                        }
+                    }                                                
+                }      
+                .description-product {
+                    padding: 10px 0;
+                    display: none;
+                    span {
+                        text-align: justify;
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                }      
+                
+                .button-product-2 {                    
+                    display: none;
+                    .button-talla-2 {
+                        position: relative;   
+                        text-transform: uppercase;
+                        font-size: $font14;
+                        font-weight: bold;    
+                        .sku-tallas-2 {
+                            position: absolute;
+                            top: 33px;
+                            left: 0;
+                            width: 100%;
+                            background-color: #fff;
+                            padding: 0;
+                            text-align: center;
+                            border-radius: 3px;
+                            border: 1px solid #E3E3E3;
+                            z-index: 1;
+                            display: none;
+                            .product-insertsku {
+                                fieldset {
+                                    border: none;
+                                    padding: 0;
+                                    .insert-sku-checklist {
+                                        @include prefix-prop(display, flex, moz o ms webkit spec);
+                                        @include prefix-prop(flex-wrap, wrap, moz o ms webkit spec); 
+                                        li {
+                                            width: 100%;
+                                            padding: 5px;
+                                        }
+                                        .is-checklist-item {
+                                            input {
+                                                display: none;   
+                                            }
+                                            label {
+                                                display: block;
+                                                padding: 5px;
+                                                cursor: pointer;
+                                                .insert-sku-count {
+                                                    display: none;   
+                                                }
+                                            }
+                                        }
+                                    }
+                                }                                
+                            }
+                            .selector-talla {
+                                margin: 10px;
+                            }
+                        }                                                   
+                    }
+                    .button-talla-2.active {
+                        position: relative;
+                        .talla-produc {
+                            .sku-tallas-2 {
+                                display: block;
+                                .product-insertsku {
+                                    display: block!important;
+                                }
+                            }
+                        }
+                    }
+                    .button-talla-2.active:after {
+                        animation: rotate-right-to-down .3s linear;
+                        transform: rotate(0)!important;
+                    }  
+                    .button-shop-2 {
+                        background-color: $color-rojo;
+                    }                                                                                                      
+                }
+                
+                .compare {
+                    display: none;
+                }
+            }
+            .product-brand {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                display: none;
+                img {
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+        }
+        
+    } 
+    
+    li:hover, li.grid2:hover, li.grid3:hover {
+        .box-item {
+            .image-product{
+                position: relative;
+                p.tag-discount {                    
+                    left: 10px;
+                    top: -10px;
+                }
+                .button-product {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    @include prefix-val(display, flow-root, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    height: 100px;
+                    padding: 10px;
+                    background-color: rgba($color: $color-negro3, $alpha: .7);
+                    backdrop-filter: blur(2px);
+                    .button-talla-1 {
+                        background-color: $color-blanco;
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);                                                        
+                        width: 100%;
+                        height: 35px;
+                        border-radius: 3px;
+                        border: 1px solid $color-gris;
+                        margin-bottom: 5px;
+                        text-transform: uppercase;    
+                        font-size: $font14;
+                        font-weight: bold;
+                    }
+                    .button-talla-1:after {
+                        background-image: url(/arquivos/ArrowDownCorporare.png);
+                        background-size: 15px;
+                        display: inline-block;
+                        content: "";
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transform: rotate(-90deg);
+                        transition: transform .2s ease-in-out;
+                        width: 16px;
+                        height: 16px;
+                    }
+                    .button-shop-1 {
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, space-evenly, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        width: 100%;
+                        height: 35px;
+                        border-radius: 3px;
+                        .add {
+                            display: block;
+                            text-align: center;
+                            a{
+                                color: $color-blanco;
+                                text-decoration: none;
+                                font-size: $font14;
+                                font-weight: bold;
+                            }
+                            
+                        }
+                    }
+                    .button-shop-1:after {
+                        background-image: url(/arquivos/CartIcon.png);
+                        background-size: 20px;
+                        display: inline-block;
+                        width: 20px;
+                        height: 18px;
+                        content: "";
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }        
+                .product-brand {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    display: none;
+                    img {
+                        height: 50px;
+                        width: 50px;
+                    }
+                }                                                           
+            }                                            
+        }
+    }
+    li.grid1:hover {
+        .box-item {
+            .image-product{
+                position: relative;
+                p.tag-discount {                    
+                    left: 10px;
+                    top: -10px;
+                }
+                .button-product  {
+                    display: none!important;
+                }
+            }
+        }
+    }
+        
+    li.grid1 {
+        width: 100%;
+        padding: 10px;
+        display: block;
+        position: relative;
+        .box-item {
+            @include prefix-prop(display, flex, moz o ms webkit spec);
+            @include prefix-prop(flex-wrap, wrap, moz o ms webkit spec);    
+            padding: 15px;
+            width: 100%;
+            border-radius: 7px;
+            background: $color-blanco;
+            .image-product{
+                width: 35%;
+                p.tag-discount {                    
+                    left: 10px;
+                    top: -10px;
+                }
+                .button-product {
+                    display: none;
+                }
+            }
+            .attribute-product {
+                width: 65%;
+                .description-product {
+                    padding: 10px 0;
+                    display: block;
+                    span {
+                        text-align: justify;
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                }   
+                
+            }     
+            .button-product-2 {  
+                width: 100%;
+                @include prefix-val(display, flex!important, moz o ms webkit spec);
+                @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                @include prefix-prop(align-items, center, moz o ms webkit spec);
+                height: auto;
+                padding: 10px;
+                background-color: rgba($color: $color-blanco, $alpha: .7);
+                .button-talla-2 {
+                    display: block;
+                    background-color: $color-blanco;
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-around, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);                                                        
+                    width: 100%;
+                    height: 35px;
+                    border-radius: 3px;
+                    border: 1px solid $color-gris;
+                    margin: 5px;
+                    text-transform: uppercase; 
+                    font-size: $font14;
+                    font-weight: bold;   
+                }
+                .button-talla-2:after {
+                    background-image: url(/arquivos/ArrowDownCorporare.png);
+                    background-size: 15px;
+                    display: inline-block;
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform: rotate(-90deg);
+                    transition: transform .2s ease-in-out;
+                    width: 16px;
+                    height: 16px;
+                }
+                .button-shop-2 {
+                    display: block;
+                    @include prefix-val(display, flex, moz o ms webkit spec);
+                    @include prefix-prop(justify-content, space-evenly, moz o ms webkit spec);
+                    @include prefix-prop(align-items, center, moz o ms webkit spec);
+                    width: 100%;
+                    height: 35px;
+                    border-radius: 3px;
+                    margin: 5px;
+                    .add {
+                        display: block;
+                        text-align: center;
+                        a {
+                            color: $color-blanco;
+                            text-decoration: none;
+                            font-size: $font12;
+                            font-weight: bold;
+                        }
+                        
+                    }
+                }
+                .button-shop-2:after {
+                    background-image: url(/arquivos/CartIcon.png);
+                    background-size: 20px;
+                    display: inline-block;
+                    width: 20px;
+                    height: 18px;
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }       
+            .price {
+                margin-top: 20px;
+            }                                
+        }                                        
+    }
+    li.grid2 {
+        width: 50%;
+        padding: 10px;
+        display: block;
+        position: relative;
+        .box-item {
+            display: grid;
+            padding: 15px;                                            
+            .button-product-2 {
+                display: none;
+            } 
+        }
+    }
+    li.grid3 {
+        width: 33.3%;
+        padding: 10px;
+        display: block;
+        position: relative;
+        .box-item {                                            
+            .price {
+                display: table-caption;
+                .installment {
+                    display: none;
+                }
+            }
+            .button-product-2 {
+                display: none;
+            } 
+        }
+    }
+}
+
+
+@media(max-width: $breakpoint-mobile) {
+    .prateleira {
+        li {
+            max-width: initial;
+            width: 50%;
+            padding: 10px;
+            display: inline-block;     
+            .box-item {
+                position: relative;
+                padding: 0px!important;
+                .image-product{
+                    .out-of-stock {
+                        position: absolute;
+                        background-color: $color-gris2;
+                        text-transform: uppercase;
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        color: #fff;
+                        left: 10px;
+                        top: -10px;
+                        font-size: $font8;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.36;
+                        letter-spacing: normal;
+                        text-align: center;
+                        width: 47px;
+                        height: 20px;
+                        border-radius: 7px;
+                    }
+                    p.tag-discount {
+                        position: absolute;
+                        background-color: $color-rojo;
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, center, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        color: $color-blanco;
+                        left: 10px;
+                        top: -10px;
+                        font-size: $font14;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.36;
+                        letter-spacing: normal;
+                        text-align: center;
+                        width: 47px;
+                        height: 20px;
+                        border-radius: 7px;
+                    }
+                    .button-product {
+                        display: none!important;
+                    }
+                    .product-brand {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        display: none;
+                        img {
+                            height: 40px;
+                            width: 40px;
+                        }
+                    }
+                }
+                .attribute-product {
+                    position: relative;
+                    .top-name-marca-product{
+                        @include prefix-val(display, flex, moz o ms webkit spec);
+                        @include prefix-prop(justify-content, space-between, moz o ms webkit spec);
+                        @include prefix-prop(align-items, center, moz o ms webkit spec);
+                        min-height: 35px;
+                        .marca-product {
+                            font-size: $font11;
+                            color: $color-rojo;
+                            line-height: 28px;
+                            text-align: left;
+                            text-transform: uppercase;
+                        }
+                        .category-product {  
+                            position: absolute;
+                            bottom: 5px;
+                            right: 5px;                                                  
+                            div {
+                                width: 24px!important;
+                                height: 24px!important;
+                                background-size: 23px!important;
+                            }
+                        }
+                        
+                    }
+    
+                    .product-name {
+                        a {
+                            color: $color-negro;
+                            font-size: $font12;
+                            font-weight: 600;
+                            line-height: 17px;
+                            text-decoration: none;                                                                
+                        }                                                                                              
+                    }
+
+                    .price {
+                        display: table-caption;
+                        a {
+                            .best-price {
+                                color: $color-negro;
+                                font-size: $font12;
+                                font-weight: bold;
+                                line-height: 17px;                                                        
+                            }
+                            .old-price {
+                                color: $color-gris2;
+                                font-size: $font12;
+                                font-weight: bold;
+                                line-height: 17px;
+                                margin-left: 10px;      
+                                text-decoration-line: line-through;                                            
+                            }
+                        }                                                
+                    } 
+                    .description-product {
+                        display: none;
+                    }
+                    .button-product-2 {
+                        display: none!important;
+                    }
+                }
+            }                                                        
+        }
+        .grid1 {
+            width: 100%!important;
+            .box-item {
+                .image-product {
+                    width: 50%!important;
+                }
+                .attribute-product {
+                    position: relative;
+                    padding-top: 40px !important;
+                    padding-bottom: 40px !important;
+                    width: 50% !important;
+                    padding-left: 10px!important;
+                    .top-name-marca-product {
+                        .category-product {
+                            position: absolute;
+                            bottom: 5px;
+                            left: 5px;
+                        }
+                    }
+                    .price {
+                        margin-top: 10px;                                                                   
+                    }
+                }
+            }
+        }
+    }
+}

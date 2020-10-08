@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*============================================================================
+  FRUTA FRESCA | Contenido Estático
+==============================================================================*/
+
+/*================ BASE ================*/
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
+@import "../base/fuentes.scss";
+@import "../base/normalize.scss";
+@import "../base/keyframes.scss";
+
+/*================ PAGES ================*/
+@import "../pages/contenido-estatico.scss";
+

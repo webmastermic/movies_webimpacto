@@ -1,0 +1,167 @@
+ <!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="en-us">
+
+ <head>
+     <title> Modelo Vtex</title>
+     <vtex:metaTags/>
+     <vtex:template id="MOVIES - CommonStyles" />
+     <link rel="stylesheet" href="/files/movies-producto.min.css" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ </head>
+
+ <body id="product-page">
+     <vtex:template id="MOVIES - Header" />
+     <vtex:template id="MOVIES - HeaderMobile" />
+     <div class="product">
+         <div class="banner_product">
+            <vtex:contentPlaceHolder id="banner_product" />
+         </div>
+        <main class="container">
+            <div class="container_product">
+                <div class="images_product">
+                    <h1 class="productName"></h1>
+                    <div class="content_referencia">
+                        <span>Referencia: </span> <span class="ref"></span>
+                    </div>
+                    <div class="images_thumbs"></div>
+                    <div class="images_big"></div>
+                    <div class="discount">
+                    </div>
+                </div>
+                <div class="info_product">
+                    <div class="breadcrumb">
+                        <vtex.cmc:breadCrumb />
+                    </div>
+                    <h2 class="productName"></h2>
+                    <div class="content_referencia">
+                        <span>REF: </span> <span class="ref"></span>
+                    </div>                    
+                    <div class="container_prices">
+                        <span class="listPrice"></span>
+                        <span class="bestPrice"></span>
+                    </div>
+                    
+                    <div id="description_short" class="content_description_short">
+                    </div>
+                    <div class="sku_container"></div>
+                    <p class="msjPrice"></p>
+                    <div class="guia_de_tallas mobile">
+                        <!--<img src="/arquivos/guia-de-tallas-min.png" class="img_guia_de_tallas" />-->
+                        <span class="guia_tallas_product measure-modal-btn">Guía de tallas</span>
+                    </div>
+                    <div class="guia_de_tallas desktop">
+                        <!--<img src="/arquivos/guia-de-tallas-min.png" class="img_guia_de_tallas" />-->
+                        <span class="guia_tallas_product measure-modal-btn">Guía de tallas</span>
+                    </div>
+                    <div class="container_qty_buy">
+                        <!--<div class="field_qty mobile">
+                            <span>Cantidad</span>
+                            <div class="content_input">
+                                <div class="minus_holder">
+                                    <img class="minus" src="/arquivos/MinusIconWhite.png" />
+                                </div>
+                                <input type="text" value="1" class="qty_field" disabled="disabled" />
+                                <div class="plus_holder">
+                                    <img class="plus" src="/arquivos/PlusIconWhite.png" />
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="field_qty">
+                            <div class="amounts">
+                                <span class="active" value="1">1</span>
+                                <span value="2">2</span>
+                                <span value="3">3</span>
+                                <span value="4">4</span>
+                                <span value="5">5</span>
+                            </div>
+                            <img class="openQty" src="/arquivos/ArrowDownCorporare.png" />
+                        </div>
+                        <div class="content_buy">
+                            <a href="#">AGREGAR AL CARRITO</a>
+                            <img src="/arquivos/CartIcon.png" />
+                        </div>
+                        <div id="native-buy-btn" style="display: none;">
+                            <vtex.cmc:BuyButton />
+                        </div>
+                    </div>                    
+                    <div class="enlaces_product">
+                        <!--<a href="#" class="medios_de_pago">
+                            <i class="icon-credit_card"></i>
+                            <span>Medios de pago</span>
+                        </a>
+                        <a href="/politica-de-cambios" class="cambios_devoluciones">
+                            <i class="icon-cambios_devoluciones"></i>
+                            <span>Cambios y devoluciones</span>
+                        </a>
+                        <a href="#" class="btn_wishlist">
+                            <i class="icon-heart_solid"></i>
+                            <span>Añadir a Favoritos</span>
+                        </a>-->
+                        <p class="compartir_redes">
+                            <i class="icon-compartir"></i>
+                            <span>Comparte este producto</span>
+                        </p>
+                        <div class="share_social_network">
+                            <a href="#" data-share="pinterest"><img src="/arquivos/pinterest-2-icon-min.png" /></a>
+                            <a href="#" data-share="facebook"><img src="/arquivos/facebook-2-icon-min.png" /></a>
+                            <a href="#" data-share="whatsapp"><img src="/arquivos/social-whatsapp.png" /></a>
+                            <!--<a href="#" data-share="instagram"><img src="/arquivos/instagram-2-icon-min.png" /></a>-->
+                            <a href="#" data-share="twitter"><img src="/arquivos/twitter-2-icon-min.png" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs_especifications">
+                <div class="button_tabs">
+                    <div class="buttons_especifications">
+                        <a href="#description_espec" class="active">Detalle del producto</a>
+                        <img src="/arquivos/ArrowDownCorporare.png" />
+                    </div>
+                    <div class="buttons_especifications">
+                        <a href="#caracteristicas_espec">Características del producto</a>
+                        <img src="/arquivos/ArrowDownCorporare.png" />
+                    </div>
+                    <div class="buttons_especifications">
+                        <a href="#cuidado_espec">Cuidado del producto</a>
+                        <img src="/arquivos/ArrowDownCorporare.png" />
+                    </div>
+                </div>
+                <div class="content_especification">
+                    <div id="description_espec" class="content_tab active">
+                        <div class="container_general"></div>
+                    </div>
+                    <div id="caracteristicas_espec" class="content_tab">
+                        <div class="container_general"></div>
+                    </div>
+                    <div id="cuidado_espec" class="content_tab">
+                        <div class="container_general"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="vitrines_related_product">
+                <div class="others_options">
+                    <div class="container_general">
+                        <div class="container_vitrine vitrines_related">
+                            <vtex:contentPlaceHolder id="coleccion_explora_otras_opciones" />
+                        </div>
+                    </div>
+                </div>
+                <div class="complementarios">
+                    <div class="container_general">
+                        <div class="container_vitrine vitrines_related">
+                            <vtex:contentPlaceHolder id="coleccion_complementarios" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-measure-table">
+                <vtex:contentPlaceHolder id="Tabla de medidas" />
+            </div>
+        </main>
+     </div>
+     <vtex:template id="MOVIES - Footer" />
+ </body>
+     <vtex:template id="MOVIES - CommonScripts" />
+     <script src="/files/movies-producto.bundle.min.js"></script>
+ </html>

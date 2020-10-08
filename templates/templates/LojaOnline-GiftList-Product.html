@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+<head>
+<title>Produtos em sua Lista</title>
+</head>
+<body>
+
+<div id="all">
+<div id="content">
+
+<h2 class="titulo-sessao">Produtos em sua Lista</h2>
+<!-- Controle: Informações de uma Lista -->
+<vtex.cmc:GiftListInfoV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+urledit="http://mysite.com/alternatefolder" caminho customizado nos links para a página de edição da lista
+giftcard="true" exibe o saldo do vale compras para uma lista com conversão do valor do produto em vale
+ -->
+<!-- /Controle: informações de uma Lista -->
+
+<!-- Controle: Estatísticas de uma Lista -->
+<vtex.cmc:GiftListStatisticsV2 />
+<!-- /Controle: Estatísticas de uma Lista -->
+
+<!-- Controle: Produtos de uma Lista -->
+<vtex.cmc:GiftListProductsV2 />
+<!-- 
+os seguintes parâmtros são permitidos:
+size="20" número de produtos exibidos por página. O padrão é 10
+image="3" ID do tipo da imagem do produto exibido. O padrão é 3 (thumb)
+ -->
+<!-- /Controle: Produtos de uma Lista -->
+
+
+</div>
+</div>
+
+</body>
+</html>

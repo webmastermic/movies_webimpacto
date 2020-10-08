@@ -1,0 +1,277 @@
+#account-content {
+    .render-route-my-account-portal {
+        .vtex-account {
+            .vtex-account__menu {
+                .vtex-account__menu-links {
+                    a {
+                        font-family: "Open Sans","Roboto",sans-serif;
+                        color: $color-negro;
+                        font-size: $font14;
+                        font-weight: bold;
+                        line-height: 25px;    
+                        text-transform: uppercase;
+                    }
+                    .b--action-primary {
+                        border-color: $color-rojo;
+                    }
+                }
+            }
+            .vtex-account__page {
+                .vtex-pageHeader__container{
+                    display: none;
+                }
+                @media(max-width: $breakpoint-mobile) {
+                    .vtex-pageHeader__container{
+                        display: block;
+                    }
+                }
+                .vtex-pageHeader__children {
+                    button {
+                        background-color: $color-rojo;
+                        border-color: $color-rojo;
+                    }
+                    button:hover {
+                        border-color: $color-rojo;
+                    }
+                }
+                .vtex-account__page-body {
+                    label {
+                        font-family: "Open Sans","Roboto",sans-serif;
+                        font-weight: bold;
+                        line-height: 25px;
+                    }
+                    span {
+                        font-family: "Open Sans","Roboto",sans-serif;
+                        line-height: 25px;
+                    }
+                    .vtex-profile-form__profile-summary {
+                        label {
+                            font-family: "Open Sans","Roboto",sans-serif;
+                            color: $color-negro;
+                            font-size: $font14;
+                            font-weight: bold;
+                            line-height: 25px;
+                            text-decoration: none;    
+                            margin: 0;
+                            padding: 0;
+                        }
+                        div.c-on-disabled {
+                            font-family: "Open Sans","Roboto",sans-serif;
+                            color: $color-gris2;
+                            font-size: $font13;
+                            font-weight: bold;
+                            line-height: 22px;
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                    .vtex-profile-form__profile-container__wrapper {
+                        .vtex-profile-form__field-wrapper {
+                            span  {
+                                font-family: "Open Sans","Roboto",sans-serif;
+                                color: $color-negro;
+                                font-size: $font14;
+                                font-weight: bold;
+                                line-height: 25px;
+                                text-decoration: none;    
+                                padding: 0;
+                            }
+                            div {
+                                input  {
+                                    font-family: "Open Sans","Roboto",sans-serif;
+                                    color: $color-gris2;
+                                    font-size: $font13;
+                                    font-weight: bold;
+                                    line-height: 22px;
+                                }
+                            }
+                        }
+                    }                    
+                }
+                .vtex-account__order-details {
+                    .w-100.fl.w-60-ns.pv3-ns.pr0 {
+                        ul {
+                            display: none;
+                        }
+                    }
+                }
+                .vtex-account__orders-list {
+                    .myo-order-card {
+                        .cf.pa5.pa6-l.bg-base.bt-0 {
+                            .cf.fr.db.w-100.w-30-ns.pt0-xl.pt5 {
+                                .myo-cancel-btn {
+                                    display: none;
+                                }
+                                .myo-reorder-btn {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*----------PAGINA 404 ERROR----------*/
+.resultado-busca {
+    #my-account-error {
+        text-align: center;    
+        .title-404 {
+            color: $color-negro;
+            font-size: $font13;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.85;
+            letter-spacing: normal;
+            text-align: center;
+        }
+        .content-404 {
+            color: $color-negro;
+            font-size: $font13;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.85;
+            letter-spacing: normal;
+            text-align: center;
+        }
+        .page-header {
+            img {
+                width: auto;
+                height: auto;
+                margin: 50px;
+            }
+        }
+        .button-404 {
+            @include prefix-val(display, flex, moz o ms webkit spec);
+            @include prefix-prop(justify-content, center, moz o ms webkit spec);
+            @include prefix-prop(align-items, center, moz o ms webkit spec);
+            margin: 20px;
+            .button-page-anterior {
+                width: 50%;
+                max-width: 200px;
+                a {
+                    font-size: $font14;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.36;
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: $color-blanco;
+                    text-decoration: none;
+                    height: 40px;
+                    border-radius: 5px;
+                    background-color: $color-negro4;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 5px;
+                }
+            }
+            .button-page-inicio {
+                width: 50%;
+                max-width: 200px;
+                a {
+                    font-size: $font14;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.36;
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: $color-blanco;
+                    text-decoration: none;
+                    height: 40px;
+                    border-radius: 5px;
+                    background-color: $color-rojo;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}
+/*----------PAGINA 404 ERROR----------*/
+
+/*----------PAGINA BUSCAVAZIA----------*/
+#busca-vazia-page {
+    #my-account-error {
+        text-align: center;
+        .page-header{
+            margin: 50px;
+            .title-busca {
+                color: $color-negro;
+                font-size: $font26;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.85;
+                letter-spacing: normal;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+        .title-404 {
+            color: $color-negro;
+            font-size: $font13;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.85;
+            letter-spacing: normal;
+            text-align: center;
+        }
+        .content-404 {
+            color: $color-negro;
+            font-size: $font13;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.85;
+            letter-spacing: normal;
+            text-align: center;
+        }
+        .page-header {
+            img {
+                width: auto;
+                height: auto;
+                margin: 50px;
+            }
+        }
+        .button-404 {
+            @include prefix-val(display, flex, moz o ms webkit spec);
+            @include prefix-prop(justify-content, center, moz o ms webkit spec);
+            @include prefix-prop(align-items, center, moz o ms webkit spec);
+            margin: 20px;
+            .button-page {
+                width: 50%;
+                max-width: 165px;
+                a {
+                    font-size: $font14;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.36;
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: $color-blanco;
+                    text-decoration: none;
+                    height: 40px;
+                    border-radius: 25px;
+                    background-color: $color-gris2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}
+/*----------PAGINA BUSCAVAZIA----------*/

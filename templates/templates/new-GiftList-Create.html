@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="es-co">
+
+<head>
+    <title>Loja Online</title>
+    <vtex:metaTags/>
+    <link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/arquivos/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- ><link href="/arquivos/style.css" rel="stylesheet" type="text/css" /> -->
+    <script src="/arquivos/bootstrap.min.js"></script>
+    <vtex:template id="commonScripts" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+            
+                <!--  SubTemplate: Header -->
+                <vtex:template id="Header" />
+                <!-- /SubTemplate: Header -->
+                    
+                <div id="content" class="row-fluid">
+                    <div class="span3 giftlist-sidebar bs-docs-sidebar">
+                        <vtex:template id="new-GiftList-Sidebar-nav" />
+                    </div>
+                    <div id="collections" class="span9">
+                        <h2>Criar lista</h2>
+            			<!-- Controle: Criar uma Lista -->
+                        <vtex.cmc:GiftListFormV2 />
+                        <!-- 
+                        os seguintes parâmtros são permitidos:
+                        types="1,2,3,..." especifica quais tipos de listas serão permitidos na criação. Por padrão, todos os tipos ativos são permitidos
+                        urlmanage="http://mysite.com/alternatefolder" caminho customizado nos links para a página de gerenciamento da lista
+                        urledit="http://mysite.com/alternatefolder" caminho customizado nos links para a página de edição da lista
+                         -->
+                        <!-- /Controle: Criar uma Lista -->
+            		</div>
+                </div>
+                
+                <div class="footer clearfix">
+                    <!--  SubTemplate: Footer -->
+                    <vtex:template id="Footer" />
+                    <!-- /SubTemplate: Footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/arquivos/lojavazia-general.js"></script>
+</body>
+</html>

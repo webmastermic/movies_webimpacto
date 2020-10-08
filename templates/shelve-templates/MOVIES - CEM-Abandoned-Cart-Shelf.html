@@ -1,0 +1,22 @@
+#set($id = $product.Id)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+<table border="0" height="60" cellpadding="0" cellspacing="0" width="550">
+<tr>
+    <td align="center" style="width: 25%;">
+        <a title="$escapedName" href="$uri?utm_source=VTEXCEM&utm_medium=Abandono_carrinho&utm_campaign=Abandono" border="0">$product.GetImageTag(30)</a>
+    </td>
+    <td style="width: 50%;">
+        <span style="font-size: 13px; color: #131e29; font-weight: bold;">$product.Name</span>
+    </td>
+    <td align="center" style="width: 25%;">     
+        <p>
+            <span style="font-size: 13px; color: #131e29; font-weight: bold;">$product.BestPrice</span>    
+            #if($product.HasBestPrice)
+                <br />
+                <span style="font-size: 13px;color:#898A8D; text-decoration:line-through; font-weight: bold;">$product.ListPrice</span>
+            #end
+        </p>
+    </td>    
+</tr>
+</table>
